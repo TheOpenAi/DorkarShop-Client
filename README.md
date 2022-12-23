@@ -1,2 +1,3 @@
 # DorkarShop-Client
-sojib
+
+typescript coded upp
