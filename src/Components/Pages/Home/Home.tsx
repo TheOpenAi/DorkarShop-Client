@@ -4,7 +4,14 @@ import Banner from './Banner/Banner';
 const Home = () => {
     return (
         <div>
-           <Banner></Banner>
+            <Banner></Banner>
+            
+            {/* Feautere  Products  */}
+            {/* categoried */}
+            {/* services  */}
+            {/*  Branches*/}
+            {/*  Testimonials */}
+            {/*  Team member */}
         </div>
     );
 };
