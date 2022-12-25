@@ -38,11 +38,11 @@ const Categories = () => {
 
     return (
         <div>
-            <h1>All Categories</h1>
+            <h1 className='text-2xl'>All Categories</h1>
 
 
             <div>
-                <div className='grid mt-8 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[1200px] mx-auto gap-10'>
+                <div className='grid mt-8  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-[1200px] mx-auto gap-6'>
                     {/* {
                         categories.map(cat => <Category
                             key={cat.id}
