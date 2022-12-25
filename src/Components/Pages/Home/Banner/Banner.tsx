@@ -42,6 +42,7 @@ const Banner = () => {
 
                 </Swiper>
             </>
+
         </div>
     );
 };
