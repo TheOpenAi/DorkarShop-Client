@@ -23,11 +23,11 @@ const Services = () => {
 
 
         <div className="">
-              <div className="container grid md:gird-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-10  px-4">
+              <div className="container">
         
               
                 {/* <!-- Team Members --> */}
-                <div className="flex flex-wrap">
+                <div className=" grid md:gird-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-10  px-4">
 
                     {/* <!-- Member #1 --> */}
                     <div className="w-full mb-6 px-6 sm:px-6 lg:px-4">
