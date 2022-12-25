@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Banner from './Banner/Banner';
 
@@ -15,21 +15,11 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-
-
             <FeaturedProducts />
+            <Categories></Categories>
 
             <Services />
             <Review />
-
-
-            <Categories></Categories>
-    {/* services  */ }
-
-    {/*  Branches*/ }
-    {/*  Testimonials */ }
-    
-            <Categories></Categories>
             <Team></Team>
         </div >
     );
