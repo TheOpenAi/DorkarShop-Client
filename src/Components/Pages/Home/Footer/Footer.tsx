@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-<footer className="footer px-10">
+        <div className='py-5'>
+<footer className="footer bg-base-200 px-10">
   <div>
    
     <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>

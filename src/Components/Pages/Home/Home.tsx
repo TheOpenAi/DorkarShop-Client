@@ -1,6 +1,7 @@
 import React from 'react';
-import Footer from '../Footer/Footer';
+import Footer from './Footer/Footer';
 import Banner from './Banner/Banner';
+import Testimonials from './Testimonials/Testimonials';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             {/*  Branches*/}
             {/*  Testimonials */}
             {/*  Team member */}
+            <Testimonials></Testimonials>
             <Footer></Footer>
         </div>
     );
