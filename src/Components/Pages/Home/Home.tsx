@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Cart from '../Cart/Cart';
 import Banner from './Banner/Banner';
 import Team from './Team/Team';
 
 const Home = () => {
+  
+
     return (
         <div>
            <Banner></Banner>
@@ -11,6 +14,7 @@ const Home = () => {
             {/* services  */}
             {/*  Branches*/}
             {/*  Testimonials */}
+           
             <Team></Team>
            
         </div>
