@@ -3,7 +3,7 @@ import React from 'react';
 import Aos from 'aos';
 const Cart = (_Props: any) => {
 
-    const { isOpen, setIsOpen } = _Props;
+    const { setIsOpen } = _Props;
     // set type
     Aos.init();
     return (

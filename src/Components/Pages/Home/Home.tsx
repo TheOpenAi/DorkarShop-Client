@@ -14,7 +14,7 @@ const Home = () => {
             {/* services  */}
             {/*  Branches*/}
             {/*  Testimonials */}
-           
+
             <Team></Team>
            
         </div>
