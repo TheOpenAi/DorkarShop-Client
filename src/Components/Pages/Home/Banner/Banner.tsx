@@ -9,6 +9,39 @@ import "./styles.css";
 const Banner = () => {
     return (
         <div>
+            <>
+                <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
+                >
+                    <SwiperSlide>
+
+                        <img src="https://i.ibb.co/PZjGQV4/banner.png" alt="" srcSet="" />
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+
+                        <img src="https://i.ibb.co/sCtN346/banner2.png" alt="" srcSet="" />
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+
+                        <img src="https://i.ibb.co/PZjGQV4/banner.png" alt="" srcSet="" />
+
+                    </SwiperSlide>
+
+                </Swiper>
+            </>
 
         </div>
     );

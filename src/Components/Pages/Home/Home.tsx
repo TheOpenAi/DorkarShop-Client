@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Cart from '../Cart/Cart';
 import Banner from './Banner/Banner';
 
 import FeaturedProducts from './FeaturedProducts/FeaturedProducts';
 import Review from './Reviews/Review';
 import Services from './Services/Services';
 import Categories from './Categories/Categories';
+import Team from './Team/Team';
 
 
 const Home = () => {
+
+
     return (
         <div>
             <Banner></Banner>
@@ -20,12 +24,14 @@ const Home = () => {
 
 
             <Categories></Categories>
-            {/* services  */}
+    {/* services  */ }
 
-            {/*  Branches*/}
-            {/*  Testimonials */}
-            {/*  Team member */}
-        </div>
+    {/*  Branches*/ }
+    {/*  Testimonials */ }
+    
+            <Categories></Categories>
+            <Team></Team>
+        </div >
     );
 };
 
