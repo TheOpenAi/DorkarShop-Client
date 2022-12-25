@@ -221,7 +221,7 @@ const Review = () => {
                                                 </p>
 
                                                 <p className="mt-4 leading-relaxed text-gray-500">
-                                                    No, Rose, they are not breathing. And they have no arms or
+                                                    rewqrwer, Rofsdfsadse, they are not breathing. And they have no arms or
                                                     legs … Where are they? You know what? If we come across
                                                     somebody with no arms or legs, do we bother resuscitating
                                                     them? I mean, what quality of life do we have there?

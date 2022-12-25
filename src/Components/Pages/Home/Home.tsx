@@ -7,6 +7,8 @@ import Review from './Reviews/Review';
 import Services from './Services/Services';
 import Categories from './Categories/Categories';
 import Team from './Team/Team';
+import Testimonials from './Testimonials/Testimonials';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -15,12 +17,13 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <FeaturedProducts />
             <Categories></Categories>
-
+            <FeaturedProducts/>
             <Services />
             <Review />
             <Team></Team>
+            <Testimonials></Testimonials>
+            <Footer></Footer>
         </div >
     );
 };
