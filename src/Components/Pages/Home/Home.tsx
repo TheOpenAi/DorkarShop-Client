@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import Banner from './Banner/Banner';
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             {/*  Branches*/}
             {/*  Testimonials */}
             {/*  Team member */}
+            <Footer></Footer>
         </div>
     );
 };
