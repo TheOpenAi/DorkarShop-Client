@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Cart from '../Cart/Cart';
+
 import Banner from './Banner/Banner';
 import Categories from './Categories/Categories';
 import Team from './Team/Team';
