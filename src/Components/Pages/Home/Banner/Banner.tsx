@@ -26,17 +26,12 @@ const Banner = () => {
                 >
                     <SwiperSlide>
 
-                        <img src="https://i.ibb.co/PZjGQV4/banner.png" alt="" srcSet="" />
+                        <img src="https://i.ibb.co/DbxGXWw/banner.png" alt="" srcSet="" />
 
                     </SwiperSlide>
                     <SwiperSlide>
 
-                        <img src="https://i.ibb.co/sCtN346/banner2.png" alt="" srcSet="" />
-
-                    </SwiperSlide>
-                    <SwiperSlide>
-
-                        <img src="https://i.ibb.co/PZjGQV4/banner.png" alt="" srcSet="" />
+                        <img src="https://i.ibb.co/1LvY7k6/banner2.png" alt="" srcSet="" />
 
                     </SwiperSlide>
 

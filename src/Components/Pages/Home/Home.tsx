@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Cart from '../Cart/Cart';
+import React from 'react';
+
 import Banner from './Banner/Banner';
 
 import FeaturedProducts from './FeaturedProducts/FeaturedProducts';
@@ -7,6 +7,8 @@ import Review from './Reviews/Review';
 import Services from './Services/Services';
 import Categories from './Categories/Categories';
 import Team from './Team/Team';
+import Testimonials from './Testimonials/Testimonials';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -15,22 +17,13 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-
-
-            <FeaturedProducts />
-
+            <Categories></Categories>
+            <FeaturedProducts/>
             <Services />
             <Review />
-
-
-            <Categories></Categories>
-    {/* services  */ }
-
-    {/*  Branches*/ }
-    {/*  Testimonials */ }
-    
-            <Categories></Categories>
             <Team></Team>
+            <Testimonials></Testimonials>
+            <Footer></Footer>
         </div >
     );
 };
