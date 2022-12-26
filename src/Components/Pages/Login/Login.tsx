@@ -113,8 +113,8 @@ const Login = () => {
                             </div>
 
                             <p className="mt-5 text-sm text-gray-600">
-                                This site is protected by reCAPTCHA and the Google <a href="#" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Privacy Policy</a> &
-                                <a href="#" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Terms of Service</a>
+                                This site is protected by reCAPTCHA and the Google <a href="/" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Privacy Policy</a> &
+                                <a href="/" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Terms of Service</a>
                             </p>
                         </div>
                     </div>
