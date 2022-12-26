@@ -1,8 +1,9 @@
+import Aos from 'aos';
 import React from 'react';
 
 const Products = () => {
 
-
+    Aos.init();
     const products = [
         {
             title: " Tranter Jaskulski",
@@ -38,7 +39,7 @@ const Products = () => {
             title: " Tranter Jaskulski",
             details: " With over 100 years of combined experience, we've got.",
             imgSrc: "https://thumbs.dreamstime.com/z/moscow-russia-april-fujifilm-t-moscow-russia-april-fujifilm-t-camera-lens-carl-zeiss-fringer-ef-fx-pro-ii-adapter-215847157.jpg"
-        },{
+        }, {
             title: " Tranter Jaskulski",
             details: " With over 100 years of combined experience, we've got.",
             imgSrc: "https://media.istockphoto.com/id/1249579132/photo/beauty-products-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=lDmUkhu7XDdGww_AsQub6jJ55I7WMgAoYrqdopFa-tI="
@@ -75,69 +76,72 @@ const Products = () => {
         },
     ]
     return (
-      
-                <div>
-                    <div className="flex items-center justify-center h-auto bg-white pt-24">
-                        <div className="flex flex-col">
 
-                            <div className="flex flex-wrap justify-center text-center mb-24">
-                                <div className="w-full lg:w-6/12 px-4">
+        <div>
+            <div className="flex items-center justify-center h-auto bg-white pt-16">
+                <div className="flex flex-col">
 
-                                    <h1 className="text-gray-900 text-4xl font-bold mb-8">
+                    <div className="flex flex-wrap justify-center text-center mb-20">
+                        <div className="w-full lg:w-6/12 px-4">
 
-                                        Our Top <span className='text-secondary'> Products</span>
-                                    </h1>
+                            <h1 className="text-gray-900 text-4xl font-bold mb-8">
 
-
-
-                                </div>
-                            </div>
-
-
-                            <div className="">
-                                <div className="container">
-
-
-                                    <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
-
-
-                                        {
-                                            products.map((product, idx) => (
-
-                                                <div key={idx} className="card bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary ">
-                                                    <div className="card-body text-center">
-                                                        <h2 className="card-title py-2">{product.title}</h2>
-                                                    <img src={product.imgSrc} alt="" />
-
-                                                    </div>
-                                                </div>
-
-
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className="flex flex-wrap justify-center text-center mb-24">
-                                <div className="w-full lg:w-6/12 px-4">
-
-                                    <h1 className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8">
-
-                                        See All..
-                                    </h1>
-
-
-
-                                </div>
-                            </div>
+                                Our Top <span className='text-secondary'> Products</span>
+                            </h1>
 
                         </div>
                     </div>
-                </div>
 
-       
+
+                    <div className="">
+                        <div className="container">
+
+
+                            <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4"
+
+                            >
+
+
+                                {
+                                    products.map((product, idx) => (
+
+                                        <div    data-aos='fade-up'
+                                        data-aos-duration='1000'
+                                        data-aos-delay='80'>
+                                            <div key={idx} className="card w-[90%] h-[100%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary " >
+                                                <div className="card-body text-center">
+                                                    <h2 className="card-title py-2">{product.title}</h2>
+                                                    <img src={product.imgSrc} alt=""  />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="flex flex-wrap justify-center text-center mb-24">
+                        <div className="w-full lg:w-6/12 px-4">
+
+                            <h1 className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8">
+
+                                See All..
+                            </h1>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     );
 };
 
