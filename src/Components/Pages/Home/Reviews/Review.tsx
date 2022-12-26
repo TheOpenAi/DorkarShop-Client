@@ -27,7 +27,7 @@ const Review = () => {
 
                         <div className="hidden lg:mt-8 lg:flex lg:gap-4">
                             <button
-                                className="prev-button rounded-full border border-pink-600 p-3 text-pink-600 hover:bg-pink-600 hover:text-white"
+                                className="prev-button rounded-full border border-primary p-3 text-secondary hover:bg-primary hover:text-white"
                             >
                                 <span className="sr-only">Previous Slide</span>
                                 <svg
@@ -47,7 +47,7 @@ const Review = () => {
                             </button>
 
                             <button
-                                className="next-button rounded-full border border-pink-600 p-3 text-pink-600 hover:bg-pink-600 hover:text-white"
+                                className="next-button rounded-full border border-primary p-3 text-secondary hover:bg-primary hover:text-white"
                             >
                                 <span className="sr-only">Next Slide</span>
                                 <svg
