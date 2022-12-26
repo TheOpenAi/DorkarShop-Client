@@ -3,116 +3,147 @@ import Category from './Category';
 
 const Categories = () => {
 
-    // const categories = [
-    //     {
-    //         id: 1,
-    //         name: 'Shoes',
-    //         img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-    //     },
-    //     {
-    //         id: 2,
-    //         name: 'Mens Collection',
-    //         img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-    //     },
-    //     {
-    //         id: 3,
-    //         name: 'Women Collection',
-    //         img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-    //     },
-    //     {
-    //         id: 4,
-    //         name: 'Bags',
-    //         img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-    //     },
-    //     {
-    //         id: 5,
-    //         name: 'Electronics',
-    //         img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-    //     },
-    //     {
-    //         id: 5,
-    //         name: 'Foods',
-    //         img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-    //     },
-    // ]
+    const categories = [
+        {
+            id: 1,
+            name: 'Shoes',
+            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
+        },
+        {
+            id: 2,
+            name: 'Mens Collection',
+            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
+        },
+        {
+            id: 3,
+            name: 'Women Collection',
+            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
+        },
+        {
+            id: 4,
+            name: 'Bags',
+            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
+        },
+        {
+            id: 5,
+            name: 'Electronics',
+            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
+        },
+        {
+            id: 5,
+            name: 'Foods',
+            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
+        },
+    ]
 
     return (
+
+
         <div>
-            <h1 className='text-2xl'>All Categories</h1>
 
 
             <div>
-                <div className='grid mt-8  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-[1200px] mx-auto gap-6'>
-                    {/* {
-                        categories.map(cat => <Category
-                            key={cat.id}
+
+                <div className="flex items-center justify-center h-auto bg-white py-24">
+                    <div className="flex flex-col">
+
+                        <div className="flex flex-wrap justify-center text-center mb-24">
+                            <div className="w-full lg:w-6/12 px-4">
+
+                                <h1 className="text-gray-900 text-4xl font-bold mb-8">
 
 
-                        ></Category>)
+                                    All Categories
+                                </h1>
 
 
 
-                    } */}
-
-
-
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src="https://media.istockphoto.com/photos/stylish-business-clothing-for-businessman-picture-id504742864?b=1&k=20&m=504742864&s=612x612&w=0&h=3cUlVTsSBVLdJCadeSuQXBS1oSxKpy1CFSRjsVlZ3XU=" alt="" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">Mens Collection</h2>
-
+                            </div>
                         </div>
-                    </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src="https://media.istockphoto.com/photos/stylish-business-clothing-for-businessman-picture-id504742864?b=1&k=20&m=504742864&s=612x612&w=0&h=3cUlVTsSBVLdJCadeSuQXBS1oSxKpy1CFSRjsVlZ3XU=" alt="" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">Mens Collection</h2>
 
+
+                        <div className="">
+                            <div className="container">
+
+
+
+                                <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
+
+
+                                    {
+                                        categories.map((category, idx) => (
+
+                                            <div className="card w-72 bg-base-100 shadow-xl">
+                                                <div className="card-body">
+                                                    <h2 className="card-title">{category.name}</h2>
+
+
+                                                </div>
+                                            </div>
+
+
+                                        ))
+                                    }
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src="https://media.istockphoto.com/photos/stylish-business-clothing-for-businessman-picture-id504742864?b=1&k=20&m=504742864&s=612x612&w=0&h=3cUlVTsSBVLdJCadeSuQXBS1oSxKpy1CFSRjsVlZ3XU=" alt="" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">Mens Collection</h2>
-
-                        </div>
-                    </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src="https://media.istockphoto.com/photos/stylish-business-clothing-for-businessman-picture-id504742864?b=1&k=20&m=504742864&s=612x612&w=0&h=3cUlVTsSBVLdJCadeSuQXBS1oSxKpy1CFSRjsVlZ3XU=" alt="" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">Mens Collection</h2>
-
-                        </div>
-                    </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src="https://media.istockphoto.com/photos/stylish-business-clothing-for-businessman-picture-id504742864?b=1&k=20&m=504742864&s=612x612&w=0&h=3cUlVTsSBVLdJCadeSuQXBS1oSxKpy1CFSRjsVlZ3XU=" alt="" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">Mens Collection</h2>
-
-                        </div>
-                    </div>
-                    <div>
-
-
-
-
                     </div>
                 </div>
-
             </div>
 
-        </div >
+        </div>
+        // <div>
+        //     <h1 className='text-gray-900 text-4xl font-bold mb-8'>All Categories</h1>
+
+
+        //     <div>
+        //         <div className='grid mt-8  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-[1200px] mx-auto gap-6'>
+
+
+
+
+        //             {
+        //                 categories.map((category, idx) => (
+
+
+        //                     <div className="card w-72 bg-base-100 shadow-xl">
+        //                         <div className="card-body">
+        //                             <h2 className="card-title">{category.name}</h2>
+
+
+        //                         </div>
+        //                     </div>
+
+        //                     // <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        //                     //     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        //                     //     <div className="card-body">
+        //                     //         <h2 className="card-title">{category.name}</h2>
+        //                     //         <p>Pr</p>
+        //                     //         <div className="card-actions justify-end">
+        //                     //             <button className="btn btn-primary">Buy Now</button>
+        //                     //         </div>
+        //                     //     </div>
+        //                     // </div>
+        //                 ))
+        //             }
+
+
+
+
+
+
+
+        //         </div>
+        //     </div>
+
+        // </div>
+
+
     );
 };
 
 export default Categories;
+
+
+
+
