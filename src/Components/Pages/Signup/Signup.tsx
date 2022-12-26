@@ -1,3 +1,4 @@
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -84,7 +85,11 @@ const Signup = () => {
 
                                             <input
                                                 type="password"
+
+                                                name=""
+
                                                 name="password"
+
                                                 id=""
                                                 placeholder="Enter your password"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -113,6 +118,15 @@ const Signup = () => {
 
                                         
                                             /> */}
+                                            <select
+                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            >
+                                                <option disabled selected>Select A Option</option>
+                                                <option>Buyer</option>
+                                                <option>Seller</option>
+                                                <option>Admin</option>
+                                        
+                                            /> */}
                                             <select 
                                                 name="role"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -120,6 +134,7 @@ const Signup = () => {
                                                 <option disabled selected>Who are you?</option>
                                                 <option>Seller</option>
                                                 <option>Buyer</option>
+
                                             </select>
 
 
@@ -159,4 +174,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
