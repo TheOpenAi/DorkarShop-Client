@@ -20,6 +20,7 @@ const Login = () => {
             }),
         }).then(res => res.json())
             .then(data => {
+                console.log(data);
                 // setUser(data)
                 // localStorage.setItem('token', data.token)
             }).catch(err => {
@@ -145,7 +146,6 @@ const Login = () => {
 };
 
 export default Login;
-
 
 
 

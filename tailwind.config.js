@@ -2,7 +2,22 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  ],daisyui: {
+    themes: [
+      {
+        dorkarTheme: {
+          primary: "#878afe",
+          secondary: "#2badc8",
+          accent: "#40a798",
+          neutral: "#191D24",
+          "base-100": "#ffffff",
+          info: "#3ABFF8",
+          error: '#eb2632'
+        },
+      },
+      "halloween"
+    ],
+  },
   theme: {
     extend: {},
   },

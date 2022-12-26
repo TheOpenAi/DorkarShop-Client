@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import aos
 import Aos from 'aos';
+
 import Cart from '../Pages/Cart/Cart';
+
 
 const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -16,17 +18,21 @@ const Header = () => {
             {/* <!-- lg+ --> */}
             <div className="bg-gray-100 border-b border-gray-200">
                 <div className="px-4 mx-auto sm:px-6 lg:px-8">
-                    <div className="relative flex items-center justify-between h-16 lg:h-20">
+                    <div className="relative flex items-center font-sans justify-between h-16 lg:h-20">
                         <ul className="hidden lg:flex lg:items-center lg:space-x-10 text-xl">
                             <li><Link to={'/home'}> Home</Link></li>
                             <li><Link to={'/about'}> About</Link></li>
                             <li><Link to={'/login'}> Login</Link></li>
                             <li><Link to={'/singup'}> Singup</Link></li>
+
+                            <li><Link to={'/dashboard'}> Dashboard</Link></li>
+
+
                         </ul>
 
                         <div className="lg:absolute lg:-translate-x-1/2 lg:inset-y-5 lg:left-1/2">
                             <div className="flex-shrink-0">
-                                <h1 className='text-xl'> Dorkar Shop</h1>
+                                <h1 className='text-4xl text-primary font-sans font-extrabold'> Dorkar Shop</h1>
                             </div>
                         </div>
 
@@ -44,15 +50,15 @@ const Header = () => {
 
                         <div className="hidden lg:flex lg:items-center lg:space-x-10  ">
                             <form >
-                                <div className="relative border  border-gray-500  ">
-                                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none bg-[#F3F4F6]">
+                                <div className="relative ">
+                                    <div className="absolute inset-y-0 left-0 flex items-center  pointer-events-none bg-[#F3F4F6]">
                                         <svg aria-hidden="true" className="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                     </div>
                                     <input type="search" id="default-search"
 
                                         className=" bg-[#F3F4F6] block w-full p-4 pl-10 text-sm text-gray-900  " placeholder="Search , " required></input>
                                     <button type="submit" className="text-white absolute right-2.5 bottom-2.5
-                                 bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
+                                 bg-gradient-to-r from-primary to-secondary hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
                                 </div>
                             </form>
 
@@ -91,6 +97,9 @@ const Header = () => {
                                 <li><Link to={'/about'}> About</Link></li>
                                 <li><Link to={'/login'}> Login</Link></li>
                                 <li><Link to={'/singup'}> Singup</Link></li>
+
+                                <li><Link to={'/dashboard'}> Dashboard</Link></li>
+
                             </ul>
 
                             <hr className="my-4 border-gray-200" />
@@ -98,7 +107,7 @@ const Header = () => {
                             <div className="flex flex-col space-y-2">
 
                                 <form >
-                                    <div className="relative border border-gray-300 rounded-lg">
+                                    <div className="relative rounded-lg">
                                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none bg-[#F3F4F6]">
                                             <svg aria-hidden="true" className="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                         </div>
@@ -114,16 +123,20 @@ const Header = () => {
                     </div>
                 </nav>)
             }
-          {
-                isOpen?<Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>: null
-         }
+
+            {
+                // isOpen ? <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart> : null
+            }
+            {
+                isOpen ? <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart> : null
+            }
         </header>
 
 
 
 
     )
-  
+
 };
 
 export default Header;
