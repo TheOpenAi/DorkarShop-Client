@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <div className='w-[1300px] mx-auto my-28'>
             <div className='flex justify-between text-xl my-5 mx-4  '>
-                <h1>Welcome To Dorkar Shop!!Please Login</h1>
+                <h1>Anamika</h1>
                 <h1>New Here?<span className='text-blue-600'>Register</span> Here</h1>
 
             </div>
