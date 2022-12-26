@@ -7,6 +7,11 @@ import Main from './Components/Layout/Main';
 import Login from './Components/Pages/Login/Login';
 import Signup from './Components/Pages/Signup/Signup';
 import About from './Components/Pages/About/About';
+import Dashboard from './Components/Pages/Dashboard/Dashboard/Dashboard';
+import AddProduct from './Components/Pages/Dashboard/Dashboard/AddProduct';
+import AllSeller from './Components/Pages/Dashboard/Dashboard/AllSeller';
+import AllBuyers from './Components/Pages/Dashboard/Dashboard/AllBuyers';
+import AllUser from './Components/Pages/Dashboard/Dashboard/AllUser';
 
 function App() {
   const route = createBrowserRouter([
@@ -15,14 +20,22 @@ function App() {
         { path: '/home', element: <Home></Home> },
         { path: '/', element: <Home></Home> },
         { path: '/login', element: <Login></Login> },
-        { path: '/singup', element: <Signup></Signup>},
-        { path: '/about', element: <About></About>},
+        { path: '/singup', element: <Signup></Signup> },
+        { path: '/about', element: <About></About> },
+        { path: '/dashboard', element: <Dashboard></Dashboard> },
+        { path: '/dashboard/addProduct', element: <AddProduct></AddProduct> },
+        { path: '/dashboard/allSeller', element: <AllSeller></AllSeller> },
+        { path: '/dashboard/allBuyers', element: <AllBuyers></AllBuyers> },
+        { path: '/dashboard/allusers', element: <AllUser></AllUser> },
+
+
+
       ]
     }
   ])
   return (
     <div className="App">
-     <RouterProvider router={route}></RouterProvider>
+      <RouterProvider router={route}></RouterProvider>
     </div>
   );
 }
