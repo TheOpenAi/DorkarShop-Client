@@ -15,6 +15,10 @@ const Header = () => {
     console.log(isOpen);
     Aos.init();
 
+    const handleLogout = () => {
+        user?.setUser(null);
+    }
+
     return (
 
         <header className='font-serif'>
@@ -26,8 +30,15 @@ const Header = () => {
                             <li><Link to={'/home'}> Home</Link></li>
                             <li><Link to={'/about'}> About</Link></li>
                             <li><Link to={'/dashboard'}> Dashboard</Link></li>
-                            <li><Link to={'/login'}> Login</Link></li>
-                            <li><Link to={'/singup'}> Singup</Link></li>
+                            {
+                                user?.user ?
+                                    <li><button onClick={handleLogout}> LogOut</button></li>
+                                    :
+                                    <>
+                                        <li><Link to={'/login'}> Login</Link></li>
+                                        <li><Link to={'/singup'}> Singup</Link></li>
+                                    </>
+                            }
 
                             <li><Link to={'/dashboard'}> {user?.user?.name}</Link></li>
 
