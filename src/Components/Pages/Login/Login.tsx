@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 
 
 const Login = () => {
+
+    const handleSubmit = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+        const target = e.target as typeof e.target & {
+            email: { value: string };
+            password: { value: string };
+        };
+
+        const email = target.email.value;
+        const password = target.password.value;
+        console.log(email, password);
+    }
     return (
         <div className=' '>
             <section className="bg-white">
@@ -13,7 +25,7 @@ const Login = () => {
                         <div className="  xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Login</h2>
                             <p className="mt-2 text-base text-gray-600">New Here? <Link className='text-blue-600' to='/singup'>Register</Link></p>
-                            <form action="#" method="POST" className="mt-8">
+                            <form onSubmit={handleSubmit} action="#" method="POST" className="mt-8">
                                 <div className="space-y-5">
                                     <div>
 
@@ -30,7 +42,7 @@ const Login = () => {
 
                                             <input
                                                 type="email"
-                                                name=""
+                                                name="email"
                                                 id=""
                                                 placeholder="Enter email to get started"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -53,7 +65,7 @@ const Login = () => {
 
                                             <input
                                                 type="password"
-                                                name=""
+                                                name="password"
                                                 id=""
                                                 placeholder="Enter your password"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -101,13 +113,26 @@ const Login = () => {
                             </div>
 
                             <p className="mt-5 text-sm text-gray-600">
-                                This site is protected by reCAPTCHA and the Google <a href="#" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Privacy Policy</a> &
-                                <a href="#" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Terms of Service</a>
+                                This site is protected by reCAPTCHA and the Google <a href="/" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Privacy Policy</a> &
+                                <a href="/" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Terms of Service</a>
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
