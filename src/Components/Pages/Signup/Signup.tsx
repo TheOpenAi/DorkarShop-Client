@@ -9,12 +9,14 @@ const Signup = () => {
             name: { value: string };
             email: { value: string };
             password: { value: string };
+            role: { value: string };
         };
 
         const name = target.name.value;
         const email = target.email.value;
         const password = target.password.value;
-        console.log(name, email, password);
+        const role = target.role.value;
+        console.log(name, email, password,role);
     }
     return (
         <div className=' '>
@@ -111,12 +113,13 @@ const Signup = () => {
 
                                         
                                             /> */}
-                                            <select
+                                            <select 
+                                                name="role"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                             >
-                                                <option disabled selected>Who shot first?</option>
-                                                <option>Han Solo</option>
-                                                <option>Greedo</option>
+                                                <option disabled selected>Who are you?</option>
+                                                <option>Seller</option>
+                                                <option>Buyer</option>
                                             </select>
 
 
