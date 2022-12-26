@@ -50,7 +50,7 @@ const Categories = () => {
                         <div className="flex flex-wrap justify-center text-center mb-24">
                             <div className="w-full lg:w-6/12 px-4">
 
-                                <h1 className="text-gray-900 text-4xl font-bold mb-8">
+                                <h1 className="text-secondary text-4xl font-bold mb-8">
 
 
                                     All Categories
@@ -73,7 +73,7 @@ const Categories = () => {
                                     {
                                         categories.map((category, idx) => (
 
-                                            <div className="card w-72 bg-base-100 shadow-xl">
+                                            <div className="card h-40 w-72 bg-base-100 shadow-lg shadow-primary">
                                                 <div className="card-body">
                                                     <h2 className="card-title">{category.name}</h2>
 
