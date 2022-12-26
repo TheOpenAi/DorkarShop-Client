@@ -21,9 +21,11 @@ const Home = () => {
             <FeaturedProducts/>
             <Services />
             <Review />
-            <Team></Team>
+            
             <Testimonials></Testimonials>
+            <Team></Team>
             <Footer></Footer>
+            
         </div >
     );
 };
