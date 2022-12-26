@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom';
 
 
 const Login = () => {
+    const handelogin = (e: any) => {
+        e.preventDefault();
+        fetch('http://localhost:5000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: e.target.email.value,
+                password: e.target.password.value
+            }),
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+                // localStorage.setItem('token', data.token)
+            }).catch(err => {
+                console.log(err)
+            })
+    }
     return (
         <div className=' '>
             <section className="bg-white">
@@ -13,7 +32,7 @@ const Login = () => {
                         <div className="  xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Login</h2>
                             <p className="mt-2 text-base text-gray-600">New Here? <Link className='text-blue-600' to='/singup'>Register</Link></p>
-                            <form action="#" method="POST" className="mt-8">
+                            <form action="#" method="POST" className="mt-8" onSubmit={handelogin}>
                                 <div className="space-y-5">
                                     <div>
 
@@ -29,8 +48,9 @@ const Login = () => {
                                             </div>
 
                                             <input
+                                            required
                                                 type="email"
-                                                name=""
+                                                name="email"
                                                 id=""
                                                 placeholder="Enter email to get started"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -52,8 +72,9 @@ const Login = () => {
                                             </div>
 
                                             <input
+                                            required
                                                 type="password"
-                                                name=""
+                                                name="password"
                                                 id=""
                                                 placeholder="Enter your password"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
