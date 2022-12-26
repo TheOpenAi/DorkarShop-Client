@@ -35,7 +35,7 @@ const FeaturedProducts = () => {
                                         <span>Second advantage weekly</span>
                                     </li>
                                     <li className="space-x-2">
-                                        <span className="text-primaryfont-semibold">&check;</span>
+                                        <span className="text-primary font-semibold">&check;</span>
                                         <span>Third advantage donate to project</span>
                                     </li>
                                 </ul>
