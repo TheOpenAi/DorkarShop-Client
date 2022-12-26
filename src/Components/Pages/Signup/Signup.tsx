@@ -3,7 +3,34 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
- 
+    const handelup=(e:any)=>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const role = form.role.value;
+      
+        if (name && email && password && role) {
+            fetch('http://localhost:5000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                    role,
+                }),
+            }).then((res) => res.json())
+            .then((res) => {
+               console.log(res);
+            }).catch((err) => {
+                console.log(err.message);
+            });
+        }
+    }
     return (
         <div className=' '>
             <section className="bg-white">
@@ -12,7 +39,7 @@ const Signup = () => {
                         <div className="  xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Registration Form</h2>
                             <p className="mt-2 text-base text-gray-600">Already Have An Account? <Link className='text-blue-600' to='/login'>Login</Link></p>
-                            <form action="#" className="mt-8" >
+                            <form action="#" className="mt-8"     onSubmit={handelup}>
                                 <div className="space-y-5">
                                     <div>
 
@@ -126,4 +153,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
