@@ -7,25 +7,6 @@ const Login = () => {
     // const data = useContext(UserContext)
     // console.log(data)
     
-    const handelogin = (e: any) => {
-        e.preventDefault();
-        fetch('http://localhost:5000/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: e.target.email.value,
-                password: e.target.password.value
-            }),
-        }).then(res => res.json())
-            .then(data => {
-                // setUser(data)
-                // localStorage.setItem('token', data.token)
-            }).catch(err => {
-                // console.log(err)
-            })
-    }
    
     return (
         <div className=' '>
@@ -37,7 +18,7 @@ const Login = () => {
                         <div className="  xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Login</h2>
                             <p className="mt-2 text-base text-gray-600">New Here? <Link className='text-blue-600' to='/singup'>Register</Link></p>
-                            <form action="#" method="POST" className="mt-8" onSubmit={handelogin}>
+                            <form action="#" method="POST" className="mt-8">
                                 <div className="space-y-5">
                                     <div>
 
