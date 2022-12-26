@@ -3,6 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
+    const handleSubmit = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+        const target = e.target as typeof e.target & {
+            name: { value: string };
+            email: { value: string };
+            password: { value: string };
+        };
+
+        const name = target.name.value;
+        const email = target.email.value;
+        const password = target.password.value;
+        console.log(name, email, password);
+    }
     return (
         <div className=' '>
             <section className="bg-white">
@@ -11,7 +24,7 @@ const Signup = () => {
                         <div className="  xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Registration Form</h2>
                             <p className="mt-2 text-base text-gray-600">Already Have An Account? <Link className='text-blue-600' to='/login'>Login</Link></p>
-                            <form action="#" method="POST" className="mt-8">
+                            <form onSubmit={handleSubmit} action="#" method="POST" className="mt-8">
                                 <div className="space-y-5">
                                     <div>
 
@@ -24,8 +37,8 @@ const Signup = () => {
 
                                             <input
                                                 type="text"
-                                                name=""
-                                                id=""
+                                                name="name"
+                                                id="name"
                                                 placeholder="Enter You Full Name"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                             />
@@ -42,7 +55,7 @@ const Signup = () => {
 
                                             <input
                                                 type="email"
-                                                name=""
+                                                name="email"
                                                 id=""
                                                 placeholder="Enter email to get started"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -69,7 +82,7 @@ const Signup = () => {
 
                                             <input
                                                 type="password"
-                                                name=""
+                                                name="password"
                                                 id=""
                                                 placeholder="Enter your password"
                                                 className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -98,8 +111,8 @@ const Signup = () => {
 
                                         
                                             /> */}
-                                            <select 
-                                                   className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                            <select
+                                                className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                             >
                                                 <option disabled selected>Who shot first?</option>
                                                 <option>Han Solo</option>
