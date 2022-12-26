@@ -5,6 +5,7 @@ import { UserContext } from '../../../context/UserProvider';
 
 const Signup = () => {
     const userContext = useContext(UserContext);
+
     const handelup = (e: any) => {
         e.preventDefault();
         const form = e.target;
@@ -29,6 +30,13 @@ const Signup = () => {
                 .then((res) => res.json())
                 .then((res) => {
                     console.log(res);
+                    if (userContext) {
+                        userContext.setUser({
+                            name: res.name,
+                            email: res.email,
+                            role: res.role
+                        })
+                    }
                 }).catch((err) => {
                     console.log(err.message);
                 });
