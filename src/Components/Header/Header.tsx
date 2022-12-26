@@ -127,10 +127,9 @@ const Header = () => {
             {
                 // isOpen ? <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart> : null
             }
-=======
-          {
-                isOpen?<Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>: null
-         }
+            {
+                isOpen ? <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart> : null
+            }
         </header>
 
 
