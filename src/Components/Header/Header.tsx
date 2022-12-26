@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 // import aos
 import Aos from 'aos';
 
+import Cart from '../Pages/Cart/Cart';
+
 
 const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -22,7 +24,10 @@ const Header = () => {
                             <li><Link to={'/about'}> About</Link></li>
                             <li><Link to={'/login'}> Login</Link></li>
                             <li><Link to={'/singup'}> Singup</Link></li>
+
                             <li><Link to={'/dashboard'}> Dashboard</Link></li>
+
+
                         </ul>
 
                         <div className="lg:absolute lg:-translate-x-1/2 lg:inset-y-5 lg:left-1/2">
@@ -92,7 +97,9 @@ const Header = () => {
                                 <li><Link to={'/about'}> About</Link></li>
                                 <li><Link to={'/login'}> Login</Link></li>
                                 <li><Link to={'/singup'}> Singup</Link></li>
+
                                 <li><Link to={'/dashboard'}> Dashboard</Link></li>
+
                             </ul>
 
                             <hr className="my-4 border-gray-200" />
@@ -116,16 +123,20 @@ const Header = () => {
                     </div>
                 </nav>)
             }
+
             {
                 // isOpen ? <Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart> : null
             }
+=======
+          {
+                isOpen?<Cart isOpen={isOpen} setIsOpen={setIsOpen}></Cart>: null
+         }
         </header>
 
 
 
 
     )
-
 };
 
 export default Header;

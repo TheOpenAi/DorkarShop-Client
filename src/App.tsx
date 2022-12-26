@@ -7,11 +7,14 @@ import Main from './Components/Layout/Main';
 import Login from './Components/Pages/Login/Login';
 import Signup from './Components/Pages/Signup/Signup';
 import About from './Components/Pages/About/About';
+
 import Dashboard from './Components/Pages/Dashboard/Dashboard/Dashboard';
 import AddProduct from './Components/Pages/Dashboard/Dashboard/AddProduct';
 import AllSeller from './Components/Pages/Dashboard/Dashboard/AllSeller';
 import AllBuyers from './Components/Pages/Dashboard/Dashboard/AllBuyers';
 import AllUser from './Components/Pages/Dashboard/Dashboard/AllUser';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 
 function App() {
   const route = createBrowserRouter([
