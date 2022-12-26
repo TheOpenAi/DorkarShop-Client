@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+// import { UserContext } from '../../Contex/AuthContex';
 
 
 const Login = () => {
+    // const data = useContext(UserContext)
+    // console.log(data)
+    
     const handelogin = (e: any) => {
         e.preventDefault();
         fetch('http://localhost:5000/login', {
@@ -16,12 +20,13 @@ const Login = () => {
             }),
         }).then(res => res.json())
             .then(data => {
-                console.log(data)
+                // setUser(data)
                 // localStorage.setItem('token', data.token)
             }).catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
+   
     return (
         <div className=' '>
             <section className="bg-white">

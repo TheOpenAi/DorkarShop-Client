@@ -63,30 +63,29 @@ const Categories = () => {
 
 
                         <div className="">
-                            <div className="container">
 
 
 
-                                <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
+
+                            <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
 
 
-                                    {
-                                        categories.map((category, idx) => (
+                                {
+                                    categories.map((category, idx) => (
 
-                                            <div className="card w-72 bg-base-100 shadow-xl">
-                                                <div className="card-body">
-                                                    <h2 className="card-title">{category.name}</h2>
+                                        <div className="card w-52 bg-base-100 shadow-xl">
+                                            <div className="card-body">
+                                                <h2 className="card-title">{category.name}</h2>
 
-
-                                                </div>
                                             </div>
+                                        </div>
 
 
-                                        ))
-                                    }
-                                </div>
+                                    ))
+                                }
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
