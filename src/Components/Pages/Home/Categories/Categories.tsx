@@ -1,8 +1,9 @@
+import Aos from 'aos';
 import React from 'react';
 // import Category from './Category';
 
 const Categories = () => {
-
+    Aos.init();
     const categories = [
         {
             id: 1,
@@ -39,17 +40,16 @@ const Categories = () => {
     return (
 
 
-        <div>
-
+    
 
             <div>
 
                 <div className="flex items-center justify-center h-auto bg-white pt-24">
                     <div className="flex flex-col">
 
-                        <div className="flex flex-wrap justify-center text-center mb-24">
+                        <div className="flex flex-wrap justify-center text-center mb-24" data-aos='fade-right'>
                             <div className="w-full lg:w-6/12 px-4">
-                            <h1 className=" text-4xl font-bold mb-8">
+                                <h1 className=" text-4xl font-bold mb-8">
                                     All Categories
                                 </h1>
                             </div>
@@ -57,28 +57,27 @@ const Categories = () => {
 
 
                         <div className="">
+                            <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
+                                {
+                                    categories.map((category, idx) => (
 
-                                <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
-                                    {
-                                        categories.map((category, idx) => (
-
-                                            <div key={idx} className="card h-40 w-52 bg-base-100 shadow-lg shadow-primary">
-                                                <div className="card-body">
-                                                    <h2 className="card-title">{category.name}</h2>
-                                                </div>
+                                        <div key={idx} className="card  w-52 bg-base-100 shadow-lg shadow-primary" data-aos='fade-up'>
+                                            <div className="card-body">
+                                                <h2 className="card-title">{category.name}</h2>
                                             </div>
-                                        ))
-                                    }
-                                </div>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
-
-        
      
+
+
+
     );
 };
 

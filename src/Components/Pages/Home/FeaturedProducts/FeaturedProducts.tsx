@@ -1,6 +1,8 @@
+import Aos from 'aos';
 import React from 'react';
 
 const FeaturedProducts = () => {
+    Aos.init();
     return (
         <div>
 
@@ -10,10 +12,18 @@ const FeaturedProducts = () => {
                         <h2 className="text-2xl  text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>
                     </div>
                     <div className="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
-                        <div className="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12">
+                        <div className="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12" data-aos='fade-right' 
+                        
+                        data-aos-duration='1000'
+                        data-aos-delay='80'
+                        
+                        >
+                        
+
+        
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-xl transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"></div>
                             <div className="relative p-6 space-y-6 lg:p-8">
-                                <h3 className="text-3xl text-gray-700 font-semibold text-center">Organisation</h3>
+                                <h3 className="text-3xl text-gray-700 font-semibold text-center">GOLD Package</h3>
                                 <div>
                                     <div className="relative flex justify-around">
                                         <div className="flex items-end">
@@ -32,11 +42,11 @@ const FeaturedProducts = () => {
                                     </li>
                                     <li className="space-x-2">
                                         <span className="text-primary font-semibold">&check;</span>
-                                        <span>Second advantage weekly</span>
+                                        <span>Second Free Delivery</span>
                                     </li>
                                     <li className="space-x-2">
                                         <span className="text-primary font-semibold">&check;</span>
-                                        <span>Third advantage donate to project</span>
+                                        <span>Third 35% Discount </span>
                                     </li>
                                 </ul>
                                 <p className="flex items-center justify-center space-x-4 text-lg text-gray-600 text-center">
@@ -57,7 +67,7 @@ const FeaturedProducts = () => {
                             </div>
                         </div>
 
-                        <div className="relative group md:w-6/12 lg:w-7/12">
+                        <div className="relative group md:w-6/12 lg:w-7/12" data-aos='fade-left'>
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
                             <div className="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
                                 <ul role="list" className="space-y-4 py-6 text-gray-600">
