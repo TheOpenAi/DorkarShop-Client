@@ -32,6 +32,7 @@ const Products = () => {
     ]
     return (
         <div>
+            <h1>Our Top Products</h1>
 
         </div>
         // <div>
