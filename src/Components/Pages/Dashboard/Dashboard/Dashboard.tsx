@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Header from '../../../Header/Header';
 
 const Dashboard = () => {
     return (
         <div>
             <div>
+                <Header></Header>
 
                 <div className="drawer drawer-mobile">
                     <input id="dashboard-drawer-2" type="checkbox" className="drawer-toggle" />

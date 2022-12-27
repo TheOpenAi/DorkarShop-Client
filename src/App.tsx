@@ -27,8 +27,15 @@ function App() {
         { path: '/login', element: <Login></Login> },
         { path: '/singup', element: <Signup></Signup> },
         { path: '/about', element: <About></About> },
-        { path: '/dashboard', element: <Dashboard></Dashboard> },
-        { path: 'dashboard/addProduct', element: <AddProduct></AddProduct> },
+
+
+      ]
+    },
+    {
+      path: '/dashboard', element: <Dashboard></Dashboard>, children: [
+
+
+        { path: '/dashboard/addProduct', element: <AddProduct></AddProduct> },
         { path: '/dashboard/allSeller', element: <AllSeller></AllSeller> },
         { path: '/dashboard/allBuyers', element: <AllBuyers></AllBuyers> },
         { path: '/dashboard/allusers', element: <AllUser></AllUser> },
@@ -38,6 +45,8 @@ function App() {
 
       ]
     }
+
+
   ])
   return (
     <div className="App">
