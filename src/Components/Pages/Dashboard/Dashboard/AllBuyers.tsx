@@ -37,8 +37,9 @@ const AllBuyers = () => {
 
 
 
-                                    <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-blue-800 to-blue-700 border-none">Verify</label>
-
+                                    <label htmlFor="Confirmation-modal" className=" btn 
+                                
+                                text-white   bg-gradient-to-r from-primary to-secondary   border-none">Verify</label>
 
 
 

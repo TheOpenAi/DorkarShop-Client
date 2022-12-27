@@ -37,7 +37,9 @@ const AllUser = () => {
 
                                 <td  >
 
-                                    <button className='btn  bg-gradient-to-r from-blue-800 to-blue-700 border-none'>Make Admin</button>
+                                    <label htmlFor="Confirmation-modal" className=" btn 
+                                
+                                text-white   bg-gradient-to-r from-primary to-secondary   border-none">Make Admin</label>
                                 </td>
 
 

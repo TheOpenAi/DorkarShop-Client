@@ -29,7 +29,9 @@ const MyProduct = () => {
 
                             <td>A</td>
                             <td>
-                                <button className='btn' >Click Here</button>
+                                <label htmlFor="Confirmation-modal" className=" btn 
+                                
+                                text-white   bg-gradient-to-r from-primary to-secondary   border-none">Click Here</label>
                             </td>
 
                             <td>Available</td>
