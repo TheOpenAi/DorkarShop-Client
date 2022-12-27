@@ -30,12 +30,12 @@ const Dashboard = () => {
                             <div className=''>
 
 
-                                <li><Link to='dashboard/addProduct' >Add Product</Link></li>
+                                <li><Link to='/dashboard/addProduct' >Add Product</Link></li>
 
-                                <li><Link to='/myProducts' >My Product</Link></li>
+                                <li><Link to='/dashboard/myProduct' >My Product</Link></li>
 
-                                <li><Link to='/myorders' >My Orders</Link></li>
-                                <li><Link to='/reportedItems' >Reported Items</Link></li>
+                                <li><Link to='/dashboard/myorder' >My Orders</Link></li>
+
                                 <li><Link to='/dashboard/allusers' >All Users</Link></li>
 
                                 <li><Link to='/dashboard/allSeller' >All Sellers</Link></li>
