@@ -1,6 +1,7 @@
 import React from 'react';
 import cartPic from "../../../Assets/About-1.jpg";
 import Footer from '../Footer/Footer';
+import ClientSay from './ClientSay';
 import NewsLetter from './NewsLetter';
 import Team from './Team';
 import Wedo from './Wedo';
@@ -44,6 +45,7 @@ const About = () => {
 <Team></Team>
  </div>
  <NewsLetter></NewsLetter>
+ <ClientSay></ClientSay>
  <Footer></Footer>
 </div>
     );
