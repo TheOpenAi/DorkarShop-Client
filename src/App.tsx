@@ -30,7 +30,9 @@ function App() {
         { path: '/login', element: <Login></Login> },
         { path: '/singup', element: <Signup></Signup> },
         { path: '/about', element: <About></About> },
-
+        {
+          path: '/productsdetails', element: <ProductsDetails></ProductsDetails>
+        }
 
       ]
     },
@@ -44,9 +46,7 @@ function App() {
         { path: '/dashboard/allusers', element: <AllUser></AllUser> },
         { path: '/dashboard/myorder', element: <MyOrder></MyOrder> },
         { path: '/dashboard/myProduct', element: <MyProduct></MyProduct> },
-       {
-        path:'/productsdetails' ,element:<ProductsDetails></ProductsDetails>
-       }
+
 
       ]
     }
