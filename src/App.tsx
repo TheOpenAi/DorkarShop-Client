@@ -14,6 +14,8 @@ import AllSeller from './Components/Pages/Dashboard/Dashboard/AllSeller';
 import AllBuyers from './Components/Pages/Dashboard/Dashboard/AllBuyers';
 import AllUser from './Components/Pages/Dashboard/Dashboard/AllUser';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import MyOrder from './Components/Pages/Dashboard/Dashboard/MyOrder';
+import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
 
 
 function App() {
@@ -26,11 +28,12 @@ function App() {
         { path: '/singup', element: <Signup></Signup> },
         { path: '/about', element: <About></About> },
         { path: '/dashboard', element: <Dashboard></Dashboard> },
-        { path: '/dashboard/addProduct', element: <AddProduct></AddProduct> },
+        { path: 'dashboard/addProduct', element: <AddProduct></AddProduct> },
         { path: '/dashboard/allSeller', element: <AllSeller></AllSeller> },
         { path: '/dashboard/allBuyers', element: <AllBuyers></AllBuyers> },
         { path: '/dashboard/allusers', element: <AllUser></AllUser> },
-
+        { path: '/dashboard/myorder', element: <MyOrder></MyOrder> },
+        { path: '/dashboard/myProduct', element: <MyProduct></MyProduct> },
 
 
       ]
