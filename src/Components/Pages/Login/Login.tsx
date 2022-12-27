@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../context/UserProvider';
 // import { UserContext } from '../../Contex/AuthContex';
 
 
 const Login = () => {
-    // const data = useContext(UserContext)
+    const userContext = useContext(UserContext)
     // console.log(data)
-    
+   console.log(userContext?.user);
     const handelogin = (e: any) => {
         e.preventDefault();
         fetch('http://localhost:5000/login', {
@@ -18,16 +19,25 @@ const Login = () => {
                 email: e.target.email.value,
                 password: e.target.password.value
             }),
-        }).then(res => res.json())
+        })
+            .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (userContext) {
+                    userContext.setUser({
+                        name: data.name,
+                        email: data.email,
+                        role: data.role
+                    })
+                }
                 // setUser(data)
-                // localStorage.setItem('token', data.token)
-            }).catch(err => {
+                localStorage.setItem('loggedUser', JSON.stringify(data))
+            })
+            .catch(err => {
                 // console.log(err)
             })
     }
-   
+
     return (
         <div className=' '>
             <section className="bg-white">
@@ -54,7 +64,7 @@ const Login = () => {
                                             </div>
 
                                             <input
-                                            required
+                                                required
                                                 type="email"
                                                 name="email"
                                                 id=""
@@ -78,7 +88,7 @@ const Login = () => {
                                             </div>
 
                                             <input
-                                            required
+                                                required
                                                 type="password"
                                                 name="password"
                                                 id=""

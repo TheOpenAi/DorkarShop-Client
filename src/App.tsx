@@ -14,8 +14,10 @@ import AllSeller from './Components/Pages/Dashboard/Dashboard/AllSeller';
 import AllBuyers from './Components/Pages/Dashboard/Dashboard/AllBuyers';
 import AllUser from './Components/Pages/Dashboard/Dashboard/AllUser';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 import MyOrder from './Components/Pages/Dashboard/Dashboard/MyOrder';
 import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
+import UserProvider from './context/UserProvider';
 
 
 function App() {
@@ -41,7 +43,9 @@ function App() {
   ])
   return (
     <div className="App">
-      <RouterProvider router={route}></RouterProvider>
+      <UserProvider>
+        <RouterProvider router={route}></RouterProvider>
+      </UserProvider>
     </div>
   );
 }
