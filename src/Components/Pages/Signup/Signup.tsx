@@ -15,7 +15,7 @@ const Signup = () => {
         const role = form.role.value;
 
         if (name && email && password && role) {
-            fetch('http://localhost:5000/register', {
+            fetch('https://dorkar-shop-server.vercel.app/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
