@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import Aos from 'aos';
 import React from 'react';
 
@@ -6,21 +7,26 @@ const FeaturedProducts = () => {
     return (
         <div>
 
-            <div className="bg-gradient-to-b from-white to-purple-200">
+            <div className="bg-gradient-to-b from-gray-500 to-purple-200">
                 <div className="container m-auto px-6 py-20 md:px-12 lg:px-20">
-                    <div className="m-auto text-center lg:w-8/12 xl:w-7/12">
+                    <div className="m-auto text-center lg:w-8/12 xl:w-7/12 relative overflow-hidden">
                         <h2 className="text-2xl  text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>
+                        {/* <img src="https://www.notion.so/cdn-cgi/image/format=auto,width=640,quality=100/front-static/pages/ai/person-wand.png?fbclid=IwAR1B09MGqWQuOJk6mU3KTWld1Fs99OoDX3_QkULEFLSG8U4476tTkWi4JXc" alt=""
+                            className='w-[50%] 
+                       left-[40%]
+                     relative'
+                         data-aos='fade-up' 
+                         data-aos-duration='1000'
+                            data-aos-delay='80'
+                         /> */}
                     </div>
-                    <div className="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
-                        <div className="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12" data-aos='fade-right' 
-                        
-                        data-aos-duration='1000'
-                        data-aos-delay='80'
-                        
-                        >
-                        
+                    <div className=" relative  left-9 mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
+                        <div className="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12" data-aos='fade-right'
 
-        
+                            data-aos-duration='1000'
+                            data-aos-delay='80'
+
+                        >
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-xl transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"></div>
                             <div className="relative p-6 space-y-6 lg:p-8">
                                 <h3 className="text-3xl text-gray-700 font-semibold text-center">GOLD Package</h3>
@@ -67,7 +73,10 @@ const FeaturedProducts = () => {
                             </div>
                         </div>
 
-                        <div className="relative group md:w-6/12 lg:w-7/12" data-aos='fade-left'>
+                        <div className="relative group md:w-6/12 lg:w-7/12" data-aos='fade-left' 
+                                  data-aos-duration='1000'
+                                  data-aos-delay='100'
+                        >
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
                             <div className="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
                                 <ul role="list" className="space-y-4 py-6 text-gray-600">

@@ -18,6 +18,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 import MyOrder from './Components/Pages/Dashboard/Dashboard/MyOrder';
 import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
 import UserProvider from './context/UserProvider';
+import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails';
 
 
 function App() {
@@ -36,13 +37,15 @@ function App() {
         { path: '/dashboard/allusers', element: <AllUser></AllUser> },
         { path: '/dashboard/myorder', element: <MyOrder></MyOrder> },
         { path: '/dashboard/myProduct', element: <MyProduct></MyProduct> },
-
+       {
+        path:'/productsdetails' ,element:<ProductsDetails></ProductsDetails>
+       }
 
       ]
     }
   ])
   return (
-    <div className="App">
+    <div className="App bg-white">
       <UserProvider>
         <RouterProvider router={route}></RouterProvider>
       </UserProvider>

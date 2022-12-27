@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
@@ -7,7 +8,7 @@ import { UserContext } from '../../../context/UserProvider';
 const Login = () => {
     const userContext = useContext(UserContext)
     // console.log(data)
-   console.log(userContext?.user);
+
     const handelogin = (e: any) => {
         e.preventDefault();
         fetch('http://localhost:5000/login', {
@@ -138,8 +139,8 @@ const Login = () => {
                             </div>
 
                             <p className="mt-5 text-sm text-gray-600">
-                                This site is protected by reCAPTCHA and the Google <a href="/" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Privacy Policy</a> &
-                                <a href="/" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Terms of Service</a>
+                                This site is protected by reCAPTCHA and the Google <a href="#" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Privacy Policy</a> &
+                                <a href="#" title="" className="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Terms of Service</a>
                             </p>
                         </div>
                     </div>
