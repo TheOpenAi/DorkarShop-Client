@@ -16,27 +16,27 @@ const About = () => {
     <div className="text-left pl-8">
       <h1 className="text-4xl font-bold">Creative and renovate fashion <br /> trends</h1>
       <p className="py-6">Collaboratively administrate empowered markets via plug-and-play maintain networks. Dynamically usable procrastinate B2B users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="flex gap-2">
   
-  <div className="stat">
-    <div className="stat-value">2 years</div>
+  <div className=' p-3'>
+    <div className="text-2xl font-bold">2 years</div>
     <div className="stat-desc text-xl font-bold">Experience</div>
   </div>
   
-  <div className="stat">
-    <div className="stat-value">2k</div>
+  <div className='p-3'>
+    <div className="text-2xl font-bold">2k</div>
     <div className="stat-desc text-xl font-bold">Happy Customers</div>
   </div>
   
-  <div className="stat">
-    <div className="stat-value">100%</div>
+  <div className='p-3'>
+    <div className="text-2xl font-bold">100%</div>
     <div className="stat-desc text-2xl font-bold">Client Satisfaction</div>
   </div>
   
 </div>
     </div>
     <div data-aos="fade-right" className="card flex-shrink-0 w-1/2 shadow-2xl bg-base-100 ">
-      <img src={cartPic} alt="" />
+      <img className='w-full' src={cartPic} alt="" />
     </div>
   </div>
   

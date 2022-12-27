@@ -38,14 +38,110 @@ const ClientSay = () => {
 <h2 className='text-xl font-bold'>Susan E. Davis</h2>
             </div>
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
+        <SwiperSlide> <div className='p-12  border text-center'>
+
+<div className=''>
+                
+                <p>They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, earum! They have always fulfilled my requests without any hesitation. So i would definitely recommend their them. Plus their theme is fantastic!</p>
+            </div>
+            <div className="avatar mt-3">
+<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+<img src="https://placeimg.com/192/192/people" />
+</div>
+</div>
+<h2 className='text-xl font-bold'>Susan E. Davis</h2>
+        </div></SwiperSlide>
       </Swiper>
     </>
         </div>
