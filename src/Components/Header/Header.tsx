@@ -11,12 +11,13 @@ const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const user = useContext(UserContext);
-    console.log(user);
+    console.log(user?.user);
     console.log(isOpen);
     Aos.init();
 
     const handleLogout = () => {
         user?.setUser(null);
+        localStorage.removeItem('loggedUser')
     }
 
     return (
@@ -31,7 +32,7 @@ const Header = () => {
                             <li><Link to={'/about'}> About</Link></li>
                             <li><Link to={'/dashboard'}> Dashboard</Link></li>
                             {
-                                user?.user ?
+                                user?.user?.email ?
                                     <li><button onClick={handleLogout}> LogOut</button></li>
                                     :
                                     <>
