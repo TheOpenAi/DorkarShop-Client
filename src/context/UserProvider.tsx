@@ -30,7 +30,7 @@ const UserProvider = ({ children }: UserContextProviderProps) => {
             email: currentUser?.email,
             role: currentUser?.role
         })
-    }, [])
+    }, [currentUser?.name, currentUser?.email, currentUser?.role])
 
 
 
