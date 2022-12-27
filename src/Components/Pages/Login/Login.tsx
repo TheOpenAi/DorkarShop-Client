@@ -11,7 +11,7 @@ const Login = () => {
 
     const handelogin = (e: any) => {
         e.preventDefault();
-        fetch('http://localhost:5000/login', {
+        fetch('https://dorkar-shop-server.vercel.app/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
