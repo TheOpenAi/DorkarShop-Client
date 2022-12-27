@@ -30,18 +30,23 @@ const Header = () => {
                         <ul className="hidden lg:flex lg:items-center lg:space-x-10 text-xl">
                             <li><Link to={'/home'}> Home</Link></li>
                             <li><Link to={'/about'}> About</Link></li>
-                            <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                           
                             {
                                 user?.user?.email ?
-                                    <li><button onClick={handleLogout}> LogOut</button></li>
+                                    <>
+                                        <li><button onClick={handleLogout}> LogOut</button></li>
+                                        <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                      
+                                    </>
                                     :
                                     <>
                                         <li><Link to={'/login'}> Login</Link></li>
                                         <li><Link to={'/singup'}> Singup</Link></li>
+                                        <li><Link to={'/dashboard'}> {user?.user?.name}</Link></li>
                                     </>
                             }
 
-                            <li><Link to={'/dashboard'}> {user?.user?.name}</Link></li>
+
 
 
                         </ul>
@@ -111,10 +116,20 @@ const Header = () => {
                             <ul className="flex flex-col space-y-2 text-xl">
                                 <li><Link to={'/home'}> Home</Link></li>
                                 <li><Link to={'/about'}> About</Link></li>
-                                <li><Link to={'/login'}> Login</Link></li>
-                                <li><Link to={'/singup'}> Singup</Link></li>
-
-                                <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                {
+                                    user?.user?.email?<> 
+                                      <li><button onClick={handleLogout}> LogOut</button></li>
+                                    <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                    </>
+                                    
+                                    : <>
+                                        <li><Link to={'/login'}> Login</Link></li>
+                                        <li><Link to={'/singup'}> Singup</Link></li> </>
+                                }
+                                
+                                
+                               
+                                
 
                             </ul>
 
