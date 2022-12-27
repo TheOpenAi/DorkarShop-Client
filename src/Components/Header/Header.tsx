@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 // import aos
 import Aos from 'aos';
 
 import Cart from '../Pages/Cart/Cart';
+import { UserContext } from '../../context/UserProvider';
 
 
 const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const user = useContext(UserContext);
+    console.log(user?.user);
     console.log(isOpen);
     Aos.init();
+
+    const handleLogout = () => {
+        user?.setUser(null);
+        localStorage.removeItem('loggedUser')
+    }
 
     return (
 
@@ -22,10 +30,23 @@ const Header = () => {
                         <ul className="hidden lg:flex lg:items-center lg:space-x-10 text-xl">
                             <li><Link to={'/home'}> Home</Link></li>
                             <li><Link to={'/about'}> About</Link></li>
-                            <li><Link to={'/login'}> Login</Link></li>
-                            <li><Link to={'/singup'}> Singup</Link></li>
+                           
+                            {
+                                user?.user?.email ?
+                                    <>
+                                        <li><button onClick={handleLogout}> LogOut</button></li>
+                                        <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                      
+                                    </>
+                                    :
+                                    <>
+                                        <li><Link to={'/login'}> Login</Link></li>
+                                        <li><Link to={'/singup'}> Singup</Link></li>
+                                        <li><Link to={'/dashboard'}> {user?.user?.name}</Link></li>
+                                    </>
+                            }
 
-                            <li><Link to={'/dashboard'}> Dashboard</Link></li>
+
 
 
                         </ul>
@@ -95,10 +116,20 @@ const Header = () => {
                             <ul className="flex flex-col space-y-2 text-xl">
                                 <li><Link to={'/home'}> Home</Link></li>
                                 <li><Link to={'/about'}> About</Link></li>
-                                <li><Link to={'/login'}> Login</Link></li>
-                                <li><Link to={'/singup'}> Singup</Link></li>
-
-                                <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                {
+                                    user?.user?.email?<> 
+                                      <li><button onClick={handleLogout}> LogOut</button></li>
+                                    <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                    </>
+                                    
+                                    : <>
+                                        <li><Link to={'/login'}> Login</Link></li>
+                                        <li><Link to={'/singup'}> Singup</Link></li> </>
+                                }
+                                
+                                
+                               
+                                
 
                             </ul>
 
