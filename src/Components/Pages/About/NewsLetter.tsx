@@ -4,8 +4,8 @@ const NewsLetter = () => {
     return (
         <div className="flex justify-around items-center flex-col bg-indigo-600 py-16 ">
             <div>
-                <h2 className='text-white text-4xl font-bold'>Get 20% Discount For Subscriber</h2>
-                <h3 className='text-white text-2xl '>Sign up for our newsletter to get up-to-date from us</h3>
+                <h2 className='text-white text-xl md:text-4xl font-bold'>Get 20% Discount For Subscriber</h2>
+                <h3 className='text-white text-lg md:text-2xl '>Sign up for our newsletter to get up-to-date from us</h3>
             </div>
             <div>
             <div className="form-control w-80">
