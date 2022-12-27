@@ -7,7 +7,7 @@ import { UserContext } from '../../../context/UserProvider';
 const Login = () => {
     const userContext = useContext(UserContext)
     // console.log(data)
-
+   console.log(userContext?.user);
     const handelogin = (e: any) => {
         e.preventDefault();
         fetch('http://localhost:5000/login', {
