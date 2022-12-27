@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export type AuthUser = {
     name: string
@@ -19,6 +19,21 @@ export const UserContext = createContext<UserContextType | null>(null)
 
 const UserProvider = ({ children }: UserContextProviderProps) => {
     const [user, setUser] = useState<AuthUser | null>(null)
+
+
+    const loggedUser = localStorage.getItem('loggedUser');
+    const currentUser = JSON.parse(String(loggedUser));
+    console.log(currentUser);
+    useEffect(() => {
+        setUser({
+            name: currentUser?.name,
+            email: currentUser?.email,
+            role: currentUser?.role
+        })
+    }, [])
+
+
+
     return (
         <UserContext.Provider value={{ user, setUser }}>
             {children}
