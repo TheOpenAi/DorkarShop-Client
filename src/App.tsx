@@ -36,10 +36,11 @@ function App() {
         {
           path: '/productsdetails', element: <ProductsDetails></ProductsDetails>
         },
-        { path:'/sinlgecategories/:id',  
-        
-        // loader:({param})=> fetch(`) // this is the way to fetch data from server
-        element: <SingleCategories></SingleCategories>}
+        {
+          path: '/sinlgecategories/:id',
+          loader: ({ params }) => fetch(`https://dorkar-shop-server-siamcse.vercel.app/products/${params.id}`),
+          element: <SingleCategories></SingleCategories>
+        }
 
       ]
     },

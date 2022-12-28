@@ -1,6 +1,10 @@
 import React from 'react';
+import { useLoaderData } from 'react-router';
 
 const CategoryCard = () => {
+  const products: any = useLoaderData();
+  console.log(products);
+  
   return (
     <div className="card w-80 bg-base-100 shadow-xl p-3">
       <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
