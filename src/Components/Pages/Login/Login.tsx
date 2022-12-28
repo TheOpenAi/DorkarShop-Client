@@ -2,8 +2,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
-// import { UserContext } from '../../Contex/AuthContex';
-
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const userContext = useContext(UserContext)
@@ -30,6 +29,7 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast.success("Login successful")
                 localStorage.setItem('loggedUser', JSON.stringify(data));
                 userContext?.setLoading(false);
                 navigate(from, { replace: true });
