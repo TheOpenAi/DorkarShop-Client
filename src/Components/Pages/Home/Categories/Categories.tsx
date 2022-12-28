@@ -33,11 +33,12 @@ const Categories = () => {
                             {
                                 categories.map((category, idx) => (
 
-                                    <div key={idx} className="card  w-52 bg-base-100 shadow-lg shadow-primary" data-aos='fade-up'>
+                                    <Link to={`/sinlgecategories/${category._id}`}>    <div key={idx} className="card  w-52 bg-base-100 shadow-lg shadow-primary" data-aos='fade-up'>
                                         <div className="card-body">
-                                            <Link to={`/category/${category._id}`}><h2 className="card-title capitalize">{category?.title}</h2></Link>
+                                           <h2 className="card-title capitalize">{category?.title}</h2>
                                         </div>
                                     </div>
+                                    </Link>
                                 ))
                             }
                         </div>
