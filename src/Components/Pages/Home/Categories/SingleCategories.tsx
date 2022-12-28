@@ -15,7 +15,7 @@ const SingleCategories = () => {
 
                     products.map((product:any) => (
 
-                        <Link to={'/productsdetails'}>
+                        <Link key={product._id} to={'/productsdetails'}>
                             <div data-aos='fade-right'
                                 data-aos-duration='1000'
                                 data-aos-delay='80'>
@@ -23,7 +23,7 @@ const SingleCategories = () => {
                                     <div className="card-body text-center">
                                         <img src={product.imgUrl} alt="" className='w-[70%] h-[60%]' />
                                         <h2 className="card-title py-2"> Name :{product.model}</h2>
-                                        <h2 className="card-title "> Name :{product.price}</h2>
+                                        <h2 className="card-title "> Price :{product.price}</h2>
                                     </div>
                                 </div>
                             </div>
