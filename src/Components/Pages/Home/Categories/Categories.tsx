@@ -1,5 +1,6 @@
 import Aos from 'aos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import Category from './Category';
 
 const Categories = () => {
@@ -7,7 +8,7 @@ const Categories = () => {
     const categories = [
         {
             id: 1,
-            name: 'Shoes',
+            name: 'shoes',
             img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
         },
         {
@@ -61,10 +62,15 @@ const Categories = () => {
                                 {
                                     categories.map((category, idx) => (
 
-                                        <div key={idx} className="card  w-52 bg-base-100 shadow-lg shadow-primary" data-aos='fade-up'>
+                                        <div
+                                         key={idx} className="card  w-52 bg-base-100 shadow-lg shadow-primary"
+                                        data-aos='fade-up'
+                                       >
+                                        <Link to={`/categories/${category.name}`}>
                                             <div className="card-body">
                                                 <h2 className="card-title">{category.name}</h2>
                                             </div>
+                                        </Link>
                                         </div>
                                     ))
                                 }

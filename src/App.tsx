@@ -19,6 +19,7 @@ import MyOrder from './Components/Pages/Dashboard/Dashboard/MyOrder';
 import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
 import UserProvider from './context/UserProvider';
 import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails';
+import Category from './Components/Pages/Home/Categories/Category';
 
 
 function App() {
@@ -30,9 +31,13 @@ function App() {
         { path: '/login', element: <Login></Login> },
         { path: '/singup', element: <Signup></Signup> },
         { path: '/about', element: <About></About> },
+           {
+        path: "/categories/:title",
+        element: <Category/> },
         {
           path: '/productsdetails', element: <ProductsDetails></ProductsDetails>
-        }
+        },
+        
 
       ]
     },
