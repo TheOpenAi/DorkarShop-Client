@@ -23,60 +23,57 @@ const AddProduct = () => {
     const date = format(currentDate, 'PPpp');
 
 
-    const handleAddProduct=(data:any)=>{
-        const { name, resellPrice, originalPrice, condition, phone, location, description, purchaseYear, categoryId } = data;
+    const handleAddProduct = (data: any) => {
+        const { model, price, phone, details, category, brand } = data;
 
         const formData = new FormData();
         console.log(data, userContext?.user?.name, userContext?.user?.email);
 
-        // formData.append('image', data.image[0]);
-        // console.log(formData);
+        formData.append('image', data.image[0]);
+        console.log(formData);
 
-        // const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_ImgbbHashKey}`;
+        const url = `https://api.imgbb.com/1/upload?key=354bd7b528be9f1e40354337c29e2d2f`;
 
-        // fetch(url, {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(res => res.json())
-        //     .then(img => {
-        //         if (img.success) {
-        //             const product = {
-        //                 name,
-        //                 image: img.data.url,
-        //                 posted: date,
-        //                 resellPrice,
-        //                 originalPrice,
-        //                 condition,
-        //                 phone,
-        //                 location,
-        //                 description,
-        //                 purchaseYear,
-        //                 seller: userContext?.user?.name,
-        //                 email: userContext?.user?.email,
-        //                 categoryId,
-        //                 isAvailable: true,
-        //                 advertise: false
-        //             };
-        //             console.log(product);
-        //             fetch('https://mobile-mart-server-siamcse.vercel.app/products', {
-        //                 method: 'POST',
-        //                 headers: {
-        //                     'content-type': 'application/json'
-        //                 },
-        //                 body: JSON.stringify(product)
-        //             })
-        //                 .then(res => res.json())
-        //                 .then(data => {
-        //                     console.log(data);
-        //                     if (data.acknowledged) {
-        //                         toast.success('Product added successfully.');
-        //                         navigate('/dashboard/myproducts');
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(img => {
+                if (img.success) {
+                    const product = {
+                        model,
+                        brand,
+                        imgUrl: img.data.url,
+                        posted: date,
+                        price,
+                        phone,
+                        details,
+                        seller: userContext?.user?.name,
+                        email: userContext?.user?.email,
+                        category,
+                        isAvailable: true,
+                        advertise: false
+                    };
+                    console.log(product);
+                    fetch('http://localhost:5000/products', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(product)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            if (data.acknowledged) {
+                                toast.success('Product added successfully.');
+                                // navigate('/dashboard/myproducts');
 
-        //                     }
-        //                 })
-        //         }
-        //     })
+                            }
+                        })
+                }
+            })
 
     }
 
@@ -87,15 +84,15 @@ const AddProduct = () => {
                 <div className='md:grid grid-cols-3 gap-1'>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Product Name</span></label>
-                        <input type="text" {...register("name")} placeholder='Enter Product Name' className="input input-bordered w-full max-w-xs" />
+                        <input type="text" {...register("model")} placeholder='Enter Product Name' className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Product  Price</span></label>
                         <input type="number" {...register("price")} placeholder='Enter Product Price In Taka ' className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="form-control w-full max-w-xs">
-                        <label className="label"> <span className="label-text">Seller Name</span></label>
-                        <input type="text" {...register("seller")} className="input input-bordered w-full max-w-xs" />
+                        <label className="label"> <span className="label-text">Brand</span></label>
+                        <input type="text" {...register("brand")} className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Mobile number</span></label>
@@ -108,9 +105,9 @@ const AddProduct = () => {
                             className="select input-bordered w-full max-w-xs capitalize" >
                             <option className='text-gray-900 ' selected disabled >Select A Option</option>
                             {
-                                categories.map((category:any) => <option
+                                categories.map((category: any) => <option
                                     key={category._id}
-                                    value={category._id}
+                                    value={category.title}
                                     className="capitalize"
                                 >{category.title}</option>)
                             }
@@ -119,7 +116,7 @@ const AddProduct = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label"> <span className="label-text">Photo</span></label>
-                    <input type="file" {...register("imgUrl")} className="w-full mb-6  text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50    " />
+                    <input type="file" {...register("image")} className="w-full mb-6  text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50    " />
                 </div>
                 <div className="form-control w-full max-w-xs  ">
                     <label className="label"> <span className="label-text">Details</span></label>
