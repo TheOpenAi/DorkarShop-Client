@@ -1,16 +1,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { FaStar, FaFacebook, FaInstagram, FaTwitter, FaShare } from "react-icons/fa";
+import { FaStar, FaFacebook, FaInstagram, FaTwitter,  } from "react-icons/fa";
+import { useLoaderData } from 'react-router';
 const ProductsDetails = () => {
-
-    const initialPicture = 'https://i.ibb.co/9qXHJL5/samsung-galaxy-m51-frandroid-2020-768x768.png'
+    
+    const data:any = useLoaderData();
+   
+    const { model, price, details, imgUrl, category ,brand} = data;
+    
+    const initialPicture = imgUrl
     const [picture, setpicture] = React.useState(initialPicture)
-
-
-
     const handel = (e: any) => {
         setpicture(e.target.src)
     }
+
     return (
         <div>
             <div className='mt-10 bg-white '>
@@ -28,7 +31,7 @@ const ProductsDetails = () => {
                     </div>
 
                     <div>
-                        <h2 className="text-3xl font-medium uppercase mb-2">Italian L Shape Sofa</h2>
+                        <h2 className="text-3xl font-medium uppercase mb-2">{model}</h2>
                         <div className="flex items-center mb-4">
                             <div className="flex gap-1 text-sm text-yellow-400">
                                 <span><i > <FaStar></FaStar></i></span>
@@ -46,11 +49,11 @@ const ProductsDetails = () => {
                             </p>
                             <p className="space-x-2">
                                 <span className="text-gray-800 font-semibold">Brand: </span>
-                                <span className="text-gray-600">Apex</span>
+                                <span className="text-gray-600">{brand}</span>
                             </p>
                             <p className="space-x-2">
                                 <span className="text-gray-800 font-semibold">Category: </span>
-                                <span className="text-gray-600">Sofa</span>
+                                <span className="text-gray-600">{category}</span>
                             </p>
                             <p className="space-x-2">
                                 <span className="text-gray-800 font-semibold">SKU: </span>
@@ -58,7 +61,7 @@ const ProductsDetails = () => {
                             </p>
                         </div>
                         <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                            <p className="text-xl text-primary font-semibold">$45.00</p>
+                            <p className="text-xl text-primary font-semibold">{price}</p>
                             <p className="text-base text-gray-400 line-through">$55.00</p>
                         </div>
 
@@ -143,15 +146,8 @@ const ProductsDetails = () => {
                     <h3 className="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium text-2xl">Product details</h3>
                     <div className="w-full pt-6">
                         <div className="text-gray-600">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur necessitatibus deleniti natus
-                                dolore cum maiores suscipit optio itaque voluptatibus veritatis tempora iste facilis non aut
-                                sapiente dolor quisquam, ex ab.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quae accusantium voluptatem
-                                blanditiis sapiente voluptatum. Autem ab, dolorum assumenda earum veniam eius illo fugiat possimus
-                                illum dolor totam, ducimus excepturi.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia modi ut expedita! Iure molestiae
-                                labore cumque nobis quasi fuga, quibusdam rem? Temporibus consectetur corrupti rerum veritatis
-                                numquam labore amet.</p>
+                            <p>{details}</p>
+                          
                         </div>
                     </div>
                 </div>

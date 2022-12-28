@@ -34,12 +34,12 @@ function App() {
         { path: '/singup', element: <Signup></Signup> },
         { path: '/about', element: <About></About> },
         {
-          path: '/productsdetails', element: <ProductsDetails></ProductsDetails>
+          path: '/productsdetails/:id', 
+          loader: ({ params }) => fetch(`http://localhost:5000/productdetails/${params.id}`),
+          element: <ProductsDetails></ProductsDetails>
         },
-        { path:'/sinlgecategories/:id',  
-        
-        // loader:({param})=> fetch(`) // this is the way to fetch data from server
-        element: <SingleCategories></SingleCategories>}
+        { path:'/sinlgecategories/:id',loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`),
+        element:<SingleCategories></SingleCategories>}
 
       ]
     },
