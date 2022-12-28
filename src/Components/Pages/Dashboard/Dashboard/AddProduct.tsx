@@ -97,7 +97,9 @@ const AddProduct = () => {
 
 
                 <div className='text-center my-16'>
-                    <button className='btn'>Add a Product</button>
+                    <button type='submit' className='text-white 
+ bg-gradient-to-r from-primary to-secondary hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 '>Add a Product</button>
+
                 </div>
             </form>
         </div>
