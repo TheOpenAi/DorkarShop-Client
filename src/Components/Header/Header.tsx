@@ -29,13 +29,13 @@ const Header = () => {
                         <ul className="hidden lg:flex lg:items-center lg:space-x-10 text-xl">
                             <li><Link to={'/home'}> Home</Link></li>
                             <li><Link to={'/about'}> About</Link></li>
-                           
+
                             {
                                 user?.user?.email ?
                                     <>
                                         <li><button onClick={handleLogout}> LogOut</button></li>
                                         <li><Link to={'/dashboard'}> Dashboard</Link></li>
-                                      
+
                                     </>
                                     :
                                     <>
@@ -51,10 +51,23 @@ const Header = () => {
                         </ul>
 
                         <div className="lg:absolute lg:-translate-x-1/2 lg:inset-y-5 lg:left-1/2">
-                            <div className="flex-shrink-0">
-                                <h1 className='text-4xl text-primary font-sans font-extrabold'> Dorkar Shop</h1>
+                            <div className=" flex flex-shrink-0">
+                                <div>
+                                    <h1 className='text-xl md:text-3xl lg:text-4xl text-primary font-sans font-extrabold'> Dorkar Shop</h1>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="dashboard-drawer-2" tabIndex={2} className="mr-10 lg:hidden">
+                                        <img className='mr-6 ' src='https://i.ibb.co/0FQ1X8x/icons8-dashboard-layout-48.png' alt='' />
+                                    </label>
+                                </div>
+
+
                             </div>
+
+
                         </div>
+
 
                         <button type="button" className="flex items-center justify-center ml-auto text-white bg-black rounded-full w-9 h-9 lg:hidden" onClick={() => setIsOpen(!isOpen)}>
                             <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,22 +126,25 @@ const Header = () => {
 
                         <div className="mt-6" >
                             <ul className="flex flex-col space-y-2 text-xl">
+
+
                                 <li><Link to={'/home'}> Home</Link></li>
                                 <li><Link to={'/about'}> About</Link></li>
                                 {
-                                    user?.user?.email?<> 
-                                      <li><button onClick={handleLogout}> LogOut</button></li>
-                                    <li><Link to={'/dashboard'}> Dashboard</Link></li>
+                                    user?.user?.email ? <>
+                                        <li><button onClick={handleLogout}> LogOut</button></li>
+
+                                        <li ><Link to={'/dashboard'}> Dashboard</Link></li>
                                     </>
-                                    
-                                    : <>
-                                        <li><Link to={'/login'}> Login</Link></li>
-                                        <li><Link to={'/singup'}> Singup</Link></li> </>
+
+                                        : <>
+                                            <li><Link to={'/login'}> Login</Link></li>
+                                            <li><Link to={'/singup'}> Singup</Link></li> </>
                                 }
-                                
-                                
-                               
-                                
+
+
+
+
 
                             </ul>
 
