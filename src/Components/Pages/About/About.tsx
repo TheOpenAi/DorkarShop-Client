@@ -1,6 +1,7 @@
 import React from 'react';
 import cartPic from "../../../Assets/About-1.jpg";
 import Footer from '../Footer/Footer';
+
 import ClientSay from './ClientSay';
 import NewsLetter from './NewsLetter';
 import Team from './Team';
@@ -10,6 +11,7 @@ const About = () => {
     return (
 <div>
 <div className='px-12 py-12 bg-white'>
+
     <h2 className='text-3xl font-bold'>About Us</h2> 
 <div className="hero mt-12">
   <div className="hero-content flex-col-reverse lg:flex-row-reverse">
