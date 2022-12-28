@@ -1,12 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 // import { UserContext } from '../../Contex/AuthContex';
 
 
 const Login = () => {
     const userContext = useContext(UserContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
     console.log(userContext?.loading);
 
     const handelogin = (e: any) => {
@@ -28,6 +32,7 @@ const Login = () => {
                 console.log(data);
                 localStorage.setItem('loggedUser', JSON.stringify(data));
                 userContext?.setLoading(false);
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 // console.log(err)

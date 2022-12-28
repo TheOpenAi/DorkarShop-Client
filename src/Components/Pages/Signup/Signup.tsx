@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 
 const Signup = () => {
     const userContext = useContext(UserContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handelup = (e: any) => {
         e.preventDefault();
@@ -33,6 +37,7 @@ const Signup = () => {
                     console.log(res);
                     localStorage.setItem('loggedUser', JSON.stringify(res));
                     userContext?.setLoading(false);
+                    navigate(from, { replace: true });
                 }).catch((err) => {
                     console.log(err.message);
                 });
