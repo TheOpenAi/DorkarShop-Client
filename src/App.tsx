@@ -19,6 +19,7 @@ import MyOrder from './Components/Pages/Dashboard/Dashboard/MyOrder';
 import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
 import UserProvider from './context/UserProvider';
 import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -58,6 +59,10 @@ function App() {
       <UserProvider>
         <RouterProvider router={route}></RouterProvider>
       </UserProvider>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   );
 }
