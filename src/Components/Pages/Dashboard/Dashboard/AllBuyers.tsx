@@ -4,7 +4,7 @@ const AllBuyers = () => {
     const [buyers, setBuyers] = useState<any[]>([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users?role=Buyer')
+        fetch('https://dorkar-shop-server-siamcse.vercel.app/users?role=Buyer')
             .then(res => res.json())
             .then(data => {
                 setBuyers(data);
@@ -28,70 +28,24 @@ const AllBuyers = () => {
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr  >
-                                <th>1</th>
-                                <td><div className="mask mask-squircle w-12 h-12">
-                                    <img src="https://static.vecteezy.com/system/resources/previews/004/773/704/original/a-girl-s-face-with-a-beautiful-smile-a-female-avatar-for-a-website-and-social-network-vector.jpg" alt='' />
-                                </div></td>
-
-                                <td>Hart Hagerty</td>
-                                <td>hart@gmail.com</td>
-
-                                <td>
-
-
-
-
-                                    <label htmlFor="Confirmation-modal" className=" btn 
-                                
-                                text-white   bg-gradient-to-r from-primary to-secondary   border-none">Verify</label>
-
-
-
-
-
-
-
-
-                                </td>
-
-                                <td>
-
-
-
-
-                                    <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-red-800 to-red-700 border-none">Delete</label>
-
-
-
-
-
-
-
-
-
-                                </td>
-
-
-                            </tr>
                             {
                                 buyers.map((buyer, i) => <tr  >
-                                    <th>{i+1}</th>
+                                    <th>{i + 1}</th>
                                     <td><div className="mask mask-squircle w-12 h-12">
                                         <img src="https://static.vecteezy.com/system/resources/previews/004/773/704/original/a-girl-s-face-with-a-beautiful-smile-a-female-avatar-for-a-website-and-social-network-vector.jpg" alt='' />
                                     </div></td>
                                     <td>{buyer.name}</td>
                                     <td>{buyer.email}</td>
                                     <td>
-                                        <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-blue-800 to-blue-700 border-none">Verify</label>
+                                        <label htmlFor="Confirmation-modal" className="btn 
+                                text-white bg-gradient-to-r from-primary to-secondary   border-none">Verify</label>
                                     </td>
                                     <td>
                                         <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-red-800 to-red-700 border-none">Delete</label>
                                     </td>
                                 </tr>)
                             }
-                            
+
                         </tbody>
                     </table>
                 </div>
