@@ -5,39 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Categories = () => {
     Aos.init();
-    const categories1 = [
-        {
-            id: 1,
-            name: 'Shoes',
-            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-        },
-        {
-            id: 2,
-            name: 'Mens Collection',
-            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-        },
-        {
-            id: 3,
-            name: 'Women Collection',
-            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-        },
-        {
-            id: 4,
-            name: 'Bags',
-            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-        },
-        {
-            id: 5,
-            name: 'Electronics',
-            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-        },
-        {
-            id: 5,
-            name: 'Foods',
-            img: "https://i1.wp.com/fashionablymale.net/wp-content/uploads/2021/09/Versace-x-Fendi-Mens-PreFall-2022-cover.jpg?fit=1200%2C675"
-        },
-    ]
-
     const [categories, setCategories] = useState<any[]>([]);
 
     useEffect(() => {
@@ -47,15 +14,8 @@ const Categories = () => {
                 setCategories(data);
             })
     }, [])
-    console.log(categories)
-
     return (
-
-
-
-
         <div>
-
             <div className="flex items-center justify-center h-auto bg-white pt-24">
                 <div className="flex flex-col">
 
