@@ -21,6 +21,7 @@ import UserProvider from './context/UserProvider';
 import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails';
 import { Toaster } from 'react-hot-toast';
 import PrivateRoutes from './Routes/PrivateRoutes';
+import SingleCategories from './Components/Pages/Home/Categories/SingleCategories';
 
 
 function App() {
@@ -34,7 +35,11 @@ function App() {
         { path: '/about', element: <About></About> },
         {
           path: '/productsdetails', element: <ProductsDetails></ProductsDetails>
-        }
+        },
+        { path:'/sinlgecategories/:id',  
+        
+        // loader:({param})=> fetch(`) // this is the way to fetch data from server
+        element: <SingleCategories></SingleCategories>}
 
       ]
     },
