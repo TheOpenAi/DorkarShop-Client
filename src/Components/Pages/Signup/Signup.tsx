@@ -8,6 +8,7 @@ const Signup = () => {
 
     const handelup = (e: any) => {
         e.preventDefault();
+        userContext?.setLoading(true);
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -30,13 +31,8 @@ const Signup = () => {
                 .then((res) => res.json())
                 .then((res) => {
                     console.log(res);
-                    if (userContext) {
-                        userContext.setUser({
-                            name: res.name,
-                            email: res.email,
-                            role: res.role
-                        })
-                    }
+                    localStorage.setItem('loggedUser', JSON.stringify(res));
+                    userContext?.setLoading(false);
                 }).catch((err) => {
                     console.log(err.message);
                 });
