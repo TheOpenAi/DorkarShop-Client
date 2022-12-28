@@ -12,7 +12,6 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const user = useContext(UserContext);
     console.log(user?.user);
-    console.log(isOpen);
     Aos.init();
 
     const handleLogout = () => {
