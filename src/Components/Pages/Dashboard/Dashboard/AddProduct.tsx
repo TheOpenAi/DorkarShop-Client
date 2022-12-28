@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useForm } from 'react-hook-form';
 
 const AddProduct = () => {
-    // const [categories, setCategories] = useState<any[]>([]);
-
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/categories')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setCategories(data);
-    //         })
-    // }, [])
+    const { register, handleSubmit } = useForm();
     const { data: categories = [] } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
@@ -19,11 +12,15 @@ const AddProduct = () => {
             return data;
         }
     });
+
+    const handleAddProduct=()=>{
+
+    }
     console.log(categories);
     return (
         <div className='lg:w-[1200px] mx-auto p-7'>
             <h2 className="text-4xl font-bold text-blue-900 text-center mb-12">Add A Product</h2>
-            <form >
+            <form onSubmit={handleSubmit(handleAddProduct)}>
                 <div className='md:grid grid-cols-3 gap-1'>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Product Name</span></label>
