@@ -1,3 +1,4 @@
 # DorkarShop-Client
 
-typescript coded upp happpy 
+Admin: dorkar@shop.com
+password: dorkar
