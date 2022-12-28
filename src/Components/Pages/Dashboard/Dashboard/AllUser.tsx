@@ -4,7 +4,7 @@ const AllUser = () => {
     return (
         <div>
             <div>
-                <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Sellers</h1>
+                <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Users</h1>
 
                 <div className="overflow-x-auto">
                     <table className="table w-full">
