@@ -32,5 +32,158 @@
             "Rubber sole"
         ],
         "imgUrl": "https://www.insidehook.com/wp-content/uploads/2021/10/Nike-Air-Zoom-Alphafly.jpg?fit=1200%2C800" 
+    },
+    {
+        "category": "mens",
+        "brand": "Lives",
+        "model": "Leather jacket",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://static-01.daraz.com.bd/p/80392dfaaec23fc90da494064e556fe8.jpg" 
+    },
+    {
+        "category": "mens",
+        "brand": "Lives",
+        "model": "Chelsea Boot",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Original Leather",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chelseaboots-2-1-1598383367.jpg?crop=0.503xw:1.00xh;0.228xw,0&resize=640:*" 
+    },
+    {
+        "category": "womens",
+        "brand": "Lives",
+        "model": "Leather Jacket",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Original Leather",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://static-01.daraz.com.bd/p/66b464af46d20c9111e89984f921a586.jpg" 
+    },
+    {
+        "category": "bags",
+        "brand": "Lives",
+        "model": "Leather Bag",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://imgshop.lbb.in/catalog/category/ngdfl005_2_.jpg" 
+    },
+    {
+        "category": "bags",
+        "brand": "Lives",
+        "model": "Travel Bag",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://i.tribune.com.pk/media/images/Bag-Pack1635181238-0/Bag-Pack1635181238-0.jpg" 
+    },
+    {
+        "category": "electronic",
+        "brand": "Sony",
+        "model": "MX-4040",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://www.energysistem.com/cdnassets/products/45303/principal_2000.jpg" 
+    },
+    {
+        "category": "electronic",
+        "brand": "Google",
+        "model": "Pixel-7",
+        "price": "799",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://media.wired.com/photos/633dc4042d9f11bddfef6a1a/master/w_1600%2Cc_limit/Google-Pixel-7-All-Colors-Gear.jpg" 
+    },
+    {
+        "category": "kids",
+        "brand": "Highttoy",
+        "model": "Transforming Car",
+        "price": "799",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/61WUjHj1VBL.jpg" 
+    },
+    {
+        "category": "kids",
+        "brand": "Mega Blocks",
+        "model": "Building Leggo",
+        "price": "799",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Plastic",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Soft tuch"
+        ],
+        "imgUrl": "https://www.verywellfamily.com/thmb/U_ONt8FDqOcGMr9I-6pxSiH9n3A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/best-toys-for-toddlers-5078720_HMF_V1-fc338088cc594b6aa53af0f7c301c583.jpg" 
     }
 ]
