@@ -133,7 +133,8 @@ const Header = () => {
                                 {
                                     user?.user?.email ? <>
                                         <li><button onClick={handleLogout}> LogOut</button></li>
-                                        <li><Link to={'/dashboard'}> Dashboard</Link></li>
+
+                                        <li ><Link to={'/dashboard'}> Dashboard</Link></li>
                                     </>
 
                                         : <>
