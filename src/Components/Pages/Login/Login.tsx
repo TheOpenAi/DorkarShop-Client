@@ -7,10 +7,12 @@ import { UserContext } from '../../../context/UserProvider';
 
 const Login = () => {
     const userContext = useContext(UserContext)
-    // console.log(data)
+    console.log(userContext?.loading);
 
     const handelogin = (e: any) => {
         e.preventDefault();
+        userContext?.setLoading(true);
+
         fetch('https://dorkar-shop-server.vercel.app/login', {
             method: 'POST',
             headers: {
@@ -24,15 +26,8 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (userContext) {
-                    userContext.setUser({
-                        name: data.name,
-                        email: data.email,
-                        role: data.role
-                    })
-                }
-                // setUser(data)
-                localStorage.setItem('loggedUser', JSON.stringify(data))
+                localStorage.setItem('loggedUser', JSON.stringify(data));
+                userContext?.setLoading(false);
             })
             .catch(err => {
                 // console.log(err)
