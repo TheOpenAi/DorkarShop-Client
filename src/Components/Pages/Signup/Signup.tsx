@@ -1,13 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 
 const Signup = () => {
     const userContext = useContext(UserContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handelup = (e: any) => {
         e.preventDefault();
+        userContext?.setLoading(true);
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -30,13 +35,9 @@ const Signup = () => {
                 .then((res) => res.json())
                 .then((res) => {
                     console.log(res);
-                    if (userContext) {
-                        userContext.setUser({
-                            name: res.name,
-                            email: res.email,
-                            role: res.role
-                        })
-                    }
+                    localStorage.setItem('loggedUser', JSON.stringify(res));
+                    userContext?.setLoading(false);
+                    navigate(from, { replace: true });
                 }).catch((err) => {
                     console.log(err.message);
                 });

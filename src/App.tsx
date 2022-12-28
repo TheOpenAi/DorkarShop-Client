@@ -20,6 +20,8 @@ import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
 import UserProvider from './context/UserProvider';
 import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails';
 import Category from './Components/Pages/Home/Categories/Category';
+import { Toaster } from 'react-hot-toast';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
 
 function App() {
@@ -33,7 +35,8 @@ function App() {
         { path: '/about', element: <About></About> },
            {
         path: "/categories/:title",
-        element: <Category/> },
+        element: <Category/> 
+      },
         {
           path: '/productsdetails', element: <ProductsDetails></ProductsDetails>
         },
@@ -42,7 +45,7 @@ function App() {
       ]
     },
     {
-      path: '/dashboard', element: <Dashboard></Dashboard>, children: [
+      path: '/dashboard', element: <PrivateRoutes>  <Dashboard></Dashboard></PrivateRoutes>, children: [
 
 
         { path: '/dashboard/addProduct', element: <AddProduct></AddProduct> },
@@ -63,6 +66,10 @@ function App() {
       <UserProvider>
         <RouterProvider router={route}></RouterProvider>
       </UserProvider>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   );
 }

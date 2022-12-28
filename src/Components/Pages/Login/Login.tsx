@@ -1,16 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
-// import { UserContext } from '../../Contex/AuthContex';
-
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const userContext = useContext(UserContext)
-    // console.log(data)
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+    console.log(userContext?.loading);
 
     const handelogin = (e: any) => {
         e.preventDefault();
+        userContext?.setLoading(true);
+
         fetch('https://dorkar-shop-server.vercel.app/login', {
             method: 'POST',
             headers: {
@@ -24,15 +29,10 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (userContext) {
-                    userContext.setUser({
-                        name: data.name,
-                        email: data.email,
-                        role: data.role
-                    })
-                }
-                // setUser(data)
-                localStorage.setItem('loggedUser', JSON.stringify(data))
+                toast.success("Login successful")
+                localStorage.setItem('loggedUser', JSON.stringify(data));
+                userContext?.setLoading(false);
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 // console.log(err)

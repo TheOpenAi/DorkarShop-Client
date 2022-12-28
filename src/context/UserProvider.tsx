@@ -9,6 +9,8 @@ export type AuthUser = {
 type UserContextType = {
     user: AuthUser | null
     setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>
+    loading: any
+    setLoading: React.Dispatch<any>
 }
 
 type UserContextProviderProps = {
@@ -19,23 +21,31 @@ export const UserContext = createContext<UserContextType | null>(null)
 
 const UserProvider = ({ children }: UserContextProviderProps) => {
     const [user, setUser] = useState<AuthUser | null>(null)
+    const [loading, setLoading] = useState<any>(true);
 
 
     const loggedUser = localStorage.getItem('loggedUser');
     const currentUser = JSON.parse(String(loggedUser));
-    console.log(currentUser);
+
     useEffect(() => {
         setUser({
             name: currentUser?.name,
             email: currentUser?.email,
             role: currentUser?.role
         })
+        setLoading(false)
     }, [currentUser?.name, currentUser?.email, currentUser?.role])
 
+    const authInfo = {
+        user,
+        setUser,
+        loading,
+        setLoading
+    }
 
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={authInfo}>
             {children}
         </UserContext.Provider>
     );
