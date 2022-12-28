@@ -1,0 +1,36 @@
+[
+    {
+        "category": "shoes",
+        "brand": "Adidas",
+        "model": "Adiboost Ultra",
+        "price": "289",
+        "details": "PARLEY OCEAN PLASTIC: This shoe's upper is made with a high-performance yarn which contains at least 50% Parley Ocean Plastic — reimagined plastic waste, intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our ocean. The other 50% of the yarn is recycled  polyester",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://spectrum.ieee.org/media-library/image.jpg?id=26144911" 
+    },
+    {
+        "category": "shoes",
+        "brand": "Nike",
+        "model": "zoom X",
+        "price": "299",
+        "details": "STRETCHWEB WITH CONTINENTAL RUBBER OUTSOLE: Stretchweb outsole flexes naturally for an energized ride, and Continental Rubber gives you superior traction; Officially licensed Continental product",
+        "bullet": [
+            "Imported",
+            "100% Authentic",
+            "Recycled Rubber",
+            "10 Months Replacement",
+            "Upper Material:Flyknit",
+            "Insole Material:EVA",
+            "Rubber sole"
+        ],
+        "imgUrl": "https://www.insidehook.com/wp-content/uploads/2021/10/Nike-Air-Zoom-Alphafly.jpg?fit=1200%2C800" 
+    }
+]
