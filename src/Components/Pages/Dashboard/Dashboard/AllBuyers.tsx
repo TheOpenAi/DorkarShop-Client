@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AllBuyers = () => {
+    const [buyers, setBuyers] = useState<any[]>([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/users?role=Buyer')
+            .then(res => res.json())
+            .then(data => {
+                setBuyers(data);
+            })
+    }, []);
     return (
         <div>
 
             <div>
                 <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Buyers</h1>
-
                 <div className="overflow-x-auto">
                     <table className="table w-full">
-
                         <thead>
                             <tr>
                                 <th></th>
                                 <th>Image</th>
-
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Verification</th>
@@ -69,19 +75,27 @@ const AllBuyers = () => {
 
 
                             </tr>
-
-
-
+                            {
+                                buyers.map((buyer, i) => <tr  >
+                                    <th>{i+1}</th>
+                                    <td><div className="mask mask-squircle w-12 h-12">
+                                        <img src="https://static.vecteezy.com/system/resources/previews/004/773/704/original/a-girl-s-face-with-a-beautiful-smile-a-female-avatar-for-a-website-and-social-network-vector.jpg" alt='' />
+                                    </div></td>
+                                    <td>{buyer.name}</td>
+                                    <td>{buyer.email}</td>
+                                    <td>
+                                        <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-blue-800 to-blue-700 border-none">Verify</label>
+                                    </td>
+                                    <td>
+                                        <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-red-800 to-red-700 border-none">Delete</label>
+                                    </td>
+                                </tr>)
+                            }
+                            
                         </tbody>
                     </table>
                 </div>
-
-
-
-
-
             </div>
-
         </div>
     );
 };
