@@ -20,6 +20,7 @@ import MyProduct from './Components/Pages/Dashboard/Dashboard/MyProduct';
 import UserProvider from './context/UserProvider';
 import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails';
 import { Toaster } from 'react-hot-toast';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
       ]
     },
     {
-      path: '/dashboard', element: <Dashboard></Dashboard>, children: [
+      path: '/dashboard', element: <PrivateRoutes>  <Dashboard></Dashboard></PrivateRoutes>, children: [
 
 
         { path: '/dashboard/addProduct', element: <AddProduct></AddProduct> },

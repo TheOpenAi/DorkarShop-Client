@@ -21,7 +21,7 @@ export const UserContext = createContext<UserContextType | null>(null)
 
 const UserProvider = ({ children }: UserContextProviderProps) => {
     const [user, setUser] = useState<AuthUser | null>(null)
-    const [loading, setLoading] = useState<any>(false);
+    const [loading, setLoading] = useState<any>(true);
 
 
     const loggedUser = localStorage.getItem('loggedUser');
@@ -33,6 +33,7 @@ const UserProvider = ({ children }: UserContextProviderProps) => {
             email: currentUser?.email,
             role: currentUser?.role
         })
+        setLoading(false)
     }, [currentUser?.name, currentUser?.email, currentUser?.role])
 
     const authInfo = {
