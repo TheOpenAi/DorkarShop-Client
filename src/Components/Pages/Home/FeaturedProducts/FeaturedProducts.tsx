@@ -112,6 +112,7 @@ const FeaturedProducts = () => {
 
                                     </div>
                                 </div>
+
                                 <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
@@ -141,6 +142,7 @@ const FeaturedProducts = () => {
 
                                     </div>
                                 </div>
+                                
                                 <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
