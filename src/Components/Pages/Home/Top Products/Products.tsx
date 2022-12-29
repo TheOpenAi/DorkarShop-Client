@@ -8,7 +8,7 @@ const Products = () => {
 
     Aos.init();
     //    use react trant query to fetch data from the server
-    const { data = [] ,isLoading} = useQuery({
+    const { data = [], isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
             const res = await fetch('https://dorkar-shop-server-siamcse.vercel.app/products');
@@ -18,7 +18,7 @@ const Products = () => {
     })
 
     if (isLoading) {
-        return <Loading></Loading>
+        return <Loading />
     }
     return (
 
@@ -46,23 +46,23 @@ const Products = () => {
                             >
                                 {
                                     data.map((product: any) => (
-               
-                                        <Link to={`/productsdetails/${product._id}`}>
-                                        <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto'
-                                            data-aos-duration='1000'
-                                            data-aos-delay='80'>
-                                            <div key={product._id} className="card w-[100%] h-[100%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary " >
-                                                <div className="card-body text-center">
-                                                <img src={product.imgUrl} alt="" className='w-[60%] h-[50%]' />
-                                                    <h2 className="card-title">{product?.model}</h2>
-                                                    
-                                                    <h2 className="card-title "> ${product?.price}</h2>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
 
-                                        </Link>   
+                                        <Link to={`/productsdetails/${product._id}`}>
+                                            <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto'
+                                                data-aos-duration='1000'
+                                                data-aos-delay='80'>
+                                                <div key={product._id} className="card w-[100%] h-[100%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary " >
+                                                    <div className="card-body text-center">
+                                                        <img src={product.imgUrl} alt="" className='w-[60%] h-[50%]' />
+                                                        <h2 className="card-title">{product?.model}</h2>
+
+                                                        <h2 className="card-title "> ${product?.price}</h2>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </Link>
                                     ))
                                 }
                             </div>
