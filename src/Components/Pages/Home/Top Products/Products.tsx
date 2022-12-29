@@ -47,7 +47,7 @@ const Products = () => {
                             >
                                 {
                                     data.map((product: any) => (
-                                      
+               
                                         <Link to={`/productsdetails/${product._id}`}>
                                         <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto'
                                             data-aos-duration='1000'
