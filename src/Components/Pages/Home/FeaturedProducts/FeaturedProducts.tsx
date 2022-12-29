@@ -2,6 +2,17 @@
 import Aos from 'aos';
 import React from 'react';
 import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons/fa'
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+import "./featured.css"
+
+// import required modules
+import { FreeMode, Pagination } from "swiper";
 
 const FeaturedProducts = () => {
     Aos.init();
@@ -78,12 +89,22 @@ const FeaturedProducts = () => {
                             data-aos-delay='100'
                         >
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
+                           
+                            <>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
                             <div className="relative p-6 m-5 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-
-
-
-                                <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+      
+        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://thevou.com/app/uploads/2022/03/Women-Clothing-Stores-thevou.com-Feature-01.jpg' alt="" className='w-full' />
 
@@ -111,8 +132,8 @@ const FeaturedProducts = () => {
                                         </div>
 
                                     </div>
-                                </div>
-                                <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                </div></SwiperSlide>
+        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
 
@@ -140,8 +161,9 @@ const FeaturedProducts = () => {
                                         </div>
 
                                     </div>
-                                </div>
-                                <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                </div></SwiperSlide>
+
+        <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
 
@@ -169,13 +191,77 @@ const FeaturedProducts = () => {
                                         </div>
 
                                     </div>
-                                </div>
+                                </div></SwiperSlide>
+                                <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                    <div className="">
+                                        <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
+
+                                        <div className='px-5'>
+                                            <div className='flex justify-between'>
+                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
+
+                                            </div>
+                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
+                                            <hr />
+                                            <div className='flex justify-between items-center py-3'>
+                                                <button className='bg-primary rounded px-2'>See Details</button>
+                                                <div className='flex items-center text-accent '>
+                                                    <div className='border-secondary p-1'>
+
+                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
+                                                    </div>
+
+                                                    <div className='border-2 rounded-full border-secondary p-1'>
+
+                                                        < FaExchangeAlt className='text-secondary' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div></SwiperSlide>
+
+                                <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                    <div className="">
+                                        <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
+
+                                        <div className='px-5'>
+                                            <div className='flex justify-between'>
+                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
+
+                                            </div>
+                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
+                                            <hr />
+                                            <div className='flex justify-between items-center py-3'>
+                                                <button className='bg-primary rounded px-2'>See Details</button>
+                                                <div className='flex items-center text-accent '>
+                                                    <div className='border-secondary p-1'>
+
+                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
+                                                    </div>
+
+                                                    <div className='border-2 rounded-full border-secondary p-1'>
+
+                                                        < FaExchangeAlt className='text-secondary' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div></SwiperSlide>
+   
+                               
+                              
 
 
 
 
 
                             </div>
+                            </Swiper>
+    </>
                         </div>
                     </div>
                 </div>
