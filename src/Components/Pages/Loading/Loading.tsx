@@ -1,7 +1,7 @@
 import React from 'react';
-import './Loader.css';
+import './Loading.css';
 
-const Loader = () => {
+const Loading = () => {
     return (
         <div className='min-h-screen flex justify-center items-center'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" height="128px" width="128px" className="pl">
@@ -17,4 +17,4 @@ const Loader = () => {
     );
 };
 
-export default Loader;
+export default Loading;
