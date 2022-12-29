@@ -66,10 +66,10 @@ const Team = () => {
   ]
 
   return (
-    <div className='mt-12'>
+    <div className='mt-24'>
       <h2 className='text-xl font-bold text-indigo-500'>Our Creative Team</h2>
       <h4 className='text-3xl font-bold'>DorkerShop Team Member</h4>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 mt-12">
 
 
         {
@@ -79,18 +79,18 @@ const Team = () => {
 
 
 
-            <div key={idx}>
-              <div className='team-container '>
-                <img src={member.photo} alt="Avatar" className="image" />
+            <div key={idx} className='team-container shadow-lg mx-auto rounded-lg p-10'>
+            
+                <img src={member.photo} alt="Avatar" className="h-56 mx-auto" />
                 <div className="overlay">
                   <div className="text">
 
                     <button className='mx-3 grid grid-cols-3 gap-3'>
-                      <a href={member.facebook}> <FaFacebook className='text-2xl'></FaFacebook></a>
-                      <a href={member.linkedin}> <FaLinkedin className='text-2xl'></FaLinkedin></a>
-                      <a href={member.github}> <FaGithub className='text-2xl'></FaGithub></a>
-                      <a href={member.portfolio}> <FaPortrait className='text-2xl'></FaPortrait></a>
-                      <a href={member.email}> <FaGoogle className='text-2xl'></FaGoogle></a>
+                      <a href={member.facebook} target="_blank">  <FaFacebook className='text-2xl'></FaFacebook></a>
+                      <a href={member.linkedin} target="_blank"> <FaLinkedin className='text-2xl'></FaLinkedin></a>
+                      <a href={member.github} target="_blank"> <FaGithub className='text-2xl'></FaGithub></a>
+                      <a href={member.portfolio} target="_blank"> <FaPortrait className='text-2xl'></FaPortrait></a>
+                      <a href={member.email} target="_blank"> <FaGoogle className='text-2xl'></FaGoogle></a>
 
 
                     </button>
@@ -100,9 +100,8 @@ const Team = () => {
                   </div>
                 </div>
 
-              </div>
               <h2 className="text-xl font-bold text-center mt-3">{member.name}</h2>
-              <h4 className="font-bold mb-20 text-gray-600">{member.developer}</h4>
+              <h4 className="font-bold text-gray-600">{member.developer}</h4>
             </div>
 
 
