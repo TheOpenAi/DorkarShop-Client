@@ -7,7 +7,8 @@ import { UserContext } from '../../../context/UserProvider';
 
 const Cart = (_Props: any) => {
     const userContext = useContext(UserContext);
-    const [cartProducts, setProducts] = useState<any[]>([])
+    const [cartProducts, setProducts] = useState<any[]>([]);
+    const [refresh, setRefresh] = useState<any>(false);
     const { setIsOpen } = _Props;
     // set type
     Aos.init();
@@ -21,11 +22,25 @@ const Cart = (_Props: any) => {
                 })
         }
 
-    }, [userContext?.user?.email])
+    }, [userContext?.user?.email, refresh]);
     console.log(cartProducts);
 
-    let sum = 0;
+    const handleRemove = (id: any) => {
+        console.log(id);
+        
+        fetch(`https://dorkar-shop-server-siamcse.vercel.app/carts/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.acknowledged){
+                    setRefresh(!refresh);
+                }
+            })
+    }
 
+    // total price 
+    let sum = 0;
     cartProducts.forEach((obj) => {
         sum += obj.price;
     });
@@ -71,7 +86,7 @@ const Cart = (_Props: any) => {
                                                 <p className="text-gray-500">Qty {product.quantity}</p>
 
                                                 <div className="flex">
-                                                    <button
+                                                    <button onClick={() => handleRemove(product._id)}
                                                         type="button"
                                                         className="font-medium text-indigo-600 hover:text-indigo-500">
                                                         Remove
