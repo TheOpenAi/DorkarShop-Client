@@ -2,6 +2,7 @@ import { useQueries, useQuery } from '@tanstack/react-query';
 import Aos from 'aos';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 const Products = () => {
 
@@ -17,9 +18,7 @@ const Products = () => {
     })
 
     if (isLoading) {
-        return <h1> 
-            Loading...
-        </h1>
+        return <Loading></Loading>
     }
     return (
 

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Components/Pages/Loading/Loading';
 import { UserContext } from '../context/UserProvider';
 
 const PrivateRoutes = ({ children }: any) => {
@@ -7,9 +8,7 @@ const PrivateRoutes = ({ children }: any) => {
     const location = useLocation();
 
     if (userContext?.loading) {
-        return <div>
-            Loading......
-        </div>
+        return <Loading/>
     }
 
     if (userContext?.user) {
