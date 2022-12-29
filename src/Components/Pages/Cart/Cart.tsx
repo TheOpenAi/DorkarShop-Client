@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Aos from 'aos';
+import { UserContext } from '../../../context/UserProvider';
 const Cart = (_Props: any) => {
+    const userContext = useContext(UserContext);
     const products = [
         {
             id: 1,
@@ -39,9 +41,23 @@ const Cart = (_Props: any) => {
         },
         // More products...
     ]
+    const [cartProducts,setProducts] = useState<any[]>([])
     const { setIsOpen } = _Props;
     // set type
     Aos.init();
+
+    useEffect(() => {
+        if(userContext?.user?.email){
+            fetch(`https://dorkar-shop-server-siamcse.vercel.app/carts?email=${userContext?.user?.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setProducts(data);
+                })
+        }
+      
+    }, [userContext?.user?.email])
+    console.log(cartProducts);
+
     return (
         <main
             className=
@@ -60,11 +76,11 @@ const Cart = (_Props: any) => {
                     <div className="mt-8">
                         <div className="flow-root">
                             <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                {products.map((product) => (
-                                    <li key={product.id} className="flex py-6">
+                                {cartProducts.map((product) => (
+                                    <li key={product._id} className="flex py-6">
                                         <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                             <img
-                                                src={product.imageSrc}
+                                                src={product.imgUrl}
                                                 alt={product.imageAlt}
                                                 className="h-full w-full object-cover object-center"
                                             />
@@ -74,11 +90,11 @@ const Cart = (_Props: any) => {
                                             <div>
                                                 <div className="flex justify-between text-base font-medium text-gray-900">
                                                     <h3>
-                                                        <a href={product.href}>{product.name}</a>
+                                                        <a href={product.href}>{product.model}</a>
                                                     </h3>
                                                     <p className="ml-4">{product.price}</p>
                                                 </div>
-                                                <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                                                <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
                                             </div>
                                             <div className="flex flex-1 items-end justify-between text-sm">
                                                 <p className="text-gray-500">Qty {product.quantity}</p>

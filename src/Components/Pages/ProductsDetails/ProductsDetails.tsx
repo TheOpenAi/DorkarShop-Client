@@ -1,17 +1,53 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { FaStar, FaFacebook, FaInstagram, FaTwitter,  } from "react-icons/fa";
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { FaStar, FaFacebook, FaInstagram, FaTwitter, } from "react-icons/fa";
 import { useLoaderData } from 'react-router';
+import { UserContext } from '../../../context/UserProvider';
+
 const ProductsDetails = () => {
-    
-    const data:any = useLoaderData();
-   
-    const { model, price, details, imgUrl, category ,brand} = data;
-    
+    const userContext = useContext(UserContext);
+    const data: any = useLoaderData();
+
+    const { _id, model, price, details, imgUrl, category, brand } = data;
+
     const initialPicture = imgUrl
     const [picture, setpicture] = React.useState(initialPicture)
-    const handel = (e: any) => {
+    const handle = (e: any) => {
         setpicture(e.target.src)
+    }
+
+    const handleAddToCart = (id: any) => {
+        console.log(id);
+        const cart = {
+            model,
+            email: userContext?.user?.email,
+            name: userContext?.user?.name,
+            brand,
+            price,
+            category,
+            imgUrl,
+            productsId: _id
+        };
+        console.log(cart);
+        fetch('http://localhost:5000/carts', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(cart)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    toast.success(
+                        `Your booking is ${model} successful. Please go to Go to Cart and pay for confirm.`
+                    );
+                }
+            })
+            .catch(e => console.log(e))
     }
 
     return (
@@ -22,11 +58,11 @@ const ProductsDetails = () => {
                         <img src={picture} alt="product" className="w-[80%] mx-auto h-[80%]"></img>
                         <div className="grid grid-cols-5 gap-4 mt-4">
                             <img src="https://i.ibb.co/hsP0XQw/61779b485e784ee5e1620a21-Image-png.png" alt="product2"
-                                className="w-full cursor-pointer " onClick={handel}></img>
+                                className="w-full cursor-pointer " onClick={handle}></img>
                             <img src={initialPicture} alt="product2"
-                                className="w-full cursor-pointer " onClick={handel}></img>
+                                className="w-full cursor-pointer " onClick={handle}></img>
                             <img src="https://i.ibb.co/nr7jvW9/20191102-191227.jpg" alt="product2"
-                                className="w-full cursor-pointer " onClick={handel}></img>
+                                className="w-full cursor-pointer " onClick={handle}></img>
                         </div>
                     </div>
 
@@ -65,9 +101,7 @@ const ProductsDetails = () => {
                             <p className="text-base text-gray-400 line-through">$55.00</p>
                         </div>
 
-                        <p className="mt-4 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum
-                            reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit
-                            consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.</p>
+                        <p className="mt-4 text-gray-600">{details}</p>
 
                         <div className="pt-4">
                             <h3 className="text-sm text-gray-800 uppercase mb-1">Size</h3>
@@ -116,16 +150,17 @@ const ProductsDetails = () => {
                                 className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition">
                                 <i className="fa-solid fa-bag-shopping"></i> Buy Now
                             </a>
-                            <a href="#"
+                            {/* Add to product cart */}
+                            <button onClick={() => handleAddToCart(_id)}
                                 className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
                                 <i className="fa-solid fa-heart"></i> Add to cart
-                            </a>
+                            </button>
                         </div>
-                    
+
 
                         <div className="flex gap-3 mt-4 w-[90%] mx-auto">
 
-                        <h1 className='text-xl'>  Share on </h1>
+                            <h1 className='text-xl'>  Share on </h1>
                             <a href="#"
                                 className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
                                 <i className="fa-brands fa-facebook-f"> <FaFacebook></FaFacebook></i>
@@ -147,7 +182,7 @@ const ProductsDetails = () => {
                     <div className="w-full pt-6">
                         <div className="text-gray-600">
                             <p>{details}</p>
-                          
+
                         </div>
                     </div>
                 </div>
