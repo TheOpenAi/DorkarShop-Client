@@ -8,7 +8,7 @@ module.exports = {
         dorkarTheme: {
           primary: "#878afe",
           secondary: "#2badc8",
-          accent: "#40a798",
+          accent: "#2f3d4b",
           neutral: "#191D24",
           "base-100": "#ffffff",
           info: "#3ABFF8",

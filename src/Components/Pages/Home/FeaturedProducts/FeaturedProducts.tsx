@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import Aos from 'aos';
 import React from 'react';
+import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons/fa'
 
 const FeaturedProducts = () => {
     Aos.init();
     return (
         <div>
 
-            <div className="bg-gradient-to-b from-gray-500 to-purple-200">
-                <div className="container m-auto px-6 py-20 md:px-12 lg:px-20">
+            <div className="bg-gray-100 py-20 w-full">
+                <div className="lg:w-3/4 m-auto ">
                     <div className="m-auto text-center lg:w-8/12 xl:w-7/12 relative overflow-hidden">
-                        <h2 className="text-2xl  text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>
+                        <h2 className="text-2xl text-accent text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>
                         {/* <img src="https://www.notion.so/cdn-cgi/image/format=auto,width=640,quality=100/front-static/pages/ai/person-wand.png?fbclid=IwAR1B09MGqWQuOJk6mU3KTWld1Fs99OoDX3_QkULEFLSG8U4476tTkWi4JXc" alt=""
                             className='w-[50%] 
                        left-[40%]
@@ -20,51 +21,42 @@ const FeaturedProducts = () => {
                             data-aos-delay='80'
                          /> */}
                     </div>
-                    <div className=" relative  left-9 mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
-                        <div className="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12" data-aos='fade-right'
+                    <div className=" relative mt-12 m-auto items-center justify-center md:flex md:space-y-0 md:-space-x-4">
+                        <div className="relative mx-4 md:w-3/12 md:mx-0 z-10 " data-aos='fade-right'
 
                             data-aos-duration='1000'
                             data-aos-delay='80'
 
                         >
-                            <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-xl transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"></div>
-                            <div className="relative p-6 space-y-6 lg:p-8">
-                                <h3 className="text-3xl text-gray-700 font-semibold text-center">GOLD Package</h3>
-                                <div>
-                                    <div className="relative flex justify-around">
-                                        <div className="flex items-end">
-                                            <span className="text-8xl text-gray-800 font-bold leading-0">35</span>
-                                            <div className="pb-2">
-                                                <span className="block text-2xl text-gray-700 font-bold">%</span>
-                                                <span className="block text-xl text-primary font-bold">Off</span>
+                            <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-gray-300 shadow-xl transition duration-500 group-hover:scale-105 lg:group-hover:scale-110">
+                                
+                            </div>
+                        
+                            <div className="relative p-6 space-y-6">
+                            <h2 className="text-accent  text-2xl font-medium py-2 border-b border-gray-400">Womans Category</h2>
+                                <div
+                                >
+                                    <div className=" bg-base-100 cursor-pointer" >
+                                        <div className="">
+                                            <img src='https://media1.popsugar-assets.com/files/thumbor/Sh7u3weJfcwV6SghHO5jv9OXWaU/0x483:3153x3636/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2022/10/25/937/n/1922564/200048d363585573475b80.48664533_/i/best-cheap-amazon-clothes-women-2020.jpg' alt="" className='w-full' />
+                                           
+                                            <div className='px-5 pt-3 bg-gray-300'>
+                                            <ul>
+                                                    <li >Text</li>
+                                                    <li>Text</li>
+                                                    <li>Text</li>
+                                                    <li>Text</li>
+                                                </ul>
+                                             
+                                             
                                             </div>
+                                         
                                         </div>
                                     </div>
+                                   
                                 </div>
-                                <ul role="list" className="w-max space-y-4 py-6 m-auto text-gray-600">
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>First premium advantage</span>
-                                    </li>
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>Second Free Delivery</span>
-                                    </li>
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>Third 35% Discount </span>
-                                    </li>
-                                </ul>
-                                <p className="flex items-center justify-center space-x-4 text-lg text-gray-600 text-center">
-                                    <span>Call us at</span>
-                                    <a href="tel:+24300" className="flex space-x-2 items-center text-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6" viewBox="0 0 16 16">
-                                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                                        </svg>
-                                        <span className="font-semibold">+1 000 000</span>
-                                    </a>
-                                    <span>or</span>
-                                </p>
+
+
                                 <button type="submit" title="Submit" className="block w-full py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary">
                                     <span className="text-white font-semibold">
                                         Send us an email
@@ -73,37 +65,116 @@ const FeaturedProducts = () => {
                             </div>
                         </div>
 
-                        <div className="relative group md:w-6/12 lg:w-7/12" data-aos='fade-left' 
-                                  data-aos-duration='1000'
-                                  data-aos-delay='100'
+
+
+
+
+
+                        {/* put this section under swiper */}
+
+
+                        <div className="relative w-full md:w-9/12" data-aos='fade-left'
+                            data-aos-duration='1000'
+                            data-aos-delay='100'
                         >
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
-                            <div className="relative p-6 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl lg:pl-20 lg:p-16">
-                                <ul role="list" className="space-y-4 py-6 text-gray-600">
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>First premium advantage</span>
-                                    </li>
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>Second advantage weekly</span>
-                                    </li>
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>Third advantage donate to project</span>
-                                    </li>
-                                    <li className="space-x-2">
-                                        <span className="text-primary font-semibold">&check;</span>
-                                        <span>Fourth, access to all components weekly</span>
-                                    </li>
-                                </ul>
-                                <p className="text-gray-700">Team can be any size, and you can add or switch members as needed. Companies using our platform include:</p>
-                                <div className="mt-6 flex justify-between gap-6">
-                                    <img className="w-16 lg:w-24" src="https://tailus.io/sources/blocks/organization/preview/images/clients/airbnb.svg" loading="lazy" alt="airbnb" />
-                                    <img className="w-8 lg:w-16" src="https://tailus.io/sources/blocks/organization/preview/images/clients/bissell.svg" loading="lazy" alt="bissell" />
-                                    <img className="w-6 lg:w-12" src="https://tailus.io/sources/blocks/organization/preview/images/clients/ge.svg" loading="lazy" alt="ge" />
-                                    <img className="w-20 lg:w-28" src="https://tailus.io/sources/blocks/organization/preview/images/clients/microsoft.svg" loading="lazy" alt="microsoft" />
+                            <div className="relative p-6 m-5 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+
+
+                                <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                    <div className="">
+                                        <img src='https://thevou.com/app/uploads/2022/03/Women-Clothing-Stores-thevou.com-Feature-01.jpg' alt="" className='w-full' />
+
+                                        <div className='px-5'>
+                                            <div className='flex justify-between'>
+                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
+
+                                            </div>
+                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
+                                            <hr />
+                                            <div className='flex justify-between items-center py-3'>
+                                                <button className='bg-primary rounded px-2'>See Details</button>
+                                                <div className='flex items-center text-accent '>
+                                                    <div className='border-secondary p-1'>
+
+                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
+                                                    </div>
+
+                                                    <div className='border-2 rounded-full border-secondary p-1'>
+
+                                                        < FaExchangeAlt className='text-secondary' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
+                                <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                    <div className="">
+                                        <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
+
+                                        <div className='px-5'>
+                                            <div className='flex justify-between'>
+                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
+
+                                            </div>
+                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
+                                            <hr />
+                                            <div className='flex justify-between items-center py-3'>
+                                                <button className='bg-primary rounded px-2'>See Details</button>
+                                                <div className='flex items-center text-accent '>
+                                                    <div className='border-secondary p-1'>
+
+                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
+                                                    </div>
+
+                                                    <div className='border-2 rounded-full border-secondary p-1'>
+
+                                                        < FaExchangeAlt className='text-secondary' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                    <div className="">
+                                        <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
+
+                                        <div className='px-5'>
+                                            <div className='flex justify-between'>
+                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
+
+                                            </div>
+                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
+                                            <hr />
+                                            <div className='flex justify-between items-center py-3'>
+                                                <button className='bg-primary rounded px-2'>See Details</button>
+                                                <div className='flex items-center text-accent '>
+                                                    <div className='border-secondary p-1'>
+
+                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
+                                                    </div>
+
+                                                    <div className='border-2 rounded-full border-secondary p-1'>
+
+                                                        < FaExchangeAlt className='text-secondary' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
                             </div>
                         </div>
                     </div>
