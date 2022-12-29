@@ -39,7 +39,7 @@ const Categories = () => {
                     <div className="flex flex-wrap justify-center text-center mb-10" data-aos='fade-right'>
                         <div className="w-full  lg:w-6/12 px-10">
                             <h1 className=" text-4xl font-bold mb-8">
-                                Why buy from us?
+                                All Available <span className='text-accent'> Categories</span>
                             </h1>
                             <p className='text-gray-500 font-bold'>DorkarShop has been the best selling and most loved Open cart theme since first launch in 2013. Tried and tested by over 20K people, DorkarShop is the bes on the market today</p>
                         </div>
