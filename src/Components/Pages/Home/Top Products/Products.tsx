@@ -10,7 +10,7 @@ const Products = () => {
     const { data = [] ,isLoading} = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products');
+            const res = await fetch('https://dorkar-shop-server-siamcse.vercel.app/products');
             const data = await res.json();
             return data;
         }
