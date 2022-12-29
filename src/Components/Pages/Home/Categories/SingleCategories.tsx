@@ -38,7 +38,7 @@ const SingleCategories = () => {
                                             </div>
                                             <h2 className="text-left text-gray-500 text-xl">$ {product.price}</h2>
                                             <div className='flex justify-between items-center py-3'>
-                                                <button className='btn btn-secondary'>See Details</button>
+                                                <button className='btn btn-primary'>See Details</button>
                                                 <div className='flex items-center text-accent '>
                                                     <div className='border-secondary p-1'>
 
