@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
+  // import Swiper JS
+  import Swiper from 'swiper';
+  // import Swiper styles
+  import 'swiper/css'
 const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(
