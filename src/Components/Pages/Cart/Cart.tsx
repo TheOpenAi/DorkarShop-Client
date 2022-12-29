@@ -4,60 +4,31 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Aos from 'aos';
 import { UserContext } from '../../../context/UserProvider';
+
 const Cart = (_Props: any) => {
     const userContext = useContext(UserContext);
-    const products = [
-        {
-            id: 1,
-            name: 'Throwback Hip Bag',
-            href: '#',
-            color: 'Salmon',
-            price: '$90.00',
-            quantity: 1,
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-            imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-        },
-        {
-            id: 2,
-            name: 'Medium Stuff Satchel',
-            href: '#',
-            color: 'Blue',
-            price: '$3.00',
-            quantity: 1,
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-            imageAlt:
-                'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-        },
-        {
-            id: 2,
-            name: 'Medium Stuff Satchel',
-            href: '#',
-            color: 'Blue',
-            price: '$32.00',
-            quantity: 1,
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-            imageAlt:
-                'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-        },
-        // More products...
-    ]
-    const [cartProducts,setProducts] = useState<any[]>([])
+    const [cartProducts, setProducts] = useState<any[]>([])
     const { setIsOpen } = _Props;
     // set type
     Aos.init();
 
     useEffect(() => {
-        if(userContext?.user?.email){
+        if (userContext?.user?.email) {
             fetch(`https://dorkar-shop-server-siamcse.vercel.app/carts?email=${userContext?.user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setProducts(data);
                 })
         }
-      
+
     }, [userContext?.user?.email])
     console.log(cartProducts);
 
+    let sum = 0;
+
+    cartProducts.forEach((obj) => {
+        sum += obj.price;
+    });
     return (
         <main
             className=
@@ -117,7 +88,7 @@ const Cart = (_Props: any) => {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                         <div className="flex justify-between text-base font-medium text-gray-900">
                             <p>Subtotal</p>
-                            <p>$262.00</p>
+                            <p>{sum}</p>
                         </div>
                         <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                         <div className="mt-6">
