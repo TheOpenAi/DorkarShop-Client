@@ -8,7 +8,7 @@ import Services from './Services/Services';
 import Categories from './Categories/Categories';
 
 import Products from './Top Products/Products';
-import Team from './Team/Team';
+import Team from '../About/Team';
 import Testimonials from './Testimonials/Testimonials';
 import Footer from '../Footer/Footer';
 
@@ -22,13 +22,15 @@ const Home = () => {
             <Banner></Banner>
             <Categories></Categories>
             <Products></Products>
-            <FeaturedProducts/>
+            <FeaturedProducts />
             <Services />
             <Review />
             <Testimonials></Testimonials>
+            {/* <Team></Team> */}
+
             <Team></Team>
             <Footer></Footer>
- 
+
         </div >
     );
 };

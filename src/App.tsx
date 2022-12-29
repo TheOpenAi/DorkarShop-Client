@@ -38,8 +38,11 @@ function App() {
           loader: ({ params }) => fetch(`http://localhost:5000/productdetails/${params.id}`),
           element: <ProductsDetails></ProductsDetails>
         },
-        { path:'/sinlgecategories/:id',loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`),
-        element:<SingleCategories></SingleCategories>}
+        {
+          path: '/sinlgecategories/:id',
+          loader: ({ params }) => fetch(`https://dorkar-shop-server-siamcse.vercel.app/products/${params.id}`),
+          element: <SingleCategories></SingleCategories>
+        }
 
       ]
     },

@@ -33,12 +33,12 @@ const Categories = () => {
                         <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4">
                             {
                                 categories.map((category, idx) => (
-
-                                    <Link to={`/sinlgecategories/${category?.title}`}> <div key={idx} className="card  w-52 bg-base-100 shadow-lg shadow-primary" data-aos='fade-up'>
-                                        <div className="card-body">
-                                           <h2 className="card-title capitalize">{category?.title}</h2>
+                                    <Link key={category._id} to={`/sinlgecategories/${category?.title}`}>
+                                        <div className="card  w-52 bg-base-100 shadow-lg shadow-primary" data-aos='fade-up'>
+                                            <div className="card-body">
+                                                <h2 className="card-title capitalize">{category?.title}</h2>
+                                            </div>
                                         </div>
-                                    </div>
                                     </Link>
                                 ))
                             }
@@ -48,10 +48,6 @@ const Categories = () => {
 
             </div>
         </div>
-
-
-
-
     );
 };
 
