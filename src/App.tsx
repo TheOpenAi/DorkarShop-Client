@@ -35,7 +35,7 @@ function App() {
         { path: '/about', element: <About></About> },
         {
           path: '/productsdetails/:id', 
-          loader: ({ params }) => fetch(`http://localhost:5000/productdetails/${params.id}`),
+          loader: ({ params }) => fetch(`https://dorkar-shop-server-siamcse.vercel.app/productdetails/${params.id}`),
           element: <ProductsDetails></ProductsDetails>
         },
         {
