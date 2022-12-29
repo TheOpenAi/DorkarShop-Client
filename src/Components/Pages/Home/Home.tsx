@@ -11,6 +11,7 @@ import Products from './Top Products/Products';
 import Team from './Team/Team';
 import Testimonials from './Testimonials/Testimonials';
 import Footer from '../Footer/Footer';
+import Addvertise from './Addvertise/Addvertise';
 
 
 
@@ -23,6 +24,7 @@ const Home = () => {
             <Categories></Categories>
             <Products></Products>
             <FeaturedProducts/>
+            <Addvertise></Addvertise>
             <Services />
             <Review />
             <Testimonials></Testimonials>
