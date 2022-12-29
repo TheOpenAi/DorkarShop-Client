@@ -11,6 +11,7 @@ import Products from './Top Products/Products';
 import Team from '../About/Team';
 import Testimonials from './Testimonials/Testimonials';
 import Footer from '../Footer/Footer';
+import WhyChoseUs from './WhyChoseUs/WhyChoseUs';
 
 
 
@@ -21,6 +22,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Categories></Categories>
+            <WhyChoseUs/>
             <Products></Products>
             <FeaturedProducts />
             <Services />
