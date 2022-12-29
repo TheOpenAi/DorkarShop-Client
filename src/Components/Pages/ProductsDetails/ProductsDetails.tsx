@@ -52,17 +52,19 @@ const ProductsDetails = () => {
 
     return (
         <div>
-            <div className='mt-10 bg-white '>
+            <div className='m-10 bg-white '>
                 <div className="container lg:grid lg:grid-cols-2 gap-6 w-[99%] mx-auto">
                     <div>
-                        <img src={picture} alt="product" className="w-[80%] mx-auto h-[80%]"></img>
-                        <div className="grid grid-cols-5 gap-4 mt-4">
-                            <img src="https://i.ibb.co/hsP0XQw/61779b485e784ee5e1620a21-Image-png.png" alt="product2"
+                        <img src={picture} alt="product" className=" mx-auto"></img>
+                        <div className="grid grid-cols-3 gap-4 mx-10 mt-10">
+                           
+                            <img src={initialPicture} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
                             <img src={initialPicture} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
-                            <img src="https://i.ibb.co/nr7jvW9/20191102-191227.jpg" alt="product2"
+                            <img src={initialPicture} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
+                           
                         </div>
                     </div>
 
@@ -193,7 +195,7 @@ const ProductsDetails = () => {
 
                 <h1 className='text-2xl'> this is a Review </h1>
                 {/*  related products start  */}
-                <div className="container pb-16">
+                <div className="container mx-auto pb-16">
                     <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Related products</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                         <div className="bg-white shadow rounded overflow-hidden group">
