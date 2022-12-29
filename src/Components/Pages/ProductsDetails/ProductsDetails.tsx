@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FaStar, FaFacebook, FaInstagram, FaTwitter, } from "react-icons/fa";
 import { useLoaderData } from 'react-router';
 import { UserContext } from '../../../context/UserProvider';
+import Modal from './Modal';
 
 const ProductsDetails = () => {
     const userContext = useContext(UserContext);
@@ -49,6 +50,7 @@ const ProductsDetails = () => {
             })
             .catch(e => console.log(e))
     }
+     const [modal, setModaldata] = useState(null);
 
     return (
         <div>
@@ -148,11 +150,10 @@ const ProductsDetails = () => {
                         </div>
 
                         <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
-                            <a href="#"
-                                className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition">
-                                <i className="fa-solid fa-bag-shopping"></i> Buy Now
-                            </a>
-                            {/* Add to product cart */}
+                          
+                                < button  onClick={() => setModaldata(data)} className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition"> <label htmlFor="my-modal"   >Book Now</label></button>
+                            
+                            
                             <button onClick={() => handleAddToCart(_id)}
                                 className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
                                 <i className="fa-solid fa-heart"></i> Add to cart
@@ -249,6 +250,9 @@ const ProductsDetails = () => {
                     </div>
                 </div>
             </div>
+            {
+                modal && <Modal modal={modal} setModaldata={setModaldata}></Modal>
+            }
         </div>
     );
 };
