@@ -78,13 +78,13 @@ const Products = () => {
     return (
 
         <div>
-            <div className="flex items-center justify-center h-auto bg-white pt-16">
+            <div className="flex items-center justify-center h-auto bg-white pt-20">
                 <div className="flex flex-col">
 
-                    <div className="flex flex-wrap justify-center text-center mb-20">
+                    <div className="flex flex-wrap justify-center text-center mb-10">
                         <div className="w-full lg:w-6/12 px-4">
 
-                            <h1 className="text-gray-900 text-4xl font-bold mb-8">
+                            <h1 className="text-accent text-4xl font-bold mb-8">
 
                                 Our Top <span className='text-secondary'> Products</span>
                             </h1>
