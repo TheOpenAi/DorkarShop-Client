@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
     return (
         <div>
 
-            <div className="bg-gray-100 py-20 w-full">
+            <div className="bg-gray-100 py-20 w-full overflow-hidden">
                 <div className="lg:w-3/4 m-auto ">
                     <div className="m-auto text-center lg:w-8/12 xl:w-7/12 relative overflow-hidden">
                         <h2 className="text-2xl text-accent text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>

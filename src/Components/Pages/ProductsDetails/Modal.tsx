@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
+
 import { UserContext } from '../../../context/UserProvider';
 
 
-const Modal = (props:any) => {
-   const { modal,setModaldata } = props;
+const Modal = (props: any) => {
+    const { modal, setModaldata } = props;
     const user = useContext(UserContext)
 
-    const handelpayment = (e:any) => {
+    const handelpayment = (e: any) => {
         e.preventDefault();
         const order = {
             name: user?.user?.name,
             email: user?.user?.email,
             productsId: modal._id,
             price: modal.price,
+
         }
-    
-       
+
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
@@ -24,30 +24,51 @@ const Modal = (props:any) => {
             },
             body: JSON.stringify(order)
         })
-        console.log(order);
-    }
+            .then((res) => res.json())
+            .then((data) => {
+              
+                window.location.replace(data.url);
+
+            })
+            .catch((er) => console.error(er));
+
+    };
     return (
         <><div>
 
             <input type="checkbox" id="my-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box">
-                    <h1 className='text-xl text-black'> Product name : {modal.model} </h1>
+                    <h1 className='text-xl text-black'> Product name :{modal.model} </h1>
                     <h1 className='text-xl '> <span className='text-green-600'> Price</span> : {modal.price}</h1>
                     <form className='grid grid-cols-1 gap-3 mt-10'>
-                        <input type="text" defaultValue={user?.user?.name} disabled className="input w-full input-bordered" />
-                        <input type="email" defaultValue={user?.user?.email} disabled className="input w-full input-bordered" />
-                        {/* <input type="text" placeholder=" Your Moblie Number" className="input w-full input-bordered" name="number" required />
-                        <input type="text" placeholder=" Your Location" className="input w-full input-bordered" name="location" required /> */}
+                        <input type="text" placeholder='Your Name' defaultValue={user?.user?.name} disabled className="input w-full input-bordered" />
+
+                        <input type="email" placeholder='Your Email' defaultValue={user?.user?.email} disabled className="input w-full input-bordered" />
+
+                        <input type="number" placeholder=" Your Mobile Number" className="input w-full input-bordered" name="number" required />
+
+                        <input type="text" placeholder=" Your Location" className="input w-full input-bordered" name="location" required />
+
+                        <select name='currency' className="input w-full input-bordered text-gray-400">
+                            <option className='text-gray-800' disabled selected>Currency</option>
+                            <option>BDT</option>
+                            <option>USD</option>
+                        </select>
+
+
+                        <input type="text" placeholder=" Your Post Code" className="input w-full input-bordered" name="postcode" required />
+
+
                         <br />
                         <input className='btn btn-accent w-full' type="submit" value="Payment Now" onClick={handelpayment} />
-                        <input className='btn btn-info w-full' value="Cancel" onClick={()=>setModaldata(null)} />
+                        <input className='btn btn-info w-full' value="Cancel" onClick={() => setModaldata(null)} />
                     </form>
                 </div>
             </div>
         </div>
         </>
-         );
-    };
+    );
+};
 
 export default Modal;
