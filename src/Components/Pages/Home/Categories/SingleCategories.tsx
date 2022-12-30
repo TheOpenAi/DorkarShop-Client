@@ -26,7 +26,7 @@ const SingleCategories = () => {
                                 data-aos-delay='80'>
                                 <div key={product._id} className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent min-w-[250px] max-w-[300px] mx-auto" >
                                     <div className='h-72'>
-                                        <img src={product.imgUrl} alt="" className='h-72 w-auto mx-auto  overflow-hidden'/>
+                                        <img src={product.imgUrl} alt="" className='h-72 w-auto mx-auto  overflow-hidden' />
                                     </div>
 
                                     <div className="h-60 bg-white">
@@ -60,14 +60,14 @@ const SingleCategories = () => {
                                             <div className='flex items-center justify-between'>
                                                 <div className='border-2 rounded-full border-yellow-500 mx-1'>
 
-                                                <FaDollarSign className='text-yellow-500'/>
+                                                    <FaDollarSign className='text-yellow-500' />
                                                 </div>
                                                 <p className=''> Buy now</p>
                                             </div>
                                             <div className='flex items-center justify-between'>
                                                 <div className='border-2 rounded-full border-red-500 mx-1'>
 
-                                                <FaQuestion className='text-red-500 '/>
+                                                    <FaQuestion className='text-red-500 ' />
                                                 </div>
                                                 <p> Question</p>
                                             </div>
