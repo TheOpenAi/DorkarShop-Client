@@ -21,10 +21,9 @@ const Contact = () => {
           </div>
           <div className="card-body items-center text-center mt-0 pt-0">
             <h2 className="font-bold text-indigo-500 text-2xl">WE ARE HERE</h2>
-            <p>
-              Our team is spread across the <br /> world to give you answer
-              fast.
-            </p>
+            <p>Phone: +88018377373</p>
+            <p>Email: dorkerShop@gmail.com</p>
+            <p></p>
             <div className="card-actions">
               <button className="btn btn-outline btn-primary">
                 Get Support
