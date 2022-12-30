@@ -11,16 +11,16 @@ const Contact = () => {
   };
   return (
     <div className="py-12">
-      <h2 className="text-3xl font-bold text-center text-indigo-500">
+      <h2 className="text-3xl font-bold text-center text-primary">
         CONTACT US
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12 px-4 md:px-12">
-        <div className="card bg-base-100 shadow-xl border-b-8 border-indigo-500">
+        <div className="card bg-base-100 shadow-xl border-b-8 border-primary">
           <div className="flex justify-center">
             <img className="w-1/2" src={support2} alt="" />
           </div>
           <div className="card-body items-center text-center mt-0 pt-0">
-            <h2 className="font-bold text-indigo-500 text-2xl">WE ARE HERE</h2>
+            <h2 className="font-bold text-primary text-2xl">WE ARE HERE</h2>
             <p>Phone: +88018377373</p>
             <p>Email: dorkerShop@gmail.com</p>
             <p></p>
@@ -31,12 +31,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 shadow-xl border-b-8 border-indigo-500">
+        <div className="card bg-base-100 shadow-xl border-b-8 border-primary">
           <div className="flex justify-center">
             <img className="w-1/2" src={support} alt="" />
           </div>
           <div className="card-body items-center text-center mt-0 pt-0">
-            <h2 className="font-bold text-indigo-500 text-2xl">
+            <h2 className="font-bold text-primary text-2xl">
               Contact Support
             </h2>
             <p>
@@ -50,12 +50,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 shadow-xl border-b-8 border-indigo-500">
+        <div className="card bg-base-100 shadow-xl border-b-8 border-primary">
           <div className="flex justify-center">
             <img className="w-1/2" src={support1} alt="" />
           </div>
           <div className="card-body items-center text-center mt-0 pt-0">
-            <h2 className="font-bold text-indigo-500 text-2xl">
+            <h2 className="font-bold text-primary text-2xl">
               Contact Sales
             </h2>
             <p>
@@ -71,7 +71,7 @@ const Contact = () => {
         </div>
       </div>
       <div className=" bg-base-200 py-12">
-        <h2 className="text-3xl font-bold text-center text-indigo-500 py-5">
+        <h2 className="text-3xl font-bold text-center text-primary py-5">
           DROP US A LINE
         </h2>
         <div className="grid grid-col-1 md:grid-cols-2 px-4 md:px-28 mt-14">
