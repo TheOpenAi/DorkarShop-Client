@@ -23,6 +23,7 @@ import { Toaster } from "react-hot-toast";
 import PrivateRoutes from "./Routes/PrivateRoutes";
 import SingleCategories from "./Components/Pages/Home/Categories/SingleCategories";
 import Contact from "./Components/Pages/Contact/Contact";
+import Payment from "./Components/Payment/Payment";
 
 function App() {
   const route = createBrowserRouter([
@@ -52,6 +53,9 @@ function App() {
             ),
           element: <SingleCategories></SingleCategories>,
         },
+        { 
+          path: "/payment/success", element: <Payment></Payment>
+        }
       ],
     },
     {
@@ -62,6 +66,7 @@ function App() {
           <Dashboard></Dashboard>
         </PrivateRoutes>
       ),
+
       children: [
         { path: "/dashboard/addProduct", element: <AddProduct></AddProduct> },
         { path: "/dashboard/allSeller", element: <AllSeller></AllSeller> },
