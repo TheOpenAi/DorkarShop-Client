@@ -22,6 +22,7 @@ import ProductsDetails from './Components/Pages/ProductsDetails/ProductsDetails'
 import { Toaster } from 'react-hot-toast';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import SingleCategories from './Components/Pages/Home/Categories/SingleCategories';
+import Success from './Components/Pages/Payment/Success';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
         { path: '/singup', element: <Signup></Signup> },
         { path: '/about', element: <About></About> },
         {
+          path: 'payment/success', element: <Success></Success>
+        },
+        {
           path: '/productsdetails/:id',
           loader: ({ params }) => fetch(`https://dorkar-shop-server-siamcse.vercel.app/productdetails/${params.id}`),
           element: <ProductsDetails></ProductsDetails>
@@ -42,7 +46,8 @@ function App() {
           path: '/sinlgecategories/:id',
           loader: ({ params }) => fetch(`https://dorkar-shop-server-siamcse.vercel.app/products/${params.id}`),
           element: <SingleCategories></SingleCategories>
-        }
+        },
+
 
       ]
     },
