@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { FaStar, FaFacebook, FaInstagram, FaTwitter, FaCartPlus, FaMoneyBillAlt } from "react-icons/fa";
+import { FaStar, FaFacebook,FaHandPointRight, FaInstagram, FaTwitter, FaCartPlus, FaMoneyBillAlt } from "react-icons/fa";
 import { useLoaderData } from 'react-router';
 import { UserContext } from '../../../context/UserProvider';
 import Modal from './Modal';
@@ -54,7 +54,7 @@ const ProductsDetails = () => {
 
     return (
         <div>
-            <div className='m-10 bg-white  font-serif'>
+            <div className='m-10 bg-white  font-sanserif'>
                 <div className="container lg:grid lg:grid-cols-2 gap-6 w-[99%] mx-auto">
                     <div>
                         <img src={picture} alt="product" className=" mx-auto"></img>
@@ -112,34 +112,44 @@ const ProductsDetails = () => {
 
 
                         <p className="mt-4 text-gray-600">{details}</p>
+                        <ul className='text-left m-5 font-semibold text-accent'>
+                            {data.bullet ? <>
+                                
+                                {
+                                    data.bullet?.map((e: any, i: any) => <li key={i} className="flex items-center p-1">
+                                       <FaHandPointRight className='mx-2 text-primary'/>  {e}
+                                   </li>)
+                                }
+                            </>: <></>}
+                        </ul>
 
                         <div className="pt-4 lg:w-[30%] mx-auto w-[50%]" >
-                            <h3 className="text-sm text-gray-800 uppercase mb-1">Size</h3>
-                            <div className="flex items-center gap-2">
+                            <h3 className="text-sm text-gray-800 font-semibold uppercase mb-1">Size</h3>
+                            <div className="flex justify-center items-center gap-2">
                                 <div className="size-selector">
                                     <input type="radio" name="size" id="size-xs" className="hidden"></input>
                                     <label htmlFor="size-xs"
-                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XS</label>
+                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 hover:bg-primary">XS</label>
                                 </div>
                                 <div className="size-selector">
                                     <input type="radio" name="size" id="size-sm" className="hidden"></input>
                                     <label htmlFor="size-sm"
-                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">S</label>
+                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 hover:bg-primary">S</label>
                                 </div>
                                 <div className="size-selector">
                                     <input type="radio" name="size" id="size-m" className="hidden"></input>
                                     <label htmlFor="size-m"
-                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">M</label>
+                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 hover:bg-primary">M</label>
                                 </div>
                                 <div className="size-selector">
                                     <input type="radio" name="size" id="size-l" className="hidden"></input>
                                     <label htmlFor="size-l"
-                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">L</label>
+                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 hover:bg-primary">L</label>
                                 </div>
                                 <div className="size-selector">
                                     <input type="radio" name="size" id="size-xl" className="hidden"></input>
                                     <label htmlFor="size-xl"
-                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XL</label>
+                                        className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 hover:bg-primary">XL</label>
                                 </div>
                             </div>
                         </div>
@@ -158,8 +168,9 @@ const ProductsDetails = () => {
                         <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5 items-center justify-center">
 
                             < button onClick={() => setModaldata(data)}
-                             className=" text-xl bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase 
-                             flex items-center gap-2 hover:bg-transparent hover:text-primary transition"> 
+                             className=" text-xl text-white  right-2.5 bottom-2.5
+                             bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg  px-4 py-2 2  uppercase 
+                             flex items-center gap-2 hover:bg-transparent  transition"> 
                              <FaMoneyBillAlt> </FaMoneyBillAlt>
                              <label htmlFor="my-modal">Book Now</label></button>
 

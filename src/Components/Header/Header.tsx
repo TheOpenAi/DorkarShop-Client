@@ -156,7 +156,7 @@ const Header = () => {
                   <button
                     type="submit"
                     className="text-white absolute right-2.5 bottom-2.5
-                                 bg-gradient-to-r from-primary to-secondary hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
+                                 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
                   >
                     Search
                   </button>
@@ -289,7 +289,7 @@ const Header = () => {
                     <button
                       type="submit"
                       className="text-white absolute right-2.5 bottom-2.5
-                                 bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
+                                 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
                     >
                       Search
                     </button>
