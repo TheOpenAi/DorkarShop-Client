@@ -2,7 +2,7 @@
 
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
-
+import "./Services.css";
 
 import ScrollAnimationWrapper from "../../../Layout/ScrollAnimationWrapper";
 import getScrollAnimation from "../../../Layout/getScrollAnimation";
@@ -21,9 +21,9 @@ const Services = () => {
 
     return (
         <div
-            className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto font-serif"
+            className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto m-5"
             id="feature"   >
-            <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12">
+            <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12 items-center justify-center">
                 <ScrollAnimationWrapper className="flex w-full justify-end">
                     <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
                         <img src="https://i.ibb.co/0c4dZXZ/Illustration2.png" />
