@@ -3,28 +3,12 @@ import support from "../../../Assets/support.webp";
 import support1 from "../../../Assets/support1.jpg";
 import support2 from "../../../Assets/SUPPORT2.webp";
 import con1 from "../../../Assets/contact.png";
+import { toast } from "react-hot-toast";
 const Contact = () => {
-  //   const form = useRef();
-
-  //   const sendEmail = (e: any) => {
-  //     e.preventDefault();
-
-  //     emailjs
-  //       .sendForm(
-  //         "service_1ayfgok",
-  //         "template_c1qw5hr",
-  //         form.current,
-  //         "SycrR_zkRHfw4upto"
-  //       )
-  //       .then(
-  //         (result: any) => {
-  //           toast.success("Email send successfully");
-  //         },
-  //         (error: any) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //   };
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    toast.success("Email send successfully");
+  };
   return (
     <div className="py-12">
       <h2 className="text-3xl font-bold text-center text-indigo-500">
@@ -96,7 +80,7 @@ const Contact = () => {
             <img src={con1} alt="" />
           </div>
           <div className=" border rounded-xl">
-            <form>
+            <form onSubmit={sendEmail}>
               <div className="card  w-full shadow-2xl">
                 <div className="card-body">
                   <div className="form-control">
