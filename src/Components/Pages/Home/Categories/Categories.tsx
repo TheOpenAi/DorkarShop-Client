@@ -25,7 +25,7 @@ const Categories = () => {
   }, []);
   console.log(categories);
   return (
-    <div>
+    <div className="md:w-3/4 mx-auto">
       <div className=" items-center justify-center h-auto bg-white pt-24">
         <div className="flex flex-col">
           <div
@@ -48,7 +48,12 @@ const Categories = () => {
           <div className="">
             <>
               <Swiper
-                slidesPerView={5}
+                breakpoints={{
+                  320: { slidesPerView: 1, spaceBetween: 30 },
+                  480: { slidesPerView: 2, spaceBetween: 30 },
+                  768: { slidesPerView: 4, spaceBetween: 30 },
+                  1024: { slidesPerView: 4, spaceBetween: 30 },
+                }}
                 spaceBetween={30}
                 freeMode={true}
                 pagination={{

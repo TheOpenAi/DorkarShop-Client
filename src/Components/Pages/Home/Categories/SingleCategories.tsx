@@ -24,9 +24,12 @@ const SingleCategories = () => {
                             <div data-aos='fade-right'
                                 data-aos-duration='1000'
                                 data-aos-delay='80'>
-                                <div key={product._id} className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary" >
-                                    <div className="">
-                                        <img src={product.imgUrl} alt="" className='w-full' />
+                                <div key={product._id} className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent min-w-[250px] max-w-[300px] mx-auto" >
+                                    <div className='h-72'>
+                                        <img src={product.imgUrl} alt="" className='h-72 w-auto mx-auto  overflow-hidden'/>
+                                    </div>
+
+                                    <div className="h-60 bg-white">
                                         <div className='w-full bg-gray-100 text-gray-400 px-5 items-center h-10 flex justify-between'>
                                             <p className='border-b border-gray-400'>Fort Cane</p>
                                             <p>Model 30</p>

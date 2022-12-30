@@ -23,7 +23,7 @@ const Products = () => {
     return (
 
         <div>
-            <div className="flex items-center justify-center h-auto bg-white pt-20">
+            <div className="flex items-center justify-center h-auto bg-gray-100 pt-20">
                 <div className="flex flex-col">
 
                     <div className="flex flex-wrap justify-center text-center mb-10">
@@ -41,8 +41,7 @@ const Products = () => {
                     <div className="">
                         <div className="container">
 
-                            <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10  px-4"
-
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 px-4"
                             >
                                 {
                                     data.map((product: any) => (
@@ -51,12 +50,12 @@ const Products = () => {
                                             <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto'
                                                 data-aos-duration='1000'
                                                 data-aos-delay='80'>
-                                                <div key={product._id} className="card w-[100%] h-[100%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary " >
-                                                    <div className="card-body text-center">
-                                                        <img src={product.imgUrl} alt="" className='w-[60%] h-[50%]' />
-                                                        <h2 className="card-title">{product?.model}</h2>
+                                                <div key={product._id} className="w-[100%] h-[100%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent " >
+                                                <img src={product.imgUrl} alt="" className='w-full' />
+                                                    <div className="mx-3 h-28">                                                      
+                                                        <h2 className="card-title text-xl mt-2">{product?.model}</h2>
 
-                                                        <h2 className="card-title "> ${product?.price}</h2>
+                                                        <h2 className="text-2xl text-left "> ${product?.price}</h2>
                                                     </div>
                                                 </div>
 
