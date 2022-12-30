@@ -31,7 +31,9 @@ const Modal = (props: any) => {
         })
             .then((res) => res.json())
             .then((data) => {
+                toast.success("done");
                 window.location.replace(data.url);
+
             })
             .catch((er) => console.error(er));
 
