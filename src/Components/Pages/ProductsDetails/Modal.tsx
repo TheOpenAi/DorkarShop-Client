@@ -29,8 +29,13 @@ const Modal = (props: any) => {
             },
             body: JSON.stringify(order)
         })
-        console.log(order);
-    }
+            .then((res) => res.json())
+            .then((data) => {
+                window.location.replace(data.url);
+            })
+            .catch((er) => console.error(er));
+
+    };
     return (
         <><div>
 
