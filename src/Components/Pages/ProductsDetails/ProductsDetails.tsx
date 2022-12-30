@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { FaStar, FaFacebook, FaInstagram, FaTwitter, } from "react-icons/fa";
+import { FaStar, FaFacebook, FaInstagram, FaTwitter, FaCartPlus, FaMoneyBillAlt } from "react-icons/fa";
 import { useLoaderData } from 'react-router';
 import { UserContext } from '../../../context/UserProvider';
 import Modal from './Modal';
@@ -11,7 +11,7 @@ const ProductsDetails = () => {
     const data: any = useLoaderData();
 
     const { _id, model, price, details, imgUrl, category, brand } = data;
-
+    console.log(data);
     const initialPicture = imgUrl
     const [picture, setpicture] = React.useState(initialPicture)
     const handle = (e: any) => {
@@ -50,43 +50,31 @@ const ProductsDetails = () => {
             })
             .catch(e => console.log(e))
     }
-     const [modal, setModaldata] = useState(null);
+    const [modal, setModaldata] = useState(null);
 
     return (
         <div>
-            <div className='m-10 bg-white '>
+            <div className='m-10 bg-white  font-serif'>
                 <div className="container lg:grid lg:grid-cols-2 gap-6 w-[99%] mx-auto">
                     <div>
                         <img src={picture} alt="product" className=" mx-auto"></img>
                         <div className="grid grid-cols-3 gap-4 mx-10 mt-10">
-                           
+
                             <img src={initialPicture} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
                             <img src={initialPicture} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
                             <img src={initialPicture} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
-                           
+
                         </div>
                     </div>
 
                     <div>
                         <h2 className="text-3xl font-medium uppercase mb-2">{model}</h2>
-                        <div className="flex items-center mb-4">
-                            <div className="flex gap-1 text-sm text-yellow-400">
-                                <span><i > <FaStar></FaStar></i></span>
-                                <span><i > <FaStar></FaStar></i></span>
-                                <span><i > <FaStar></FaStar></i></span>
-                                <span><i > <FaStar></FaStar></i></span>
 
-                            </div>
-                            <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
-                        </div>
                         <div className="space-y-2">
-                            <p className="text-gray-800 font-semibold space-x-2">
-                                <span>Availability: </span>
-                                <span className="text-green-600">In Stock</span>
-                            </p>
+
                             <p className="space-x-2">
                                 <span className="text-gray-800 font-semibold">Brand: </span>
                                 <span className="text-gray-600">{brand}</span>
@@ -100,14 +88,32 @@ const ProductsDetails = () => {
                                 <span className="text-gray-600">BE45VGRT</span>
                             </p>
                         </div>
-                        <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                            <p className="text-xl text-primary font-semibold">{price}</p>
+                        <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4  border-t-[2px] border-t-gray-400 justify-evenly m-5 p-5 ">
+                            <div className='flex ' > 
+                            <p className="text-2xl text-primary font-semibold"> $ {price}</p>
                             <p className="text-base text-gray-400 line-through">$55.00</p>
+                            </div>
+                            <p className="text-gray-800 font-semibold space-x-2">
+                                <span>Availability: </span>
+                                <span className="text-green-600">In Stock</span>
+                            </p>
+                            <div className="flex items-center mb-4">
+                                <div className="flex gap-1 text-sm text-yellow-400">
+                                    <span><i > <FaStar></FaStar></i></span>
+                                    <span><i > <FaStar></FaStar></i></span>
+                                    <span><i > <FaStar></FaStar></i></span>
+                                    <span><i > <FaStar></FaStar></i></span>
+
+                                </div>
+                                <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
+                            </div>
+
                         </div>
+
 
                         <p className="mt-4 text-gray-600">{details}</p>
 
-                        <div className="pt-4">
+                        <div className="pt-4 lg:w-[30%] mx-auto w-[50%]" >
                             <h3 className="text-sm text-gray-800 uppercase mb-1">Size</h3>
                             <div className="flex items-center gap-2">
                                 <div className="size-selector">
@@ -140,28 +146,32 @@ const ProductsDetails = () => {
 
 
 
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                             <h3 className="text-sm text-gray-800 uppercase mb-1">Quantity</h3>
                             <div className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
                                 <div className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">-</div>
                                 <div className="h-8 w-8 text-base flex items-center justify-center">4</div>
                                 <div className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">+</div>
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
-                          
-                                < button  onClick={() => setModaldata(data)} className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition"> <label htmlFor="my-modal"   >Book Now</label></button>
-                            
-                            
+                        <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5 items-center justify-center">
+
+                            < button onClick={() => setModaldata(data)}
+                             className=" text-xl bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase 
+                             flex items-center gap-2 hover:bg-transparent hover:text-primary transition"> 
+                             <FaMoneyBillAlt> </FaMoneyBillAlt>
+                             <label htmlFor="my-modal">Book Now</label></button>
+
+
                             <button onClick={() => handleAddToCart(_id)}
                                 className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
-                                <i className="fa-solid fa-heart"></i> Add to cart
+                                <i className='text-xl'> <FaCartPlus></FaCartPlus></i> Add to cart
                             </button>
                         </div>
 
 
-                        <div className="flex gap-3 mt-4 w-[90%] mx-auto">
+                        <div className="flex gap-3 mt-4 w-[50%] mx-auto">
 
                             <h1 className='text-xl'>  Share on </h1>
                             <a href="#"
@@ -176,11 +186,14 @@ const ProductsDetails = () => {
                                 className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
                                 <i className="fa-brands fa-instagram"> <FaInstagram></FaInstagram></i>
                             </a>
+
                         </div>
+
+
                     </div>
                 </div>
 
-                <div className="container py-16">
+                {/* <div className="container py-16">
                     <h3 className="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium text-2xl">Product details</h3>
                     <div className="w-full pt-6">
                         <div className="text-gray-600">
@@ -188,14 +201,15 @@ const ProductsDetails = () => {
 
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* 
                     use Review component here
              */}
 
-                <h1 className='text-2xl'> this is a Review </h1>
-                {/*  related products start  */}
+
+                {/* <h1 className='text-2xl'> this is a Review </h1>
+            
                 <div className="container mx-auto pb-16">
                     <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Related products</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -248,7 +262,7 @@ const ProductsDetails = () => {
 
 
                     </div>
-                </div>
+                </div> */}
             </div>
             {
                 modal && <Modal modal={modal} setModaldata={setModaldata}></Modal>
