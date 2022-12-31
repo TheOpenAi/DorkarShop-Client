@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../Pages/Footer/Footer';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import PaymentFail from './PaymentFail';
 
 
 const Payment = () => {
@@ -22,6 +23,14 @@ const Payment = () => {
 
     console.log(order);
 
+    if (!order?._id) {
+        return (
+            <div>
+                <PaymentFail></PaymentFail>
+            </div>
+        )
+    }
+
 
 
 
@@ -31,6 +40,7 @@ const Payment = () => {
 
 
             <div className=" ">
+
 
                 <div className="bg-white p-6  md:mx-auto">
                     <svg viewBox="0 0 24 24" className="text-green-600 w-16 h-16 mx-auto my-6">
