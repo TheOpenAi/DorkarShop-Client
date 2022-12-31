@@ -5,7 +5,7 @@ import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons
 const SingleCategories = () => {
     const products: any = useLoaderData();
 
-     console.log(products);
+    console.log(products);
     return (
         <div className='bg-gray-50 md:w-3/4 pt-20 mx-auto'>
 
