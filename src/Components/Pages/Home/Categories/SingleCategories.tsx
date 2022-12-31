@@ -5,11 +5,11 @@ import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons
 const SingleCategories = () => {
     const products: any = useLoaderData();
 
-    console.log(products);
+     console.log(products);
     return (
         <div className='bg-gray-50 md:w-3/4 pt-20 mx-auto'>
 
-            <h1 className='text-3xl text-accent font-semibold text-left ml-10'> Welcome to {products.length} </h1>
+            <h1 className='text-3xl text-accent font-semibold text-left ml-10'> Welcome to {products[0].category}  it has {products.length} Products</h1>
             <div className='w-[300px] h-[5px]  bg-secondary '></div>
             <hr />
 
@@ -24,9 +24,12 @@ const SingleCategories = () => {
                             <div data-aos='fade-right'
                                 data-aos-duration='1000'
                                 data-aos-delay='80'>
-                                <div key={product._id} className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-secondary" >
-                                    <div className="">
-                                        <img src={product.imgUrl} alt="" className='w-full' />
+                                <div key={product._id} className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent min-w-[250px] max-w-[300px] mx-auto" >
+                                    <div className='h-72'>
+                                        <img src={product.imgUrl} alt="" className='h-72 w-auto mx-auto  overflow-hidden' />
+                                    </div>
+
+                                    <div className="h-60 bg-white">
                                         <div className='w-full bg-gray-100 text-gray-400 px-5 items-center h-10 flex justify-between'>
                                             <p className='border-b border-gray-400'>Fort Cane</p>
                                             <p>Model 30</p>
@@ -57,14 +60,14 @@ const SingleCategories = () => {
                                             <div className='flex items-center justify-between'>
                                                 <div className='border-2 rounded-full border-yellow-500 mx-1'>
 
-                                                <FaDollarSign className='text-yellow-500'/>
+                                                    <FaDollarSign className='text-yellow-500' />
                                                 </div>
                                                 <p className=''> Buy now</p>
                                             </div>
                                             <div className='flex items-center justify-between'>
                                                 <div className='border-2 rounded-full border-red-500 mx-1'>
 
-                                                <FaQuestion className='text-red-500 '/>
+                                                    <FaQuestion className='text-red-500 ' />
                                                 </div>
                                                 <p> Question</p>
                                             </div>

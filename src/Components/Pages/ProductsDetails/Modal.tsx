@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
+
 import { UserContext } from '../../../context/UserProvider';
 
 
@@ -15,14 +15,8 @@ const Modal = (props: any) => {
             productsId: modal._id,
             price: modal.price,
 
-
-
-
         }
-
-
-
-        fetch('http://localhost:5000/orders', {
+        fetch('https://dorkar-shop-server-siamcse.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +25,7 @@ const Modal = (props: any) => {
         })
             .then((res) => res.json())
             .then((data) => {
-                toast.success("done");
+
                 window.location.replace(data.url);
 
             })

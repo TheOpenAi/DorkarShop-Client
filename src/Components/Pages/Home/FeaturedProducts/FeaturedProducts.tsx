@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
     return (
         <div>
 
-            <div className="bg-gray-100 py-20 w-full">
+            <div className="bg-gray-100 py-20 w-full overflow-hidden">
                 <div className="lg:w-3/4 m-auto ">
                     <div className="m-auto text-center lg:w-8/12 xl:w-7/12 relative overflow-hidden">
                         <h2 className="text-2xl text-accent text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>
@@ -92,19 +92,24 @@ const FeaturedProducts = () => {
                            
                             <>
       <Swiper
-        slidesPerView={3}
+        breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 30 },
+            480: { slidesPerView: 2, spaceBetween: 30 },
+            768: { slidesPerView: 4, spaceBetween: 30 },
+            1024: { slidesPerView: 4, spaceBetween: 30 },
+          }}
         spaceBetween={30}
         freeMode={true}
         pagination={{
           clickable: true,
         }}
-        modules={[FreeMode, Pagination]}
+        modules={[FreeMode, Pagination]} 
         className="mySwiper"
       >
                             <div className="relative p-6 m-5 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
       
-        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://thevou.com/app/uploads/2022/03/Women-Clothing-Stores-thevou.com-Feature-01.jpg' alt="" className='w-full' />
 
@@ -133,7 +138,7 @@ const FeaturedProducts = () => {
 
                                     </div>
                                 </div></SwiperSlide>
-        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
 
@@ -163,7 +168,7 @@ const FeaturedProducts = () => {
                                     </div>
                                 </div></SwiperSlide>
 
-        <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+        <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
 
@@ -192,7 +197,7 @@ const FeaturedProducts = () => {
 
                                     </div>
                                 </div></SwiperSlide>
-                                <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
 
@@ -222,7 +227,7 @@ const FeaturedProducts = () => {
                                     </div>
                                 </div></SwiperSlide>
 
-                                <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent" >
+                                <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
                                     <div className="">
                                         <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
 
