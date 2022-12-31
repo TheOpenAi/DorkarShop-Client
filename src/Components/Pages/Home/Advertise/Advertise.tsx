@@ -7,17 +7,17 @@ const Addvertise = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-4 py-12 mt-8 bg-white">
       <div className="mx-auto" data-aos="zoom-in">
         <figure>
-          <img src={add2} alt="Shoes" />
+          <img src='https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_41-1-1-1.jpg' alt="Shoes" />
         </figure>
       </div>
       <div className="mx-auto" data-aos="zoom-in">
         <figure>
-          <img src={add1} alt="Shoes" />
+          <img src='https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_21-1-1-1.jpg' alt="Shoes" />
         </figure>
       </div>
       <div className="mx-auto" data-aos="zoom-in">
         <figure>
-          <img src={add3} alt="Shoes" />
+          <img src='https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_31-1-1-1.png' alt="Shoes" />
         </figure>
       </div>
     </div>

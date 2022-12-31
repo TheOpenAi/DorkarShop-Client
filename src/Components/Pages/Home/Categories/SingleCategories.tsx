@@ -5,11 +5,11 @@ import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons
 const SingleCategories = () => {
     const products: any = useLoaderData();
 
-    console.log(products);
+     console.log(products);
     return (
         <div className='bg-gray-50 md:w-3/4 pt-20 mx-auto'>
 
-            <h1 className='text-3xl text-accent font-semibold text-left ml-10'> Welcome to {products.length} </h1>
+            <h1 className='text-3xl text-accent font-semibold text-left ml-10'> Welcome to {products[0].category}  it has {products.length} Products</h1>
             <div className='w-[300px] h-[5px]  bg-secondary '></div>
             <hr />
 

@@ -1,8 +1,10 @@
 #app { height: 100% }
+
 html,
 body {
   position: relative;
   height: 50%;
+  
 }
 
 body {

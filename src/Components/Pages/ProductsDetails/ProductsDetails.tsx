@@ -10,7 +10,7 @@ import Related from './Related';
 const ProductsDetails = () => {
     const userContext = useContext(UserContext);
     const data: any = useLoaderData();
-  console.log(data.category);
+ 
     const { _id, model, price, details, imgUrl, category, brand } = data;
     
     
@@ -122,6 +122,7 @@ const ProductsDetails = () => {
                                     <span><i > <FaStar></FaStar></i></span>
                                     <span><i > <FaStar></FaStar></i></span>
                                     <span><i > <FaStar></FaStar></i></span>
+
 
                                 </div>
                                 <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
