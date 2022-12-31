@@ -44,12 +44,14 @@ const Payment = () => {
                         <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Payment Done!</h3>
                         <p className="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
                         <p> Have a great day!  </p>
-                        <div className="py-11 text-center">
+                        <div className="py-10 text-center">
 
 
+                            <a href="/" className=" text-white font-semibold py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary print:hidden ">
+                                GO BACK TO HOME
+                            </a>
 
-
-                            <div>
+                            <div >
                                 <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>Order Summery</h1>
                                 <div className="overflow-x-auto">
                                     <table className="table w-full">
@@ -82,9 +84,15 @@ const Payment = () => {
 
                                         </tbody>
                                     </table>
+
+
+
                                 </div>
+
                             </div>
                         </div>
+                        <button onClick={() => window.print()} className=' text-white font-semibold py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary print:hidden '>Print</button>
+
 
                         <div>
 
