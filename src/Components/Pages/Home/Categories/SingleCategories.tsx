@@ -5,11 +5,11 @@ import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons
 const SingleCategories = () => {
     const products: any = useLoaderData();
 
-    console.log(products);
+     console.log(products);
     return (
         <div className='bg-gray-50 md:w-3/4 pt-20 mx-auto'>
 
-            <h1 className='text-3xl text-accent font-semibold text-left ml-10'> Welcome to {products.length} </h1>
+            <h1 className='text-3xl text-accent font-semibold text-left ml-10'> Welcome to {products[0].category}  it has {products.length} Products</h1>
             <div className='w-[300px] h-[5px]  bg-secondary '></div>
             <hr />
 
@@ -26,7 +26,7 @@ const SingleCategories = () => {
                                 data-aos-delay='80'>
                                 <div key={product._id} className=" bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent min-w-[250px] max-w-[300px] mx-auto" >
                                     <div className='h-72'>
-                                        <img src={product.imgUrl} alt="" className='h-72 w-auto mx-auto  overflow-hidden'/>
+                                        <img src={product.imgUrl} alt="" className='h-72 w-auto mx-auto  overflow-hidden' />
                                     </div>
 
                                     <div className="h-60 bg-white">
@@ -60,14 +60,14 @@ const SingleCategories = () => {
                                             <div className='flex items-center justify-between'>
                                                 <div className='border-2 rounded-full border-yellow-500 mx-1'>
 
-                                                <FaDollarSign className='text-yellow-500'/>
+                                                    <FaDollarSign className='text-yellow-500' />
                                                 </div>
                                                 <p className=''> Buy now</p>
                                             </div>
                                             <div className='flex items-center justify-between'>
                                                 <div className='border-2 rounded-full border-red-500 mx-1'>
 
-                                                <FaQuestion className='text-red-500 '/>
+                                                    <FaQuestion className='text-red-500 ' />
                                                 </div>
                                                 <p> Question</p>
                                             </div>

@@ -16,7 +16,6 @@ const Modal = (props: any) => {
             price: modal.price,
 
         }
-
         fetch('https://dorkar-shop-server-siamcse.vercel.app/orders', {
             method: 'POST',
             headers: {

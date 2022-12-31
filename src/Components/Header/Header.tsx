@@ -60,10 +60,10 @@ const Header = () => {
             </ul>
 
             <div className="lg:absolute lg:-translate-x-1/2 lg:inset-y-5 lg:left-1/2">
-              <div className=" flex flex-shrink-0">
+              <div className=" flex flex-shrink-0 ">
                 <div>
-                  <h1 className="text-xl md:text-3xl lg:text-4xl text-primary font-sans font-extrabold">
-                    {" "}
+                  <h1 className="text-xl md:text-3xl lg:text-3xl text-primary font-sans font-extrabold lg:ml-10">
+                    
                     Dorkar Shop
                   </h1>
                 </div>
