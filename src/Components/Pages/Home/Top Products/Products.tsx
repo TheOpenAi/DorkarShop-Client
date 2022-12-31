@@ -47,31 +47,34 @@ const Products = () => {
                                 {
                                     data.map((product: any) => (
 
-                                        <Link to={`/productsdetails/${product._id}`}>
-                                            <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto '
-                                                data-aos-duration='1000'
-                                                data-aos-delay='80'>
-                                                <div key={product._id} className="w-[100%] h-[70%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent flex  " >
-                                                    <img src={product.imgUrl} alt="" className='w-[50%] h-[100%]' />
-                                                    <div className="mx-3 flex flex-col justify-center items-center ">
-                                                        <h2 className="card-title text-xl mt-2">{product?.model}</h2>
-                                                        <div className="flex items-center mb-4">
-                                                            <div className="flex gap-1 text-sm text-yellow-400">
-                                                                <span><i > <FaStar></FaStar></i></span>
-                                                                <span><i > <FaStar></FaStar></i></span>
-                                                                <span><i > <FaStar></FaStar></i></span>
-                                                                <span><i > <FaStar></FaStar></i></span>
 
+                                        product?.paid ? null :
+
+                                            <Link to={`/productsdetails/${product._id}`}>
+                                                <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto '
+                                                    data-aos-duration='1000'
+                                                    data-aos-delay='80'>
+                                                    <div key={product._id} className="w-[100%] h-[70%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent flex  " >
+                                                        <img src={product.imgUrl} alt="" className='w-[50%] h-[100%]' />
+                                                        <div className="mx-3 flex flex-col justify-center items-center ">
+                                                            <h2 className="card-title text-xl mt-2">{product?.model}</h2>
+                                                            <div className="flex items-center mb-4">
+                                                                <div className="flex gap-1 text-sm text-yellow-400">
+                                                                    <span><i > <FaStar></FaStar></i></span>
+                                                                    <span><i > <FaStar></FaStar></i></span>
+                                                                    <span><i > <FaStar></FaStar></i></span>
+                                                                    <span><i > <FaStar></FaStar></i></span>
+
+
+                                                                </div>
 
                                                             </div>
-                                                           
                                                         </div>
                                                     </div>
+
                                                 </div>
 
-                                            </div>
-
-                                        </Link>
+                                            </Link>
                                     ))
                                 }
                             </div>
