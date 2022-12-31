@@ -19,6 +19,13 @@ const Success = () => {
                             <a href="/" className="px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3">
                                 GO BACK
                             </a>
+
+
+                            <button type="submit" title="Submit" className="block w-full py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary">
+                                <span className="text-white font-semibold">
+                                    Send us an email
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </div>
