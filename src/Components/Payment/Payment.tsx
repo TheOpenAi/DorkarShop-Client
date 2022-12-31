@@ -1,10 +1,37 @@
 import React from 'react';
+import Footer from '../Pages/Footer/Footer';
+import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 const Payment = () => {
+
+    const location = useLocation();
+    // console.log(location.search)
+    const query = new URLSearchParams(location.search);
+    const transectionId = query.get("transectionId");
+    // console.log(transectionId);
+
+
+    const [order, setOrder]: any = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders/by-transaction-id/${transectionId}`)
+            .then(res => res.json())
+            .then(data => setOrder(data));
+    }, [transectionId])
+
+    console.log(order);
+
+
+
+
     return (
         <div>
-            <div className="bg-gray-100 h-screen">
+
+
+
+            <div className=" ">
+
                 <div className="bg-white p-6  md:mx-auto">
                     <svg viewBox="0 0 24 24" className="text-green-600 w-16 h-16 mx-auto my-6">
                         <path fill="currentColor"
@@ -12,6 +39,8 @@ const Payment = () => {
                         </path>
                     </svg>
                     <div className="text-center">
+
+                        <h1>{order.price}</h1>
                         <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Payment Done!</h3>
                         <p className="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
                         <p> Have a great day!  </p>
@@ -26,7 +55,7 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
-
+            <Footer></Footer>
         </div>
     );
 };
