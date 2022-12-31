@@ -24,6 +24,7 @@ import PrivateRoutes from "./Routes/PrivateRoutes";
 import SingleCategories from "./Components/Pages/Home/Categories/SingleCategories";
 import Contact from "./Components/Pages/Contact/Contact";
 import Payment from "./Components/Payment/Payment";
+import PaymentFail from "./Components/Payment/PaymentFail";
 
 function App() {
   const route = createBrowserRouter([
@@ -53,8 +54,11 @@ function App() {
             ),
           element: <SingleCategories></SingleCategories>,
         },
-        { 
+        {
           path: "/payment/success", element: <Payment></Payment>
+        },
+        {
+          path: "/payment/fail", element: <PaymentFail></PaymentFail>
         }
       ],
     },
