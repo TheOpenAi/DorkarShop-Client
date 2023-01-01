@@ -232,13 +232,7 @@ const Header = () => {
                         ></path>
                       </svg>
                     </div>
-                    <input
-                      type="search"
-                      id="default-search"
-                      className=" bg-[#F3F4F6] block w-full p-4 pl-10 text-sm text-gray-900  "
-                      placeholder="Search , "
-                      required
-                    ></input>
+                   
                     <button
                       type="submit"
                       className="text-white absolute right-2.5 bottom-2.5
