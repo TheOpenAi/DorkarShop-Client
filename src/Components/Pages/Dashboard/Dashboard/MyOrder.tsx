@@ -4,7 +4,7 @@ const MyOrder = () => {
     return (
         <div>
             <div>
-                <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Orderss</h1>
+                <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Order</h1>
 
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -43,13 +43,15 @@ const MyOrder = () => {
                             text-white   bg-gradient-to-r from-primary to-secondary   border-none">Cancel</label>
                                 </td>
 
-                                <td  >
 
-                                    <label htmlFor="Confirmation-modal" className=" btn 
+                                <td>
 
-text-white   bg-gradient-to-r from-primary to-secondary   border-none">Payment</label>
+
+
+
+
+
                                 </td>
-
 
 
 

@@ -72,7 +72,7 @@ const MyProduct = () => {
 
                                         {
 
-                                            product?.paid == "true" &&
+                                            product?.paid === "true" &&
                                             <h1>Already Sold</h1>
 
 
