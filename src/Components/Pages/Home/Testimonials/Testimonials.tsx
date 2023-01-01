@@ -66,77 +66,60 @@
 // export default Testimonials;
 import { useEffect, useState } from 'react'
 import { Tab } from '@headlessui/react'
+import { Link } from 'react-router-dom';
 
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Testimonials()
-
-{
+export default function Testimonials() {
     let [categories] = useState({
         Recent: [
+
             {
-                id: 1,
-                title: 'Does drinking coffee make you smarter?',
-                date: '5h ago',
-                commentCount: 5,
-                shareCount: 2,
+                _id: "63ac7363bb5a39c81433154d",
+                category: "womens",
+                model: "Leather Jacket",
+                brand: "Lives",
             },
             {
-                id: 2,
-                title: "So you've bought coffee... now what?",
-                date: '2h ago',
-                commentCount: 3,
-                shareCount: 2,
+                _id: "63ac7363bb5a39c81433154a",
+                category: "shoes",
+                model: "zoom X",
+                brand: "Nike",
             },
         ],
         Popular: [
             {
-                id: 1,
-                title: 'Is tech making coffee better or worse?',
-                date: 'Jan 7',
-                commentCount: 29,
-                shareCount: 16,
-            },
-            {
-                id: 2,
-                title: 'The most innovative things happening in coffee',
-                date: 'Mar 19',
-                commentCount: 24,
-                shareCount: 12,
+                _id: "63ac7363bb5a39c81433154a",
+                category: "shoes",
+                model: "zoom X",
+                brand: "Nike",
             },
         ],
         Trending: [
             {
-                id: 1,
-                title: 'Ask Me Anything: 10 answers to your questions about coffee',
-                date: '2d ago',
-                commentCount: 9,
-                shareCount: 5,
-            },
-            {
-                id: 2,
-                title: "The worst advice we've ever heard about coffee",
-                date: '4d ago',
-                commentCount: 1,
-                shareCount: 2,
+                _id: "63ac7363bb5a39c81433154d",
+                category: "womens",
+                model: "Leather Jacket",
+                brand: "Lives",
             },
         ],
     })
+
     useEffect(() => {
         fetch("https://dorkar-shop-server-siamcse.vercel.app/products")
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          });
-      }, []);
-
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
+    }, []);
+    ;
     return (
-        <div className="w-[vh] max-w-md px-2 py-16 sm:px-0 mx-auto">
+        <div className="w-11/12 max-w-md px-2 py-16 sm:px-0 mx-auto">
             <Tab.Group>
-                <Tab.List className="flex space-x-1 rounded-xl bg-black-900/20 p-1 ">
+                <Tab.List className="flex space-x-1 rounded-xl bg-black-900/20 p-1  ">
                     {Object.keys(categories).map((category) => (
                         <Tab
                             key={category}
@@ -162,30 +145,29 @@ export default function Testimonials()
                                 'rounded-xl bg-gray p-3',
                                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
                             )}>
-                            <ul>
+                            <ul >
                                 {posts.map((post) => (
                                     <li
-                                        key={post.id}
-                                        className="relative rounded-md p-3 hover:bg-gray-100"
+                                        key={post._id}
+                                        className="relative rounded-md p-3 my-2 border border-gray-400 hover:bg-gray-100 hover:scale-110 ease-linear transition-all duration-300"
                                     >
-                                        <h3 className="text-sm font-medium leading-5">
-                                            {post.title}
+                                        <h3 className="text-xl font-medium leading-5 text-center">
+                                            {post.model}
                                         </h3>
 
-                                        <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
-                                            <li>{post.date}</li>
+                                        <ul className="mt-1 flex  space-x-1 text-xs font-normal leading-4 text-gray-500 justify-center" >
+                                            <li>{post.category}</li>
                                             <li>&middot;</li>
-                                            <li>{post.commentCount} comments</li>
-                                            <li>&middot;</li>
-                                            <li>{post.shareCount} shares</li>
+                                            <li>{post.brand}</li>
                                         </ul>
 
-                                        <a
-                                            href="#"
-                                            className={classNames(
-                                                'absolute inset-0 rounded-md',
-                                                'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
-                                            )}
+                                        <Link to={`/productsdetails/${post._id}`}
+
+                                            className={
+                                                classNames(
+                                                    'absolute inset-0 rounded-md',
+                                                    'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
+                                                )}
                                         />
                                     </li>
                                 ))}
