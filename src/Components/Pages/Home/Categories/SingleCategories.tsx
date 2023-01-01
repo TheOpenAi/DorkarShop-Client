@@ -77,28 +77,28 @@ const SingleCategories = () => {
                           <input
                             type="radio"
                             name="rating-4"
-                            className="mask mask-star-2 bg-green-500"
+                            className="mask mask-star-2 bg-yellow-500"
                           />
                           <input
                             type="radio"
                             name="rating-4"
-                            className="mask mask-star-2 bg-green-500"
+                            className="mask mask-star-2 bg-yellow-500"
                             checked
                           />
                           <input
                             type="radio"
                             name="rating-4"
-                            className="mask mask-star-2 bg-green-500"
+                            className="mask mask-star-2 bg-yellow-500"
                           />
                           <input
                             type="radio"
                             name="rating-4"
-                            className="mask mask-star-2 bg-green-500"
+                            className="mask mask-star-2 bg-yellow-500"
                           />
                           <input
                             type="radio"
                             name="rating-4"
-                            className="mask mask-star-2 bg-green-500"
+                            className="mask mask-star-2 bg-yellow-500"
                           />
                         </div>
                       </p>

@@ -48,18 +48,18 @@ const Products = () => {
                     >
                       <div
                         key={product._id}
-                        className="w-[100%] h-36  bg-base-100 cursor-pointer shadow-lg rounded hover:scale-110 transition-transform hover:shadow-accent flex  "
+                        className="w-[100%] h-36  bg-base-100 cursor-pointer shadow-lg rounded hover:scale-110 transition-transform hover:shadow-accent flex  items-center p-2"
                       >
                         <img
                           src={product.imgUrl}
                           alt=""
-                          className="w-[45%] h-[100%]"
+                          className="w-[45%] h-[70%]"
                         />
                         <div className="mx-3 flex flex-col justify-center items-center ">
                           <h2 className="font-bold text-lg mt-2">
                             {product?.model}
                           </h2>
-                          <h2 className="mt-2">{product?.price} BDT</h2>
+                          <h2 className="mt-2">Price: {product?.price} ৳ </h2>
                           <p className="py-2">Brand: {product?.brand}</p>
                           {/* <div className="flex items-center mb-4">
                             <div className="flex gap-1 text-sm text-yellow-400">
@@ -100,7 +100,7 @@ const Products = () => {
                 onClick={() => setProduct(product + 10)}
                 className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8"
               >
-                See All..
+                Load More..
               </h1>
             </div>
           </div>
