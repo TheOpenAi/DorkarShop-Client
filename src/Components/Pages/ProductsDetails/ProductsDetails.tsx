@@ -115,8 +115,8 @@ const ProductsDetails = () => {
                         </div>
                         <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4  border-t-[2px] border-t-gray-400 justify-evenly m-5 p-5 ">
                             <div className='flex ' >
-                                <p className="text-2xl text-primary font-semibold"> $ {price}</p>
-                                <p className="text-base text-gray-400 line-through">$55.00</p>
+                                <p className="text-xl text-primary font-semibold flex"> Tk.{price} </p>
+                                <p className="text-base text-gray-400 line-through"> 55.00</p>
                             </div>
                             <p className="text-gray-800 font-semibold space-x-2">
                                 <span>Availability: </span>

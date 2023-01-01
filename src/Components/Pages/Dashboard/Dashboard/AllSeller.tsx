@@ -14,7 +14,7 @@ const AllSeller = () => {
     console.log(sellers);
     return (
         <div>
-                 <div className="text-sm breadcrumbs">
+                 <div className="text-xl  breadcrumbs">
                 <ul>
                     <li>
                         <Link to={'/home'}>
