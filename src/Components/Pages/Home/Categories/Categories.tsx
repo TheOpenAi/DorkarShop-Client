@@ -25,8 +25,8 @@ const Categories = () => {
   }, []);
  
   return (
-    <div className="md:w-7/8 xl:w-3/4 mx-auto">
-      <div className=" items-center justify-center h-auto bg-white pt-24">
+    <div className="md:w-7/8 xl:w-3/4 pt-24  mx-auto">
+      <div className=" items-center justify-center h-auto bg-gray-100 py-5">
         <div className="flex flex-col">
           <div
             className="flex flex-wrap justify-center text-center mb-10"
@@ -61,17 +61,17 @@ const Categories = () => {
                   clickable: true,
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper"
+                className="mySwiper bg-gray-100"
               >
                 {categories.map((category, idx) => (
-                  <SwiperSlide>
-                    <div className="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-5 xl:gap-10 m-10 px-4">
+                  <SwiperSlide className="m-2 mx-auto">
+                    <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-5 xl:gap-10  px-4 bg-gray-100">
                       <Link
                         key={category._id}
                         to={`/sinlgecategories/${category?.title}`}
                       >
                         <div
-                          className="card w-52 lg:w-64 bg-base-100 shadow-lg shadow-primary"
+                          className="card w-52 lg:w-64 bg-gray-100 shadow-lg shadow-primary"
                           data-aos="fade-up"
                         >
                           <div className="relative text-center">

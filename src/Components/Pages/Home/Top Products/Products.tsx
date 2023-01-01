@@ -28,8 +28,8 @@ const Products = () => {
   return (
 
     <>
-      <div>
-        <div className="flex items-center justify-center h-auto bg-gray-100 pt-20">
+      <div className="xl:w-3/4 mx-auto py-5 bg-gray-100 my-20">
+        <div className="flex items-center justify-center h-auto ">
           <div className="flex flex-col">
 
             <div className="flex flex-wrap justify-center text-center mb-10">

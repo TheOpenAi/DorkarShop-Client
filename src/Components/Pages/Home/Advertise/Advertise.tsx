@@ -4,7 +4,7 @@ import add2 from "../../../../Assets/add2.jpg";
 import add3 from "../../../../Assets/add3.jpg";
 const Addvertise = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-4 py-12 mt-8 bg-white">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-4 py-14 bg-gray-100">
       <div className="mx-auto" data-aos="zoom-in">
         <figure>
           <img src='https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_41-1-1-1.jpg' alt="Shoes" />
