@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../../context/UserProvider';
+import trash from "../../../../Assets/icons8-trash-can-50.png"
+import { FaTrash, FaTrashAlt } from 'react-icons/fa'
 
 const MyProduct = () => {
     const user = useContext(UserContext);
@@ -31,7 +33,7 @@ const MyProduct = () => {
 
     return (
         <div>
-                 <div className="text-sm breadcrumbs">
+            <div className="text-sm breadcrumbs">
                 <ul>
                     <li>
                         <Link to={'/home'}>
@@ -81,9 +83,14 @@ const MyProduct = () => {
 
                                     <td>{product.model}</td>
                                     <td>
-                                        <label htmlFor="Confirmation-modal" className=" btn 
+                                        {
+                                            product?.paid !== "true" &&
+                                            <label htmlFor="Confirmation-modal" className=" btn 
                                     
                                     text-white   bg-gradient-to-r from-primary to-secondary   border-none">Click Here</label>
+
+                                        }
+
                                     </td>
 
                                     <td>
@@ -112,7 +119,10 @@ const MyProduct = () => {
                                     </td>
                                     <td>
                                         <td>
-                                            <label className="btn bg-gradient-to-r from-red-800 to-red-700 border-none" onClick={() => handelproducts(product._id)} >Delete</label>
+                                            <FaTrashAlt onClick={() => handelproducts(product._id)} className='text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
+
+                                            {/* <img className='cursor-pointer' onClick={() => handelproducts(product._id)} src={trash} alt="" /> */}
+
                                         </td>
                                     </td>
 
@@ -128,7 +138,7 @@ const MyProduct = () => {
 
 
 
-        </div>
+        </div >
     );
 };
 
