@@ -13,34 +13,14 @@ import "./featured.css"
 
 // import required modules
 import { FreeMode, Pagination } from "swiper";
-import { useQuery } from '@tanstack/react-query';
-import Loading from '../../Loading/Loading';
+
 
 const FeaturedProducts = () => {
-    const [item, setItem] = useState<any>({});
-    const [dataloading, setDataLoading] = useState<boolean>(true)
-  const {category, bullet, imgUrl
-  } = item;
+
+
 
     Aos.init();
-    
-    const { data = [], isLoading } = useQuery({
-        queryKey: ['categories'],
-        queryFn: async () => {
-            const category = "electronics";
-            const res = await fetch(`https://dorkar-shop-server-siamcse.vercel.app/products/${category}`);
-            const data = await res.json();
-            setItem(data[0])
-            setDataLoading(false)
-            return data;
-        }
-    })
 
-    if (isLoading && dataloading) {
-        return <Loading />
-    }
-    console.log('I', item);
-    console.log('P', data);
 
     return (
         <div>
@@ -48,62 +28,11 @@ const FeaturedProducts = () => {
             <div className="bg-gray-100 py-20 w-full overflow-hidden">
                 <div className="lg:w-3/4 m-auto ">
                     <div className="m-auto text-center lg:w-8/12 xl:w-7/12 relative overflow-hidden">
-                        <h2 className="text-2xl text-accent text-shadow font-bold md:text-4xl">Our Featured Products. We Provide The Best Deal In Town</h2>
-                        {/* <img src="https://www.notion.so/cdn-cgi/image/format=auto,width=640,quality=100/front-static/pages/ai/person-wand.png?fbclid=IwAR1B09MGqWQuOJk6mU3KTWld1Fs99OoDX3_QkULEFLSG8U4476tTkWi4JXc" alt=""
-                            className='w-[50%] 
-                       left-[40%]
-                     relative'
-                         data-aos='fade-up' 
-                         data-aos-duration='1000'
-                            data-aos-delay='80'
-                         /> */}
+                        <h2 className="text-2xl text-accent text-shadow font-bold md:text-4xl">What Customers Say About Us</h2>
+                   
                     </div>
-                    <div className=" relative mt-12 m-auto items-center justify-center md:flex md:space-y-0 md:-space-x-4">
-                        <div className="relative mx-4 md:w-3/12 md:mx-0 z-10 " data-aos='fade-right'
-
-                            data-aos-duration='1000'
-                            data-aos-delay='80'
-
-                        >
-                            <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-gray-300 shadow-xl transition duration-500 group-hover:scale-105 lg:group-hover:scale-110">
-
-                            </div>
-
-                            <div className="relative p-6 space-y-6">
-                                <h2 className="text-accent  text-2xl font-medium py-2 border-b border-gray-400">{category}</h2>
-                                <div
-                                >
-                                    <div className=" bg-base-100 cursor-pointer" >
-                                        <div className="">
-                                            <img src={imgUrl} alt="" className='w-full' />
-
-                                            <div className='px-5 pt-3 bg-gray-300'>
-                                                <ul>
-                                                   {
-                                                    bullet?.map((e:any, i:any) => <li key={i}>
-                                                        {e}
-                                                    </li>)
-
-                                                   }
-                                                </ul>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <button type="submit" title="Submit" className="block w-full py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary">
-                                    <span className="text-white font-semibold">
-                                        Send us an email
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
+                    <div className="  mt-12 m-auto items-center justify-center md:flex md:space-y-0 md:-space-x-4">
+                  
 
 
 
@@ -112,7 +41,7 @@ const FeaturedProducts = () => {
                         {/* put this section under swiper */}
 
 
-                        <div className="relative w-full md:w-9/12" data-aos='fade-left'
+                        <div className="w-full md:w-3/4" data-aos='fade-left'
                             data-aos-duration='1000'
                             data-aos-delay='100'
                         >
@@ -122,10 +51,10 @@ const FeaturedProducts = () => {
                                 <Swiper
                                     breakpoints={{
                                         320: { slidesPerView: 1, spaceBetween: 30 },
-                                        480: { slidesPerView: 2, spaceBetween: 30 },
+                                        480: { slidesPerView: 1, spaceBetween: 30 },
                                         768: { slidesPerView: 2, spaceBetween: 30 },
-                                        1024: { slidesPerView: 3, spaceBetween: 30 },
-                                        1524: { slidesPerView: 4, spaceBetween: 30 },
+                                        1024: { slidesPerView: 2, spaceBetween: 10 },
+
                                     }}
                                     spaceBetween={30}
                                     freeMode={true}
@@ -135,43 +64,362 @@ const FeaturedProducts = () => {
                                     modules={[FreeMode, Pagination]}
                                     className="mySwiper"
                                 >
-                                    <div className="relative p-6 m-5 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                                    <div className="relative ">
 
-                                        {
-                                            data.map((e: any) => <SwiperSlide
-                                                key={e._id}>
-                                                <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
-                                                    <div className="">
-                                                        <img src={e?.imgUrl} alt='model' />
-
-                                                        <div className='px-5'>
-                                                            <div className='flex justify-between'>
-                                                                <h2 className="text-accent  text-2xl font-medium py-2">{e?.model}</h2>
-
-                                                            </div>
-                                                            <h2 className="text-left text-gray-500 text-xl">BDT {e?.price}</h2>
-                                                            <hr />
-                                                            <div className='flex justify-between items-center py-3'>
-                                                                <button className='bg-primary rounded px-2'>See Details</button>
-                                                                <div className='flex items-center text-accent '>
-                                                                    <div className='border-secondary p-1'>
-
-                                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
-                                                                    </div>
-
-                                                                    <div className='border-2 rounded-full border-secondary p-1'>
-
-                                                                        < FaExchangeAlt className='text-secondary' />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
+                                        <SwiperSlide>
+                                            <div className=" p-5 m-5 shadow-lg md:mb-0">
+                                                <div className="w-2/4 mx-auto flex justify-center mb-6">
+                                                    <img
+                                                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+                                                        className="rounded-full shadow-lg w-32 " alt='user'
+                                                    />
                                                 </div>
+                                                <h5 className="text-xl font-semibold mb-4">Maria Smantha</h5>
+                                                <h6 className="font-semibold text-secondary mb-4">Web Developer</h6>
+                                                <p className="mb-4">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        focusable="false"
+                                                        data-prefix="fas"
+                                                        data-icon="quote-left"
+                                                        className="w-6 pr-2 inline-block"
+                                                        role="img"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512"
+                                                    >
+                                                        <path
+                                                            fill="currentColor"
+                                                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                                                        ></path>
+                                                    </svg>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic
+                                                    tenetur quae quaerat ad velit ab hic tenetur.
+                                                </p>
+                                                <ul className="flex justify-center mb-0">
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star-half-alt"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 536 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                            </SwiperSlide>)
-                                        }
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <div className=" p-5 m-5 shadow-lg md:mb-0">
+                                                <div className="w-2/4 mx-auto flex justify-center mb-6">
+                                                    <img
+                                                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg"
+                                                        className="rounded-full shadow-lg w-32" alt='user'
+                                                    />
+                                                </div>
+                                                <h5 className="text-xl font-semibold mb-4">Lisa Cudrow</h5>
+                                                <h6 className="font-semibold text-secondary mb-4">Graphic Designer</h6>
+                                                <p className="mb-4">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        focusable="false"
+                                                        data-prefix="fas"
+                                                        data-icon="quote-left"
+                                                        className="w-6 pr-2 inline-block"
+                                                        role="img"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512"
+                                                    >
+                                                        <path
+                                                            fill="currentColor"
+                                                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                                                        ></path></svg>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+                                                    laboriosam, nisi ut aliquid commodi.
+                                                </p>
+                                                <ul className="flex justify-center mb-0">
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <div className=" p-5 m-5 shadow-lg md:mb-0">
+                                                <div className="w-2/4 mx-auto flex justify-center mb-6">
+                                                    <img
+                                                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                                                        className="rounded-full shadow-lg w-32" alt='user'
+                                                    />
+                                                </div>
+                                                <h5 className="text-xl font-semibold mb-4">John Smith</h5>
+                                                <h6 className="font-semibold text-secondary mb-4">Marketing Specialist</h6>
+                                                <p className="mb-4">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        focusable="false"
+                                                        data-prefix="fas"
+                                                        data-icon="quote-left"
+                                                        className="w-6 pr-2 inline-block"
+                                                        role="img"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512"
+                                                    >
+                                                        <path
+                                                            fill="currentColor"
+                                                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                                                        ></path></svg>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                                    praesentium voluptatum deleniti atque corrupti.
+                                                </p>
+                                                <ul className="flex justify-center mb-0">
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                    <li>
+                                                        <svg
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="far"
+                                                            data-icon="star"
+                                                            className="w-4 text-yellow-500"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 576 512"
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                                                            ></path>
+                                                        </svg>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </SwiperSlide>
+
 
 
                                     </div>

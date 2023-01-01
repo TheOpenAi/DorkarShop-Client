@@ -17,6 +17,7 @@ li.custom-list:before {
     left: -0.7em;
     top: -0.4em;
   }
+  
   li.check:before {
     left: -0.5em;
     /* background-image: url("/assets/Icon/jam_check.svg"); */
