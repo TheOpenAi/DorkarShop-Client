@@ -23,9 +23,9 @@ const Categories = () => {
         setCategories(data);
       });
   }, []);
-  console.log(categories);
+ 
   return (
-    <div className="md:w-3/4 mx-auto">
+    <div className="md:w-7/8 xl:w-3/4 mx-auto">
       <div className=" items-center justify-center h-auto bg-white pt-24">
         <div className="flex flex-col">
           <div
@@ -51,8 +51,9 @@ const Categories = () => {
                 breakpoints={{
                   320: { slidesPerView: 1, spaceBetween: 30 },
                   480: { slidesPerView: 2, spaceBetween: 30 },
-                  768: { slidesPerView: 4, spaceBetween: 30 },
-                  1024: { slidesPerView: 4, spaceBetween: 30 },
+                  768: { slidesPerView: 3, spaceBetween: 10 },
+                  1024: { slidesPerView: 3, spaceBetween: 20 },
+                  1524: { slidesPerView: 4, spaceBetween: 30 }
                 }}
                 spaceBetween={30}
                 freeMode={true}
@@ -64,7 +65,7 @@ const Categories = () => {
               >
                 {categories.map((category, idx) => (
                   <SwiperSlide>
-                    <div className="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-10 m-10 px-4">
+                    <div className="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-5 xl:gap-10 m-10 px-4">
                       <Link
                         key={category._id}
                         to={`/sinlgecategories/${category?.title}`}

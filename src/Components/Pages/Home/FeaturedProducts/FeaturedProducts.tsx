@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import Aos from 'aos';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaRegHeart, FaExchangeAlt, FaQuestion, FaDollarSign } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,9 +13,35 @@ import "./featured.css"
 
 // import required modules
 import { FreeMode, Pagination } from "swiper";
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../../Loading/Loading';
 
 const FeaturedProducts = () => {
+    const [item, setItem] = useState<any>({});
+    const [dataloading, setDataLoading] = useState<boolean>(true)
+  const {category, bullet, imgUrl
+  } = item;
+
     Aos.init();
+    
+    const { data = [], isLoading } = useQuery({
+        queryKey: ['categories'],
+        queryFn: async () => {
+            const category = "electronics";
+            const res = await fetch(`https://dorkar-shop-server-siamcse.vercel.app/products/${category}`);
+            const data = await res.json();
+            setItem(data[0])
+            setDataLoading(false)
+            return data;
+        }
+    })
+
+    if (isLoading && dataloading) {
+        return <Loading />
+    }
+    console.log('I', item);
+    console.log('P', data);
+
     return (
         <div>
 
@@ -40,31 +66,33 @@ const FeaturedProducts = () => {
 
                         >
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-gray-300 shadow-xl transition duration-500 group-hover:scale-105 lg:group-hover:scale-110">
-                                
+
                             </div>
-                        
+
                             <div className="relative p-6 space-y-6">
-                            <h2 className="text-accent  text-2xl font-medium py-2 border-b border-gray-400">Womans Category</h2>
+                                <h2 className="text-accent  text-2xl font-medium py-2 border-b border-gray-400">{category}</h2>
                                 <div
                                 >
                                     <div className=" bg-base-100 cursor-pointer" >
                                         <div className="">
-                                            <img src='https://media1.popsugar-assets.com/files/thumbor/Sh7u3weJfcwV6SghHO5jv9OXWaU/0x483:3153x3636/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2022/10/25/937/n/1922564/200048d363585573475b80.48664533_/i/best-cheap-amazon-clothes-women-2020.jpg' alt="" className='w-full' />
-                                           
+                                            <img src={imgUrl} alt="" className='w-full' />
+
                                             <div className='px-5 pt-3 bg-gray-300'>
-                                            <ul>
-                                                    <li >Text</li>
-                                                    <li>Text</li>
-                                                    <li>Text</li>
-                                                    <li>Text</li>
+                                                <ul>
+                                                   {
+                                                    bullet?.map((e:any, i:any) => <li key={i}>
+                                                        {e}
+                                                    </li>)
+
+                                                   }
                                                 </ul>
-                                             
-                                             
+
+
                                             </div>
-                                         
+
                                         </div>
                                     </div>
-                                   
+
                                 </div>
 
 
@@ -89,184 +117,66 @@ const FeaturedProducts = () => {
                             data-aos-delay='100'
                         >
                             <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
-                           
+
                             <>
-      <Swiper
-        breakpoints={{
-            320: { slidesPerView: 1, spaceBetween: 30 },
-            480: { slidesPerView: 2, spaceBetween: 30 },
-            768: { slidesPerView: 4, spaceBetween: 30 },
-            1024: { slidesPerView: 4, spaceBetween: 30 },
-          }}
-        spaceBetween={30}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination]} 
-        className="mySwiper"
-      >
-                            <div className="relative p-6 m-5 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                                <Swiper
+                                    breakpoints={{
+                                        320: { slidesPerView: 1, spaceBetween: 30 },
+                                        480: { slidesPerView: 2, spaceBetween: 30 },
+                                        768: { slidesPerView: 2, spaceBetween: 30 },
+                                        1024: { slidesPerView: 3, spaceBetween: 30 },
+                                        1524: { slidesPerView: 4, spaceBetween: 30 },
+                                    }}
+                                    spaceBetween={30}
+                                    freeMode={true}
+                                    pagination={{
+                                        clickable: true,
+                                    }}
+                                    modules={[FreeMode, Pagination]}
+                                    className="mySwiper"
+                                >
+                                    <div className="relative p-6 m-5 pt-16 md:p-8 md:pl-12 md:rounded-r-2xl grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      
-        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
-                                    <div className="">
-                                        <img src='https://thevou.com/app/uploads/2022/03/Women-Clothing-Stores-thevou.com-Feature-01.jpg' alt="" className='w-full' />
+                                        {
+                                            data.map((e: any) => <SwiperSlide
+                                                key={e._id}>
+                                                <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
+                                                    <div className="">
+                                                        <img src={e?.imgUrl} alt='model' />
 
-                                        <div className='px-5'>
-                                            <div className='flex justify-between'>
-                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
+                                                        <div className='px-5'>
+                                                            <div className='flex justify-between'>
+                                                                <h2 className="text-accent  text-2xl font-medium py-2">{e?.model}</h2>
 
-                                            </div>
-                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
-                                            <hr />
-                                            <div className='flex justify-between items-center py-3'>
-                                                <button className='bg-primary rounded px-2'>See Details</button>
-                                                <div className='flex items-center text-accent '>
-                                                    <div className='border-secondary p-1'>
+                                                            </div>
+                                                            <h2 className="text-left text-gray-500 text-xl">BDT {e?.price}</h2>
+                                                            <hr />
+                                                            <div className='flex justify-between items-center py-3'>
+                                                                <button className='bg-primary rounded px-2'>See Details</button>
+                                                                <div className='flex items-center text-accent '>
+                                                                    <div className='border-secondary p-1'>
 
-                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
-                                                    </div>
+                                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
+                                                                    </div>
 
-                                                    <div className='border-2 rounded-full border-secondary p-1'>
+                                                                    <div className='border-2 rounded-full border-secondary p-1'>
 
-                                                        < FaExchangeAlt className='text-secondary' />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                                        < FaExchangeAlt className='text-secondary' />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                    </div>
-                                </div></SwiperSlide>
-        <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
-                                    <div className="">
-                                        <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
-
-                                        <div className='px-5'>
-                                            <div className='flex justify-between'>
-                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
-
-                                            </div>
-                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
-                                            <hr />
-                                            <div className='flex justify-between items-center py-3'>
-                                                <button className='bg-primary rounded px-2'>See Details</button>
-                                                <div className='flex items-center text-accent '>
-                                                    <div className='border-secondary p-1'>
-
-                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
-                                                    </div>
-
-                                                    <div className='border-2 rounded-full border-secondary p-1'>
-
-                                                        < FaExchangeAlt className='text-secondary' />
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+
+                                            </SwiperSlide>)
+                                        }
+
 
                                     </div>
-                                </div></SwiperSlide>
-
-        <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
-                                    <div className="">
-                                        <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
-
-                                        <div className='px-5'>
-                                            <div className='flex justify-between'>
-                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
-
-                                            </div>
-                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
-                                            <hr />
-                                            <div className='flex justify-between items-center py-3'>
-                                                <button className='bg-primary rounded px-2'>See Details</button>
-                                                <div className='flex items-center text-accent '>
-                                                    <div className='border-secondary p-1'>
-
-                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
-                                                    </div>
-
-                                                    <div className='border-2 rounded-full border-secondary p-1'>
-
-                                                        < FaExchangeAlt className='text-secondary' />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div></SwiperSlide>
-                                <SwiperSlide> <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
-                                    <div className="">
-                                        <img src='https://static-01.daraz.com.bd/p/7a1125148acd02ce66ee07b43a1de694.jpg' alt="" className='w-full' />
-
-                                        <div className='px-5'>
-                                            <div className='flex justify-between'>
-                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
-
-                                            </div>
-                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
-                                            <hr />
-                                            <div className='flex justify-between items-center py-3'>
-                                                <button className='bg-primary rounded px-2'>See Details</button>
-                                                <div className='flex items-center text-accent '>
-                                                    <div className='border-secondary p-1'>
-
-                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
-                                                    </div>
-
-                                                    <div className='border-2 rounded-full border-secondary p-1'>
-
-                                                        < FaExchangeAlt className='text-secondary' />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div></SwiperSlide>
-
-                                <SwiperSlide>  <div className=" bg-base-100 cursor-pointer shadow-lg my-5 hover:shadow-accent" >
-                                    <div className="">
-                                        <img src='https://media.glamour.com/photos/5bbe6c031101be309c9889bb/1:1/pass/river.jpg' alt="" className='w-full' />
-
-                                        <div className='px-5'>
-                                            <div className='flex justify-between'>
-                                                <h2 className="text-accent  text-2xl font-medium py-2">product.brand</h2>
-
-                                            </div>
-                                            <h2 className="text-left text-gray-500 text-xl">$ product.price</h2>
-                                            <hr />
-                                            <div className='flex justify-between items-center py-3'>
-                                                <button className='bg-primary rounded px-2'>See Details</button>
-                                                <div className='flex items-center text-accent '>
-                                                    <div className='border-secondary p-1'>
-
-                                                        <FaRegHeart className='text-xl text-red-500 mr-2' />
-                                                    </div>
-
-                                                    <div className='border-2 rounded-full border-secondary p-1'>
-
-                                                        < FaExchangeAlt className='text-secondary' />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div></SwiperSlide>
-   
-                               
-                              
-
-
-
-
-
-                            </div>
-                            </Swiper>
-    </>
+                                </Swiper>
+                            </>
                         </div>
                     </div>
                 </div>

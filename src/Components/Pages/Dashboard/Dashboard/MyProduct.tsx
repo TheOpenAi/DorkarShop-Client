@@ -1,19 +1,30 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { UserContext } from '../../../../context/UserProvider';
 
 const MyProduct = () => {
     const user = useContext(UserContext);
     const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch(
-            `http://localhost:5000/sellerorder?email=${user?.user?.email}`
-        )
-            .then((res) => res.json())
-            .then((data) => {
-                setProducts(data);
-            });
-    }, [user]);
-    console.log(products);
+    //    useEffect(() => {
+    //     fetch(
+    //         `http://localhost:5000/sellerorder?email=${user?.user?.email}`
+    //       )
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setProducts(data);
+    //         });
+    //    }, [user]);
+    // react query 
+    const { data, isLoading, error, refetch } = useQuery({
+        queryKey: ["products", user?.user?.email],
+        queryFn: () => {
+            return fetch(
+                `http://localhost:5000/sellerorder?email=${user?.user?.email}`
+            ).then((res) => res.json());
+        },
+    });
+    console.log(data);
 
 
     const handelproducts = (id: any) => {
@@ -22,7 +33,9 @@ const MyProduct = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log("deleted successfully");
+
+                refetch()
+                toast.success("Deleted Successfully");
             });
     }
 
@@ -48,7 +61,7 @@ const MyProduct = () => {
 
                         {
                             // mapo the porduca
-                            products && products.map((product: any) => (
+                            data && data.map((product: any) => (
 
                                 <tr >
                                     <th> 1</th>
@@ -62,11 +75,6 @@ const MyProduct = () => {
                                     
                                     text-white   bg-gradient-to-r from-primary to-secondary   border-none">Click Here</label>
                                     </td>
-
-
-
-
-
 
                                     <td>
 
@@ -92,9 +100,6 @@ const MyProduct = () => {
 
 
                                     </td>
-
-
-
                                     <td>
                                         <td>
                                             <label className="btn bg-gradient-to-r from-red-800 to-red-700 border-none" onClick={() => handelproducts(product._id)} >Delete</label>

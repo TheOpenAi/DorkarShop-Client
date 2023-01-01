@@ -44,7 +44,7 @@ function App() {
             fetch(
               `https://dorkar-shop-server-siamcse.vercel.app/productdetails/${params.id}`
             ),
-          element: <ProductsDetails></ProductsDetails>,
+          element: <ProductsDetails></ProductsDetails> ,
         },
         {
           path: "/sinlgecategories/:id",
