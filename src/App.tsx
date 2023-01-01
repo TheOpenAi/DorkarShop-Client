@@ -25,6 +25,7 @@ import SingleCategories from "./Components/Pages/Home/Categories/SingleCategorie
 import Contact from "./Components/Pages/Contact/Contact";
 import Payment from "./Components/Payment/Payment";
 import PaymentFail from "./Components/Payment/PaymentFail";
+import UserDashboard from "./Components/Pages/Dashboard/Dashboard/UserDashboard";
 
 function App() {
   const route = createBrowserRouter([
@@ -66,12 +67,13 @@ function App() {
       path: "/dashboard",
       element: (
         <PrivateRoutes>
-          {" "}
+         
           <Dashboard></Dashboard>
         </PrivateRoutes>
       ),
 
-      children: [
+      children: [ 
+        { path: "/dashboard/", element: <UserDashboard></UserDashboard> },
         { path: "/dashboard/addProduct", element: <AddProduct></AddProduct> },
         { path: "/dashboard/allSeller", element: <AllSeller></AllSeller> },
         { path: "/dashboard/allBuyers", element: <AllBuyers></AllBuyers> },

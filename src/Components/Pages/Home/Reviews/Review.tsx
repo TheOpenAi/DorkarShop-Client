@@ -50,7 +50,7 @@ const Review = () => {
                                     <img className="object-contain w-full h-20 mx-auto" src="https://www.seekpng.com/png/detail/99-998528_oneplus-bw-icon-oneplus-6-logo-png.png" alt="" />
                                 </div>
                                 <div className="hidden lg:block">
-                                    <img className="object-contain w-full h-20 mx-auto" src="https://www.seekpng.com/png/detail/99-998528_oneplus-bw-icon-oneplus-6-logo-png.png" alt="" />
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://seeklogo.com/images/H/hewlett-packard-company-logo-4082756A03-seeklogo.com.png" alt="" />
                                 </div>
 
 
