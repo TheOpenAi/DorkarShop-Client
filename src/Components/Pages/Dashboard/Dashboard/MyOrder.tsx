@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../../../context/UserProvider';
 
 const MyOrder = () => {
@@ -32,6 +33,26 @@ const MyOrder = () => {
 
 
         <div>
+                 <div className="text-sm breadcrumbs">
+                <ul>
+                    <li>
+                        <Link to={'/home'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/dashboard'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            dashboard
+                        </Link>
+                    </li>
+                    <li>
+                    
+                        my order
+                    </li>
+                </ul>
+            </div>
             <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>My Orders </h1>
 
             <div className="overflow-x-auto">
