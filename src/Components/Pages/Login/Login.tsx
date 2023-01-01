@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 import toast from 'react-hot-toast';
+import signup from "../../../Assets/121421-login.gif"
 
 const Login = () => {
     const userContext = useContext(UserContext)
@@ -42,8 +43,11 @@ const Login = () => {
     return (
         <div className=' '>
             <section className="bg-white">
-                <div className="">
+                <div className="lg:w-[1150px] mx-auto lg:grid grid-cols-2 gap-0 lg:my-8">
+                    <div>
 
+                        <img className='hidden lg:block lg:w-full h-full mx-auto mt-11  ' src={signup} alt=""></img>
+                    </div>
 
                     <div className="flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
                         <div className="  xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
@@ -102,7 +106,7 @@ const Login = () => {
                                     <div>
                                         <button
                                             type="submit"
-                                            className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-md bg-gradient-to-r from-fuchsia-600 to-blue-600 focus:outline-none hover:opacity-80 focus:opacity-80"
+                                            className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-md bg-gradient-to-r from-primary to-secondary  focus:secondary hover:opacity-80 focus:opacity-80"
                                         >
                                             Login
                                         </button>

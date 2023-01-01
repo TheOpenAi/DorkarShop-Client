@@ -5,39 +5,39 @@ import { UserContext } from '../../../../context/UserProvider';
 
 const MyProduct = () => {
     const user = useContext(UserContext);
- const [products, setProducts] = useState([]);
-//    useEffect(() => {
-//     fetch(
-//         `http://localhost:5000/sellerorder?email=${user?.user?.email}`
-//       )
-//         .then((res) => res.json())
-//         .then((data) => {
-//             setProducts(data);
-//         });
-//    }, [user]);
-// react query 
-  const { data, isLoading, error ,refetch} = useQuery({
-    queryKey: ["products", user?.user?.email],
-    queryFn: () => {
-        return fetch(
-            `http://localhost:5000/sellerorder?email=${user?.user?.email}`
-        ).then((res) => res.json());
-    },
-  });
+    const [products, setProducts] = useState([]);
+    //    useEffect(() => {
+    //     fetch(
+    //         `http://localhost:5000/sellerorder?email=${user?.user?.email}`
+    //       )
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setProducts(data);
+    //         });
+    //    }, [user]);
+    // react query 
+    const { data, isLoading, error, refetch } = useQuery({
+        queryKey: ["products", user?.user?.email],
+        queryFn: () => {
+            return fetch(
+                `http://localhost:5000/sellerorder?email=${user?.user?.email}`
+            ).then((res) => res.json());
+        },
+    });
     console.log(data);
-  
-   
-  const handelproducts = (id:any) => {
-    fetch(`http://localhost:5000/sellerorder/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        
-        refetch()
-        toast.success("Deleted Successfully");
-      });
-  }
+
+
+    const handelproducts = (id: any) => {
+        fetch(`http://localhost:5000/sellerorder/${id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((result) => {
+
+                refetch()
+                toast.success("Deleted Successfully");
+            });
+    }
 
     return (
         <div>
@@ -59,33 +59,56 @@ const MyProduct = () => {
                     </thead>
                     <tbody>
 
-                      {
+                        {
                             // mapo the porduca
-                            data && data.map((product:any) => (
-                               
+                            data && data.map((product: any) => (
+
                                 <tr >
-                                <th> 1</th>
-                                <td><div className="mask mask-squircle w-12 h-12">
-                                    <img src={product.imgUrl} alt="Avatar Tailwind CSS Component" />
-                                </div></td>
-    
-                                <td>{product.model}</td>
-                                <td>
-                                    <label htmlFor="Confirmation-modal" className=" btn 
+                                    <th> 1</th>
+                                    <td><div className="mask mask-squircle w-12 h-12">
+                                        <img src={product.imgUrl} alt="Avatar Tailwind CSS Component" />
+                                    </div></td>
+
+                                    <td>{product.model}</td>
+                                    <td>
+                                        <label htmlFor="Confirmation-modal" className=" btn 
                                     
                                     text-white   bg-gradient-to-r from-primary to-secondary   border-none">Click Here</label>
-                                </td>
-    
-                                <td>Available</td>
-                                <td>
-                                    <td>
-                                        <label className="btn bg-gradient-to-r from-red-800 to-red-700 border-none" onClick={()=>handelproducts(product._id)} >Delete</label>
                                     </td>
-                                </td>
-    
-                            </tr>
+
+                                    <td>
+
+                                        {
+
+                                            product?.paid === "true" &&
+                                            <h1>Already Sold</h1>
+
+
+                                        }
+
+
+                                        {
+
+                                            product?.paid !== "true" &&
+                                            <h1>Available</h1>
+
+
+                                        }
+
+
+
+
+
+                                    </td>
+                                    <td>
+                                        <td>
+                                            <label className="btn bg-gradient-to-r from-red-800 to-red-700 border-none" onClick={() => handelproducts(product._id)} >Delete</label>
+                                        </td>
+                                    </td>
+
+                                </tr>
                             ))
-                      }
+                        }
 
                     </tbody>
                 </table>
