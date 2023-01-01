@@ -45,7 +45,7 @@ const Services = () => {
                                     className="relative circle-check custom-list text-xl"
                                     custom={{ duration: 2 + index }}
                                     variants={scrollAnimation}
-                                    key={feature}
+                                    key={index}
                                     whileHover={{
                                         scale: 1.1,
                                         transition: {

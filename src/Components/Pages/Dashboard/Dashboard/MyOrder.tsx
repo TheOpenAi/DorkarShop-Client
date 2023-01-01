@@ -19,19 +19,14 @@ const MyOrder = () => {
     // react query 
     const { data, isLoading, error, refetch } = useQuery({
         queryKey: ["orders", user?.user?.email],
-        queryFn: () => {
-            return fetch(
-                `http://localhost:5000/orders?email=${user?.user?.email}`
-            ).then((res) => res.json());
+        queryFn: async() => {
+            return fetch(`http://localhost:5000/orders?email=${user?.user?.email}`)
+            .then((res) => res.json());
         },
     });
     console.log(data);
 
-
-
     return (
-
-
         <div>
             <div className="text-sm breadcrumbs">
                 <ul>
@@ -48,84 +43,46 @@ const MyOrder = () => {
                         </Link>
                     </li>
                     <li>
-
                         my order
                     </li>
                 </ul>
             </div>
             <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>My Orders </h1>
-
             <div className="overflow-x-auto">
                 <table className="table w-full">
-
                     <thead>
                         <tr>
-
                             <th>Product Name</th>
                             <th>Price</th>
                             <th>Invoice Id</th>
-
-
-
                             <th>Payment</th>
-
-
                         </tr>
                     </thead>
                     <tbody>
-
                         {
                             // mapo the porduca
                             data && data.map((product: any) => (
-
                                 <tr >
-
-
                                     <td>{product.model}</td>
                                     <td>{product.price}</td>
                                     <td className='text-gray-500'>{product.transectionId
                                     }</td>
-
                                     <td>
-
                                         {
-
                                             product?.paid === true &&
                                             <h1 className='text-green-700 font-extrabold'>Paid</h1>
-
-
                                         }
-
-
                                         {
-
                                             product?.paid === false &&
                                             <h1 className='text-yellow-300 font-extrabold'>Pending</h1>
-
-
                                         }
-
-
-
-
-
                                     </td>
-
-
-
-
                                 </tr>
                             ))
                         }
-
                     </tbody>
                 </table>
             </div>
-
-
-
-
-
         </div>
     );
 };
