@@ -1,27 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useEffect, useState } from 'react';
-import { toast } from 'react-hot-toast';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../../context/UserProvider';
 
 const MyOrder = () => {
     const user = useContext(UserContext);
-    const [orders, setOrders] = useState([]);
-    //    useEffect(() => {
-    //     fetch(
-    //         `http://localhost:5000/sellerorder?email=${user?.user?.email}`
-    //       )
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setProducts(data);
-    //         });
-    //    }, [user]);
-    // react query 
-    const { data, isLoading, error, refetch } = useQuery({
+
+    const { data } = useQuery({
         queryKey: ["orders", user?.user?.email],
-        queryFn: async() => {
-            return fetch(`http://localhost:5000/orders?email=${user?.user?.email}`)
-            .then((res) => res.json());
+        queryFn: async () => {
+            return fetch(`https://dorkar-shop-server-siamcse.vercel.app/orders?email=${user?.user?.email}`)
+                .then((res) => res.json());
         },
     });
     console.log(data);
@@ -62,7 +51,7 @@ const MyOrder = () => {
                         {
                             // mapo the porduca
                             data && data.map((product: any) => (
-                                <tr >
+                                <tr key={product._id}>
                                     <td>{product.model}</td>
                                     <td>{product.price}</td>
                                     <td className='text-gray-500'>{product.transectionId
