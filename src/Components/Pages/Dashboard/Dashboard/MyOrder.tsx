@@ -13,7 +13,6 @@ const MyOrder = () => {
                             <tr>
                                 <th></th>
                                 <th>Image</th>
-
                                 <th> Product Name</th>
                                 <th>Price</th>
                                 <th>Category</th>

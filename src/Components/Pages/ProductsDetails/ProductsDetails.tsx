@@ -69,17 +69,17 @@ const ProductsDetails = () => {
             });
     }, [data]);
     return (
-        <div>
-            <div className="text-xl breadcrumbs w-[90%] mx-auto text-secondary">
+        <div className='lg:w-3/4 mx-auto'>
+            <div className="text-xl breadcrumbs w-[100%] mx-auto text-secondary">
                 <ul>
                     <li><Link to={'/home'}> Home</Link></li>
                     <li><Link to={`/sinlgecategories/${category}`}> Category</Link></li>
                     <li><Link to={'/home'}> {model} </Link></li>
                 </ul>
             </div>
-            <div className="w-[310px] h-[5px]  ml-[5%] bg-secondary "></div>
+            <div className="w-[310px] h-[5px]   bg-secondary "></div>
             <hr />
-            <div className='m-5 bg-white  font-sanserif'>
+            <div className=' mt-5 bg-white  font-sanserif'>
                 <div className="container lg:grid lg:grid-cols-2 gap-6 w-[99%] mx-auto">
                     <div>
                         <img src={picture ? picture : imgUrl} alt="product" className=" mx-auto"></img>

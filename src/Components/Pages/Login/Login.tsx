@@ -28,12 +28,16 @@ const Login = () => {
             }),
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(data => {  
+              if (data) {
+              
                 toast.success("Login successful")
                 localStorage.setItem('loggedUser', JSON.stringify(data));
                 userContext?.setLoading(false);
                 navigate(from, { replace: true });
+              }else{
+                toast.error("Login failed")
+              }
             })
             .catch(err => {
                 // console.log(err)
