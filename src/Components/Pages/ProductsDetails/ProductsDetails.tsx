@@ -154,25 +154,21 @@ const ProductsDetails = () => {
                 <div className="flex gap-1 text-sm text-yellow-400">
                   <span>
                     <i>
-                      {" "}
                       <FaStar></FaStar>
                     </i>
                   </span>
                   <span>
                     <i>
-                      {" "}
                       <FaStar></FaStar>
                     </i>
                   </span>
                   <span>
                     <i>
-                      {" "}
                       <FaStar></FaStar>
                     </i>
                   </span>
                   <span>
                     <i>
-                      {" "}
                       <FaStar></FaStar>
                     </i>
                   </span>
