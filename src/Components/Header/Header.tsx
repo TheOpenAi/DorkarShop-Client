@@ -29,7 +29,7 @@ const Header = () => {
         })
     }
 
-  }, [user?.user?.email,user?.refresh]);
+  }, [user?.user?.email, user?.refresh]);
 
   return (
     <>
@@ -132,7 +132,7 @@ const Header = () => {
                   <Link to={"/about"}> About</Link>
                 </li>
                 <li>
-                  <Link to={"/contact"}> Contract </Link>
+                  <Link to={"/contact"}> Contact </Link>
                 </li>
 
                 {user?.user?.email ? (
@@ -183,15 +183,38 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="indicator lg:hidden">
-                <span className="indicator-item badge badge-error">{cartProducts?.length}</span>
+              <div>
+                <div className="indicator lg:hidden">
+                  <span className="indicator-item badge badge-error">{cartProducts?.length}</span>
+                  <button
+                    type="button"
+                    className="flex items-center justify-center ml-auto text-white bg-black rounded-full w-9 h-9"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
                 <button
                   type="button"
-                  className="flex items-center justify-center ml-auto text-white bg-black rounded-full w-9 h-9"
-                  onClick={() => setIsOpen(!isOpen)}
+                  className="inline-flex p-2 ml-5 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
+                  onClick={() => setNavbarOpen(!navbarOpen)}
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-6 h-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -201,32 +224,11 @@ const Header = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      d="M4 6h16M4 12h16m-7 6h7"
                     />
                   </svg>
                 </button>
               </div>
-
-              <button
-                type="button"
-                className="inline-flex p-2 ml-5 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
-                onClick={() => setNavbarOpen(!navbarOpen)}
-              >
-                <svg
-                  className="w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              </button>
 
               <div className="hidden lg:flex lg:items-center lg:space-x-10  ">
                 {/* <form>
