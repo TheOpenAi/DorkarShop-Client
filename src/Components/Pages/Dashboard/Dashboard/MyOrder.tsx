@@ -33,7 +33,7 @@ const MyOrder = () => {
 
 
         <div>
-                 <div className="text-sm breadcrumbs">
+            <div className="text-sm breadcrumbs">
                 <ul>
                     <li>
                         <Link to={'/home'}>
@@ -48,7 +48,7 @@ const MyOrder = () => {
                         </Link>
                     </li>
                     <li>
-                    
+
                         my order
                     </li>
                 </ul>
@@ -83,7 +83,7 @@ const MyOrder = () => {
 
                                     <td>{product.model}</td>
                                     <td>{product.price}</td>
-                                    <td>{product.transectionId
+                                    <td className='text-gray-500'>{product.transectionId
                                     }</td>
 
                                     <td>
@@ -91,7 +91,7 @@ const MyOrder = () => {
                                         {
 
                                             product?.paid === true &&
-                                            <h1>Paid</h1>
+                                            <h1 className='text-green-700 font-extrabold'>Paid</h1>
 
 
                                         }
@@ -100,7 +100,7 @@ const MyOrder = () => {
                                         {
 
                                             product?.paid === false &&
-                                            <h1>Pending</h1>
+                                            <h1 className='text-yellow-300 font-extrabold'>Pending</h1>
 
 
                                         }

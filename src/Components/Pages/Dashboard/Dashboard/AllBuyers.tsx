@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaTrashAlt } from 'react-icons/fa';
 
 const AllBuyers = () => {
     const [buyers, setBuyers] = useState<any[]>([]);
@@ -28,7 +29,7 @@ const AllBuyers = () => {
                         </Link>
                     </li>
                     <li>
-                       
+
                         All Buyer
                     </li>
                 </ul>
@@ -61,7 +62,9 @@ const AllBuyers = () => {
                                 text-white bg-gradient-to-r from-primary to-secondary   border-none">Verify</label>
                                     </td>
                                     <td>
-                                        <label htmlFor="Confirmation-modal" className=" btn bg-gradient-to-r from-red-800 to-red-700 border-none">Delete</label>
+
+                                        <FaTrashAlt className=' border-none text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
+
                                     </td>
                                 </tr>)
                             }
