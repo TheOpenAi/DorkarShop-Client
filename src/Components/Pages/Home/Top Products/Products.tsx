@@ -46,7 +46,7 @@ const Products = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 px-4">
                 {data.slice(0, product).map((product: any) => (
                   product?.paid ? null :
-                    <Link to={`/productsdetails/${product._id}`}>
+                    <Link key={product._id} to={`/productsdetails/${product._id}`}>
                       <div
                         data-aos="fade-up"
                         className="w-[100%] h-[90%] mx-auto"

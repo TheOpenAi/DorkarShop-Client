@@ -17,7 +17,7 @@ const Payment = () => {
 
     const [order, setOrder]: any = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/by-transaction-id/${transectionId}`)
+        fetch(`https://dorkar-shop-server-siamcse.vercel.app/orders/by-transaction-id/${transectionId}`)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, [transectionId])
@@ -32,17 +32,9 @@ const Payment = () => {
         )
     }
 
-
-
-
     return (
         <div>
-
-
-
             <div className=" ">
-
-
                 <div className="bg-white p-6  md:mx-auto">
                     <svg viewBox="0 0 24 24" className="text-green-600 w-16 h-16 mx-auto my-6">
                         <path fill="currentColor"
@@ -56,20 +48,15 @@ const Payment = () => {
                         <p className="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
                         <p> Have a great day!  </p>
                         <div className="py-10 text-center">
-
-
                             <a href="/" className=" text-white font-semibold py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary print:hidden ">
                                 GO BACK TO HOME
                             </a>
-
                             <div >
                                 <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>Order Summery</h1>
                                 <div className="overflow-x-auto">
                                     <table className="table w-full">
                                         <thead>
                                             <tr>
-
-
                                                 <th>Invoice ID</th>
                                                 <th>Product Name</th>
                                                 <th>Category</th>
@@ -78,10 +65,7 @@ const Payment = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-
                                             <tr  >
-
-
                                                 <td>{order._id}</td>
                                                 <td>{order.model}</td>
                                                 <td>{order.category}</td>
@@ -89,38 +73,20 @@ const Payment = () => {
                                                 <td>
                                                     Paid
                                                 </td>
-
                                             </tr>
-
-
                                         </tbody>
                                     </table>
-
-
-
                                 </div>
-
                             </div>
                         </div>
                         <button onClick={() => window.print()} className=' text-white font-semibold py-3 px-6 text-center rounded-xl transition bg-gradient-to-r from-primary to-secondary  focus:secondary print:hidden '>Print</button>
-
-
                         <div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
             <div>
-
-
-
-
-
             </div>
-
-
             <Footer></Footer>
         </div>
     );

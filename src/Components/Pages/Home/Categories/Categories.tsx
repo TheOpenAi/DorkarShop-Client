@@ -23,7 +23,7 @@ const Categories = () => {
         setCategories(data);
       });
   }, []);
- 
+
   return (
     <div className="md:w-7/8 xl:w-3/4 pt-24  mx-auto">
       <div className=" items-center justify-center h-auto bg-gray-100 py-5">
@@ -64,10 +64,9 @@ const Categories = () => {
                 className="mySwiper bg-gray-100"
               >
                 {categories.map((category, idx) => (
-                  <SwiperSlide className="m-2 mx-auto">
+                  <SwiperSlide key={category._id} className="m-2 mx-auto">
                     <div className=" grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-5 xl:gap-10  px-4 bg-gray-100">
                       <Link
-                        key={category._id}
                         to={`/sinlgecategories/${category?.title}`}
                       >
                         <div

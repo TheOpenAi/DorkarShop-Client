@@ -8,19 +8,19 @@ import { FaTrash, FaTrashAlt } from 'react-icons/fa'
 
 const MyProduct = () => {
     const user = useContext(UserContext);
-  
+
     const { data, isLoading, error, refetch } = useQuery({
         queryKey: ["products", user?.user?.email],
-        queryFn: () => {
+        queryFn: async () => {
             return fetch(
-                `http://localhost:5000/sellerorder?email=${user?.user?.email}`
+                `https://dorkar-shop-server-siamcse.vercel.app/sellerorder?email=${user?.user?.email}`
             ).then((res) => res.json());
         },
     });
-  
-    
-    const handelproducts = (id: any) => {
-        fetch(`http://localhost:5000/sellerorder/${id}`, {
+
+
+    const handleProducts = (id: any) => {
+        fetch(`https://dorkar-shop-server-siamcse.vercel.app/sellerorder/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -119,7 +119,7 @@ const MyProduct = () => {
                                     </td>
                                     <td>
                                         <td>
-                                            <FaTrashAlt onClick={() => handelproducts(product._id)} className='text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
+                                            <FaTrashAlt onClick={() => handleProducts(product._id)} className='text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
 
                                             {/* <img className='cursor-pointer' onClick={() => handelproducts(product._id)} src={trash} alt="" /> */}
 
