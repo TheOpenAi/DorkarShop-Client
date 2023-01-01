@@ -28,69 +28,7 @@ const Products = () => {
   return (
 
     <>   
-     <div>
-      <div className="flex items-center justify-center h-auto bg-gray-100 pt-20">
-        <div className="flex flex-col">
-
-          <div className="flex flex-wrap justify-center text-center mb-10">
-            <div className="w-full lg:w-6/12 px-4">
-
-              <h1 className="text-accent text-4xl font-bold mb-8">
-
-                Our Top <span className='text-secondary'> Products</span>
-              </h1>
-
-            </div>
-          </div>
-
-
-          <div className="">
-            <div className="container">
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 px-4"
-              >
-                {
-                  data.map((product: any) => (
-
-                    <Link to={`/productsdetails/${product._id}`}>
-                      <div data-aos='fade-up' className='w-[99%] h-[90%] mx-auto'
-                        data-aos-duration='1000'
-                        data-aos-delay='80'>
-                        <div key={product._id} className="w-[100%] h-[100%] bg-base-100 cursor-pointer shadow-lg hover:scale-110 transition-transform hover:shadow-accent " >
-                          <img src={product.imgUrl} alt="" className='w-full' />
-                          <div className="mx-3 h-28">
-                            <h2 className="card-title text-xl mt-2">{product?.model}</h2>
-
-                            <h2 className="text-2xl text-left "> ${product?.price}</h2>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </Link>
-                  ))
-                }
-              </div>
-            </div>
-          </div>
-
-
-          <div className="flex flex-wrap justify-center text-center mb-24">
-            <div className="w-full lg:w-6/12 px-4">
-
-              <h1 className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8">
-
-                See All..
-              </h1>
-
-
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
+   
 
       <div className="">
         <div className="container">

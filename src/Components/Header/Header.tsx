@@ -282,7 +282,7 @@ const Header = () => {
                     <input
                       type="search"
                       id="default-search"
-                      className=" bg-[#F3F4F6] block w-full p-4 pl-10 text-sm text-gray-900  "
+                      className=" bg-[#F3F4F6] block w-full p-4 pl-10 text-sm text-gray-900 "
                       placeholder="Search Prodcuts, "
                       required
                     ></input>
