@@ -60,7 +60,7 @@ function App() {
         {
           path: "/payment/fail", element: <PaymentFail></PaymentFail>
         }
-      ],
+      ]
     },
     {
       path: "/dashboard",

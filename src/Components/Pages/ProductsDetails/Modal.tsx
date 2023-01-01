@@ -67,7 +67,7 @@ const Modal = (props: any) => {
                                 <input className='btn btn-info w-full' value="Cancel" onClick={() => setModaldata(null)} />
                             </form></> :
                             <>
-                                <h1 className='text-2xl my-10'> Please Login to Order </h1>
+                                <h1 className='text-2xl my-10 '> Please Login to Order </h1>
                                 <Link to={'/login'} className="text-white  
                                  bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "> Login Now  </Link>
                                 <input className='btn btn-info w-full mt-10' value="Cancel" onClick={() => setModaldata(null)} />

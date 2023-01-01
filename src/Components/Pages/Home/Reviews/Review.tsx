@@ -6,364 +6,63 @@ const Review = () => {
 
 
 
-        <section className="bg-gray-100 w-3/4 mx-auto">
-            <div
-                className="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 lg:pr-0"
-            >
-                <div
-                    className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16"
-                >
-                    <div className="max-w-xl text-center sm:text-left">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                            Don't just take our word for it...
-                            <br className="hidden sm:block lg:hidden" />
-                            Read reviews from our customers
-                        </h2>
-
-                        <p className="mt-4 text-gray-500">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
-                            veritatis illo placeat harum porro optio fugit a culpa sunt id!
-                        </p>
-
-                        <div className="hidden lg:mt-8 lg:flex lg:gap-4">
-                            <button
-                                className="prev-button rounded-full border border-primary p-3 text-secondary hover:bg-primary hover:text-white"
-                            >
-                                <span className="sr-only">Previous Slide</span>
-                                <svg
-                                    className="h-5 w-5 -rotate-180 transform"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9 5l7 7-7 7"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                    />
-                                </svg>
-                            </button>
-
-                            <button
-                                className="next-button rounded-full border border-primary p-3 text-secondary hover:bg-primary hover:text-white"
-                            >
-                                <span className="sr-only">Next Slide</span>
-                                <svg
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9 5l7 7-7 7"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                    />
-                                </svg>
-                            </button>
+        <div>
+            <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
+                <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    <div className="grid items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 sm:gap-x-12 gap-y-12">
+                        <div className="lg:col-span-2">
+                            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
+                                1 Shop.<br />
+                                6+ years.<br />
+                                300+ Company Trust Us .<br />
+                            </h2>
+                            <p className="mt-6 text-base text-gray-600">
+                            We understand that building trust with our customers is of the utmost importance. We strive to consistently provide high-quality products and services, transparent communication, and reliable support to earn and maintain your trust.</p>
                         </div>
-                    </div>
 
-                    <div className="-mx-6 lg:col-span-2 lg:mx-0">
-                        <div className="swiper-container !overflow-hidden">
-                            <div className="swiper-wrapper">
-                                <div className="swiper-slide">
-                                    <blockquote
-                                        className="flex h-full flex-col justify-between bg-white p-12"
-                                    >
-                                        <div>
-                                            <div className="flex gap-0.5 text-green-500">
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-                                            </div>
-
-                                            <div className="mt-4">
-                                                <p className="text-2xl font-bold text-pink-600 sm:text-3xl">
-                                                    Stayin' Alive
-                                                </p>
-
-                                                <p className="mt-4 leading-relaxed text-gray-500">
-                                                    No, Rose, they are not breathing. And they have no arms or
-                                                    legs … Where are they? You know what? If we come across
-                                                    somebody with no arms or legs, do we bother resuscitating
-                                                    them? I mean, what quality of life do we have there?
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <footer className="mt-8 text-sm text-gray-500">
-                                            &mdash; Michael Scott
-                                        </footer>
-                                    </blockquote>
+                        <div className="lg:col-span-3 xl:col-span-4">
+                            <div className="grid items-center max-w-4xl grid-cols-2 mx-auto lg:grid-cols-4 gap-x-10 gap-y-16">
+                                <div>
+                                    <img className="object-contain w-full h-8 mx-auto" src="https://seeklogo.com/images/W/walton-logo-8655B6D7F3-seeklogo.com.png" alt="" />
                                 </div>
 
-                                <div className="swiper-slide">
-                                    <blockquote
-                                        className="flex h-full flex-col justify-between bg-white p-12"
-                                    >
-                                        <div>
-                                            <div className="flex gap-0.5 text-green-500">
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-                                            </div>
-
-                                            <div className="mt-4">
-                                                <p className="text-2xl font-bold text-pink-600 sm:text-3xl">
-                                                    Stayin' Alive
-                                                </p>
-
-                                                <p className="mt-4 leading-relaxed text-gray-500">
-                                                    rewqrwer, Rofsdfsadse, they are not breathing. And they have no arms or
-                                                    legs … Where are they? You know what? If we come across
-                                                    somebody with no arms or legs, do we bother resuscitating
-                                                    them? I mean, what quality of life do we have there?
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <footer className="mt-8 text-sm text-gray-500">
-                                            &mdash; Michael Scott
-                                        </footer>
-                                    </blockquote>
+                                <div>
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://www.freepnglogos.com/uploads/samsung-logo-text-png-1.png" alt="" />
                                 </div>
 
-                                <div className="swiper-slide">
-                                    <blockquote
-                                        className="flex h-full flex-col justify-between bg-white p-12"
-                                    >
-                                        <div>
-                                            <div className="flex gap-0.5 text-green-500">
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-                                            </div>
-
-                                            <div className="mt-4">
-                                                <p className="text-2xl font-bold text-pink-600 sm:text-3xl">
-                                                    Stayin' Alive
-                                                </p>
-
-                                                <p className="mt-4 leading-relaxed text-gray-500">
-                                                    No, Rose, they are not breathing. And they have no arms or
-                                                    legs … Where are they? You know what? If we come across
-                                                    somebody with no arms or legs, do we bother resuscitating
-                                                    them? I mean, what quality of life do we have there?
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <footer className="mt-8 text-sm text-gray-500">
-                                            &mdash; Michael Scott
-                                        </footer>
-                                    </blockquote>
+                                <div>
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-3.png" alt="" />
                                 </div>
+
+                                <div>
+                                    <img className="object-contain w-full mx-auto h-10" src="https://w7.pngwing.com/pngs/359/511/png-transparent-laptop-%E5%8D%8E%E7%A1%95-asus-logo-laptop-electronics-text-logo.png" alt="" />
+                                </div>
+
+                                <div className="hidden lg:block">
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://seeklogo.com/images/P/pran-logo-416D020A91-seeklogo.com.png" alt="" />
+                                </div>
+
+                                <div className="hidden lg:block">
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://img.favpng.com/20/22/10/kabel-eins-classics-cable-television-logo-png-favpng-pLg6bZq9gfd8rktAnRGSaHzQh.jpg" alt="" />
+                                </div>
+
+                                <div className="hidden lg:block">
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://www.seekpng.com/png/detail/99-998528_oneplus-bw-icon-oneplus-6-logo-png.png" alt="" />
+                                </div>
+                                <div className="hidden lg:block">
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://www.seekpng.com/png/detail/99-998528_oneplus-bw-icon-oneplus-6-logo-png.png" alt="" />
+                                </div>
+
+
+
                             </div>
+
+
                         </div>
                     </div>
                 </div>
-
-                <div className="mt-8 flex justify-center gap-4 lg:hidden">
-                    <button
-                        aria-label="Previous slide"
-                        className="prev-button rounded-full border border-pink-600 p-4 text-pink-600 hover:bg-pink-600 hover:text-white"
-                    >
-                        <svg
-                            className="h-5 w-5 -rotate-180 transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M9 5l7 7-7 7"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                            />
-                        </svg>
-                    </button>
-                    
-                    <button
-                        aria-label="Next slide"
-                        className="next-button rounded-full border border-pink-600 p-4 text-pink-600 hover:bg-pink-600 hover:text-white"
-                    >
-                        <svg
-                            className="h-5 w-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M9 5l7 7-7 7"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                            />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
 
     );
