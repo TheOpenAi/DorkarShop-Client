@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className=''>
-            <footer className="footer bg-base-200 px-10 py-10">
+        <div className='print:hidden'>
+            <footer className="footer bg-base-200 px-10 py-10  ">
                 <div>
 
-                
+
                 </div>
                 <div className=''>
                     <span className="footer-title">FOLLOW US ON</span>

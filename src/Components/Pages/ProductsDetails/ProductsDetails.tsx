@@ -1,19 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { FaStar, FaFacebook,FaHandPointRight, FaInstagram, FaTwitter, FaCartPlus, FaMoneyBillAlt } from "react-icons/fa";
+import { FaStar, FaFacebook, FaHandPointRight, FaInstagram, FaTwitter, FaCartPlus, FaMoneyBillAlt } from "react-icons/fa";
 import { useLoaderData } from 'react-router';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 import Modal from './Modal';
+import Related from './Related';
 
 const ProductsDetails = () => {
     const userContext = useContext(UserContext);
     const data: any = useLoaderData();
 
     const { _id, model, price, details, imgUrl, category, brand } = data;
-    console.log(data);
-    const initialPicture = imgUrl
-    const [picture, setpicture] = React.useState(initialPicture)
+
+
+    const [picture, setpicture] = React.useState(null)
     const handle = (e: any) => {
         setpicture(e.target.src)
     }
@@ -51,20 +53,43 @@ const ProductsDetails = () => {
             .catch(e => console.log(e))
     }
     const [modal, setModaldata] = useState(null);
+    const [related, setRelated] = useState([]);
+    useEffect(() => {
 
+        fetch(
+            `https://dorkar-shop-server-siamcse.vercel.app/products/${data.category}`
+        ).then((res) => res.json())
+            .then((data) => {
+                // filter out the current product
+                const filtered = data.filter((item: any) => item._id !== _id);
+                // get the first 4 itemsse
+                const related = filtered.slice(0, 4);
+                setRelated(related);
+
+            });
+    }, [data]);
     return (
         <div>
-            <div className='m-10 bg-white  font-sanserif'>
+            <div className="text-xl breadcrumbs w-[90%] mx-auto text-secondary">
+                <ul>
+                    <li><Link to={'/home'}> Home</Link></li>
+                    <li><Link to={`/sinlgecategories/${category}`}> Category</Link></li>
+                    <li><Link to={'/home'}> {model} </Link></li>
+                </ul>
+            </div>
+            <div className="w-[310px] h-[5px]  ml-[5%] bg-secondary "></div>
+            <hr />
+            <div className='m-5 bg-white  font-sanserif'>
                 <div className="container lg:grid lg:grid-cols-2 gap-6 w-[99%] mx-auto">
                     <div>
-                        <img src={picture} alt="product" className=" mx-auto"></img>
+                        <img src={picture ? picture : imgUrl} alt="product" className=" mx-auto"></img>
                         <div className="grid grid-cols-3 gap-4 mx-10 mt-10">
 
-                            <img src={initialPicture} alt="product2"
+                            <img src={imgUrl} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
-                            <img src={initialPicture} alt="product2"
+                            <img src={imgUrl} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
-                            <img src={initialPicture} alt="product2"
+                            <img src={imgUrl} alt="product2"
                                 className="w-full cursor-pointer " onClick={handle}></img>
 
                         </div>
@@ -89,9 +114,9 @@ const ProductsDetails = () => {
                             </p>
                         </div>
                         <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4  border-t-[2px] border-t-gray-400 justify-evenly m-5 p-5 ">
-                            <div className='flex ' > 
-                            <p className="text-2xl text-primary font-semibold"> $ {price}</p>
-                            <p className="text-base text-gray-400 line-through">$55.00</p>
+                            <div className='flex ' >
+                                <p className="text-2xl text-primary font-semibold"> $ {price}</p>
+                                <p className="text-base text-gray-400 line-through">$55.00</p>
                             </div>
                             <p className="text-gray-800 font-semibold space-x-2">
                                 <span>Availability: </span>
@@ -104,6 +129,7 @@ const ProductsDetails = () => {
                                     <span><i > <FaStar></FaStar></i></span>
                                     <span><i > <FaStar></FaStar></i></span>
 
+
                                 </div>
                                 <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
                             </div>
@@ -114,13 +140,13 @@ const ProductsDetails = () => {
                         <p className="mt-4 text-gray-600">{details}</p>
                         <ul className='text-left m-5 font-semibold text-accent'>
                             {data.bullet ? <>
-                                
+
                                 {
                                     data.bullet?.map((e: any, i: any) => <li key={i} className="flex items-center p-1">
-                                       <FaHandPointRight className='mx-2 text-primary'/>  {e}
-                                   </li>)
+                                        <FaHandPointRight className='mx-2 text-primary' />  {e}
+                                    </li>)
                                 }
-                            </>: <></>}
+                            </> : <></>}
                         </ul>
 
                         <div className="pt-4 lg:w-[30%] mx-auto w-[50%]" >
@@ -168,11 +194,11 @@ const ProductsDetails = () => {
                         <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5 items-center justify-center">
 
                             < button onClick={() => setModaldata(data)}
-                             className=" text-xl text-white  right-2.5 bottom-2.5
+                                className=" text-xl text-white  right-2.5 bottom-2.5
                              bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg  px-4 py-2 2  uppercase 
-                             flex items-center gap-2 hover:bg-transparent  transition"> 
-                             <FaMoneyBillAlt> </FaMoneyBillAlt>
-                             <label htmlFor="my-modal">Book Now</label></button>
+                             flex items-center gap-2 hover:bg-transparent  transition">
+                                <FaMoneyBillAlt> </FaMoneyBillAlt>
+                                <label htmlFor="my-modal">Book Now</label></button>
 
 
                             <button onClick={() => handleAddToCart(_id)}
@@ -219,61 +245,19 @@ const ProductsDetails = () => {
              */}
 
 
-                {/* <h1 className='text-2xl'> this is a Review </h1>
-            
-                <div className="container mx-auto pb-16">
+                {/* <h1 className='text-2xl'> this is a Review </h1> */}
+
+                <div className="container mx-auto lg:p-16">
                     <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Related products</h2>
-                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img src="https://i.ibb.co/hsP0XQw/61779b485e784ee5e1620a21-Image-png.png" alt="product 1" className="w-[50%] mx-auto"></img>
-                                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                    <a href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product">
-                                        <i className="fa-solid fa-magnifying-glass">
-                                            cart</i>
-                                    </a>
-                                    <a href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist">
-                                        <i className="fa-solid fa-heart">
-                                            Wish
-                                        </i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">Guyer
-                                        Chair</h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span><i > <FaStar></FaStar> </i></span>
-                                        <span><i > <FaStar></FaStar> </i></span>
-                                        <span><i > <FaStar></FaStar> </i></span>
-                                        <span><i > <FaStar></FaStar> </i></span>
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-10">
+                        {
+                            related.map(product => <Related product={product} setpicture={setpicture}></Related>)
 
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">
-                                Add
-                                to cart
-                            </a>
-                        </div>
-
+                        }
 
                     </div>
-                </div> */}
+
+                </div>
             </div>
             {
                 modal && <Modal modal={modal} setModaldata={setModaldata}></Modal>
