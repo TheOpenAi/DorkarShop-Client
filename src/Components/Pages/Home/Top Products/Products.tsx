@@ -27,23 +27,34 @@ const Products = () => {
   }
   return (
 
-    <>   
-   
+    <>
+      <div>
+        <div className="flex items-center justify-center h-auto bg-gray-100 pt-20">
+          <div className="flex flex-col">
 
-      <div className="">
-        <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5  px-4">
+            <div className="flex flex-wrap justify-center text-center mb-10">
+              <div className="w-full lg:w-6/12 px-4">
+
+                <h1 className="text-accent text-4xl font-bold mb-8">
+
+                  Our Top <span className='text-secondary'>Products</span>
+                </h1>
+
+              </div>
+            </div>
+            <div className="w-full  mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 px-4">
             {data.slice(0, product).map((product: any) => (
               <Link to={`/productsdetails/${product._id}`}>
                 <div
                   data-aos="fade-up"
                   className="w-[100%] h-[90%] mx-auto"
                   data-aos-duration="1000"
-                  data-aos-delay="80"
+                  data-aos-delay="100"
                 >
                   <div
                     key={product._id}
-                    className="w-[100%] h-36  bg-base-100 cursor-pointer shadow-lg rounded hover:scale-110 transition-transform hover:shadow-accent flex  items-center p-2"
+                    className="w-[100%] h-36  bg-base-100 cursor-pointer shadow-lg rounded hover:scale-110 transition duration-700 hover:shadow-accent flex  items-center p-2"
                   >
                     <img
                       src={product.imgUrl}
@@ -64,9 +75,8 @@ const Products = () => {
             ))}
           </div>
         </div>
-      </div>
 
-      <div className="flex flex-wrap justify-center text-center ">
+        <div className="flex flex-wrap justify-center text-center ">
         <div className="w-full lg:w-6/12 px-4">
           <h1
             onClick={() => setProduct(product + 10)}
@@ -76,9 +86,17 @@ const Products = () => {
           </h1>
         </div>
       </div>
-    
 
-</>
+          </div>
+        </div>
+      </div>
+
+      
+
+   
+
+
+    </>
   );
 };
 
