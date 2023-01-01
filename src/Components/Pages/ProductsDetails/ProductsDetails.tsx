@@ -19,6 +19,7 @@ import Related from "./Related";
 const ProductsDetails = () => {
   const userContext = useContext(UserContext);
   const data: any = useLoaderData();
+
   const { _id, model, price, details, imgUrl, category, brand } = data;
 
   const [picture, setpicture] = React.useState(null);
@@ -283,23 +284,15 @@ const ProductsDetails = () => {
                         </div> */}
 
             <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5 items-center justify-center">
-              {userContext?.user?.email ? (
-                <>
-                  (
-                  <button
-                    onClick={() => setModaldata(data)}
-                    className=" text-xl text-white  right-2.5 bottom-2.5
-                            bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg  px-4 py-2 2  uppercase 
-                            flex items-center gap-2 hover:bg-transparent  transition"
-                  >
-                    <FaMoneyBillAlt> </FaMoneyBillAlt>
-                    <label htmlFor="my-modal">Book Now</label>
-                  </button>
-                  : )
-                </>
-              ) : (
-                <button>Without Login</button>
-              )}
+              <button
+                onClick={() => setModaldata(data)}
+                className=" text-xl text-white  right-2.5 bottom-2.5
+                             bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg  px-4 py-2 2  uppercase 
+                             flex items-center gap-2 hover:bg-transparent  transition"
+              >
+                <FaMoneyBillAlt> </FaMoneyBillAlt>
+                <label htmlFor="my-modal">Book Now</label>
+              </button>
 
               <button
                 onClick={() => handleAddToCart(_id)}
