@@ -22,6 +22,7 @@ const ProductsDetails = () => {
 
     const handleAddToCart = (id: any) => {
         console.log(id);
+        
         const cart = {
             model,
             email: userContext?.user?.email,
@@ -48,6 +49,7 @@ const ProductsDetails = () => {
                     toast.success(
                         `Your booking is ${model} successful. Please go to Go to Cart and pay for confirm.`
                     );
+                    userContext?.setRefresh(!userContext?.refresh);
                 }
             })
             .catch(e => console.log(e))
@@ -251,7 +253,7 @@ const ProductsDetails = () => {
                     <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Related products</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-10">
                         {
-                            related.map(product => <Related product={product} setpicture={setpicture}></Related>)
+                            related.map((product, i) => <Related key={i} product={product} setpicture={setpicture}></Related>)
 
                         }
 
