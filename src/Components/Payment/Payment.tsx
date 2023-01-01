@@ -3,6 +3,7 @@ import Footer from '../Pages/Footer/Footer';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PaymentFail from './PaymentFail';
+import NoProductFound from './NoProductFound';
 
 
 const Payment = () => {
@@ -26,7 +27,7 @@ const Payment = () => {
     if (!order?._id) {
         return (
             <div>
-                <PaymentFail></PaymentFail>
+                <NoProductFound></NoProductFound>
             </div>
         )
     }

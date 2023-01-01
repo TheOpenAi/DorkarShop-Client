@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { UserContext } from '../../../../context/UserProvider';
 import Header from '../../../Header/Header';
 
 const Dashboard = () => {
+    const user = useContext(UserContext);
     return (
         <div>
             <div>
                 <Header></Header>
-
+        
                 <div className="drawer drawer-mobile">
                     <input id="dashboard-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content  ">
                         <Outlet></Outlet>
-
-
-
+                        
                     </div>
                     <div className="drawer-side">
                         <label htmlFor="dashboard-drawer-2" className="drawer-overlay"></label>
@@ -43,26 +43,6 @@ const Dashboard = () => {
                                 <li><Link to='/dashboard/allSeller' >All Sellers</Link></li>
 
                                 <li><Link to='/dashboard/allBuyers' >All Buyers</Link></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                             </div>
 

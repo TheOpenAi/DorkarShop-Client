@@ -1,71 +1,133 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../../../context/UserProvider';
 
 const MyOrder = () => {
+    const user = useContext(UserContext);
+    const [orders, setOrders] = useState([]);
+    //    useEffect(() => {
+    //     fetch(
+    //         `http://localhost:5000/sellerorder?email=${user?.user?.email}`
+    //       )
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setProducts(data);
+    //         });
+    //    }, [user]);
+    // react query 
+    const { data, isLoading, error, refetch } = useQuery({
+        queryKey: ["orders", user?.user?.email],
+        queryFn: () => {
+            return fetch(
+                `http://localhost:5000/orders?email=${user?.user?.email}`
+            ).then((res) => res.json());
+        },
+    });
+    console.log(data);
+
+
+
     return (
+
+
         <div>
-            <div>
-                <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Orderss</h1>
+                 <div className="text-sm breadcrumbs">
+                <ul>
+                    <li>
+                        <Link to={'/home'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/dashboard'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            dashboard
+                        </Link>
+                    </li>
+                    <li>
+                    
+                        my order
+                    </li>
+                </ul>
+            </div>
+            <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>My Orders </h1>
 
-                <div className="overflow-x-auto">
-                    <table className="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Image</th>
+                    <thead>
+                        <tr>
 
-                                <th> Product Name</th>
-                                <th>Price</th>
-                                <th>Category</th>
-                                <th>Cancel</th>
-                                <th>Payment</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr >
-                                <th> 1</th>
-                                <td><div className="mask mask-squircle w-12 h-12">
-                                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Avatar Tailwind CSS Component" />
-                                </div></td>
-
-                                <td>Watch</td>
-                                <td>2000</td>
-                                <td>Electronics</td>
-
-
-
-                                <td  >
-
-                                    <label htmlFor="Confirmation-modal" className=" btn 
-                            
-                            text-white   bg-gradient-to-r from-primary to-secondary   border-none">Cancel</label>
-                                </td>
-
-                                <td  >
-
-                                    <label htmlFor="Confirmation-modal" className=" btn 
-
-text-white   bg-gradient-to-r from-primary to-secondary   border-none">Payment</label>
-                                </td>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Invoice Id</th>
 
 
 
+                            <th>Payment</th>
 
-                            </tr>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            // mapo the porduca
+                            data && data.map((product: any) => (
+
+                                <tr >
 
 
-                        </tbody>
-                    </table>
-                </div>
+                                    <td>{product.model}</td>
+                                    <td>{product.price}</td>
+                                    <td>{product.transectionId
+                                    }</td>
 
+                                    <td>
+
+                                        {
+
+                                            product?.paid === true &&
+                                            <h1>Paid</h1>
+
+
+                                        }
+
+
+                                        {
+
+                                            product?.paid === false &&
+                                            <h1>Pending</h1>
+
+
+                                        }
+
+
+
+
+
+                                    </td>
+
+
+
+
+                                </tr>
+                            ))
+                        }
+
+                    </tbody>
+                </table>
             </div>
 
-        </div >
+
+
+
+
+        </div>
     );
 };
 
 export default MyOrder;
-
-

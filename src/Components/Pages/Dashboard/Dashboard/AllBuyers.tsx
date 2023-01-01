@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const AllBuyers = () => {
     const [buyers, setBuyers] = useState<any[]>([]);
@@ -12,7 +13,26 @@ const AllBuyers = () => {
     }, []);
     return (
         <div>
-
+            <div className="text-sm breadcrumbs">
+                <ul>
+                    <li>
+                        <Link to={'/home'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/dashboard'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            dashboard
+                        </Link>
+                    </li>
+                    <li>
+                       
+                        All Buyer
+                    </li>
+                </ul>
+            </div>
             <div>
                 <h1 className='text-4xl text-blue-900 font-bold text-center my-5'>All Buyers</h1>
                 <div className="overflow-x-auto">
