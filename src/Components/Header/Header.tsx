@@ -11,14 +11,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const user = useContext(UserContext);
   const [cartProducts, setProducts] = useState<any[]>([]);
-  console.log(user?.user);
   Aos.init();
 
   const handleLogout = () => {
     user?.setUser(null);
     localStorage.removeItem("loggedUser");
   };
-  console.log(user?.refresh);
 
   useEffect(() => {
     if (user?.user?.email) {
