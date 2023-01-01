@@ -23,7 +23,7 @@ const Categories = () => {
         setCategories(data);
       });
   }, []);
-  console.log(categories);
+ 
   return (
     <div className="md:w-3/4 mx-auto">
       <div className=" items-center justify-center h-auto bg-white pt-24">
