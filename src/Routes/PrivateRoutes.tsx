@@ -11,7 +11,7 @@ const PrivateRoutes = ({ children }: any) => {
         return <Loading/>
     }
 
-    if (userContext?.user) {
+    if (userContext?.user?.email){
         return children;
     }
     return <Navigate to='/login' state={{ from: location }} replace></Navigate>
