@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import Aos from "aos";
-import React from "react";
+import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 
 const Products = () => {
+  const [product, setProduct] = useState(10);
   Aos.init();
   //    use react trant query to fetch data from the server
   const { data = [], isLoading } = useQuery({
@@ -37,7 +38,7 @@ const Products = () => {
           <div className="">
             <div className="container">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5  px-4">
-                {data.map((product: any) => (
+                {data.slice(0, product).map((product: any) => (
                   <Link to={`/productsdetails/${product._id}`}>
                     <div
                       data-aos="fade-up"
@@ -59,8 +60,8 @@ const Products = () => {
                             {product?.model}
                           </h2>
                           <h2 className="mt-2">{product?.price} BDT</h2>
-                          <small className="py-2">Brand:{product?.brand}</small>
-                          <div className="flex items-center mb-4">
+                          <p className="py-2">Brand: {product?.brand}</p>
+                          {/* <div className="flex items-center mb-4">
                             <div className="flex gap-1 text-sm text-yellow-400">
                               <span>
                                 <i>
@@ -83,7 +84,7 @@ const Products = () => {
                                 </i>
                               </span>
                             </div>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -95,7 +96,10 @@ const Products = () => {
 
           <div className="flex flex-wrap justify-center text-center ">
             <div className="w-full lg:w-6/12 px-4">
-              <h1 className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8">
+              <h1
+                onClick={() => setProduct(product + 10)}
+                className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8"
+              >
                 See All..
               </h1>
             </div>
