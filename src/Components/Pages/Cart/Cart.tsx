@@ -9,7 +9,7 @@ import { UserContext } from '../../../context/UserProvider';
 const Cart = (_Props: any) => {
     const userContext = useContext(UserContext);
     const [cartProducts, setProducts] = useState<any[]>([]);
-    const [refresh, setRefresh] = useState<any>(false);
+
     const { setIsOpen } = _Props;
     // set type
     Aos.init();
@@ -23,7 +23,7 @@ const Cart = (_Props: any) => {
                 })
         }
 
-    }, [userContext?.user?.email, refresh]);
+    }, [userContext?.user?.email, userContext?.refresh]);
     console.log(cartProducts);
 
     const handleRemove = (id: any) => {
@@ -35,7 +35,7 @@ const Cart = (_Props: any) => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    setRefresh(!refresh);
+                    userContext?.setRefresh(!userContext?.refresh);
                 }
             })
     }

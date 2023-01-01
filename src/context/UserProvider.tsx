@@ -11,6 +11,8 @@ type UserContextType = {
     setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>
     loading: any
     setLoading: React.Dispatch<any>
+    refresh: any
+    setRefresh: React.Dispatch<any>
 }
 
 type UserContextProviderProps = {
@@ -22,6 +24,7 @@ export const UserContext = createContext<UserContextType | null>(null)
 const UserProvider = ({ children }: UserContextProviderProps) => {
     const [user, setUser] = useState<AuthUser | null>(null)
     const [loading, setLoading] = useState<any>(true);
+    const [refresh, setRefresh] = useState<any>(false);
 
 
     const loggedUser = localStorage.getItem('loggedUser');
@@ -40,7 +43,9 @@ const UserProvider = ({ children }: UserContextProviderProps) => {
         user,
         setUser,
         loading,
-        setLoading
+        setLoading,
+        refresh,
+        setRefresh
     }
 
 

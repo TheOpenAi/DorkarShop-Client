@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import aos
 import Aos from "aos";
@@ -10,6 +10,7 @@ const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const user = useContext(UserContext);
+  const [cartProducts, setProducts] = useState<any[]>([]);
   console.log(user?.user);
   Aos.init();
 
@@ -17,6 +18,18 @@ const Header = () => {
     user?.setUser(null);
     localStorage.removeItem("loggedUser");
   };
+  console.log(user?.refresh);
+
+  useEffect(() => {
+    if (user?.user?.email) {
+      fetch(`https://dorkar-shop-server-siamcse.vercel.app/carts?email=${user?.user?.email}`)
+        .then(res => res.json())
+        .then(data => {
+          setProducts(data);
+        })
+    }
+
+  }, [user?.user?.email,user?.refresh]);
 
   return (
     <>
@@ -243,27 +256,30 @@ const Header = () => {
                   </div>
                 </form> */}
 
-                <Link
-                  to={"#"}
-                  title=""
-                  className="flex items-center justify-center w-10 h-10 text-white bg-gray-500 rounded-full"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    onClick={() => setIsOpen(!isOpen)}
+                <div className="indicator">
+                  <span className="indicator-item badge badge-error">{cartProducts?.length}</span>
+                  <Link
+                    to={"#"}
+                    title=""
+                    className="flex items-center justify-center w-10 h-10 text-white bg-gray-500 rounded-full"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
-                </Link>
+                    <svg
+                      className="w-6 h-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
                 {user?.user?.email && (
                   <label
                     tabIndex={0}
@@ -324,6 +340,9 @@ const Header = () => {
                   </li>
                   <li>
                     <Link to={"/about"}> About</Link>
+                  </li>
+                  <li>
+                    <Link to={"/contact"}> Contact</Link>
                   </li>
                   {user?.user?.email ? (
                     <>
