@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
 import { FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const AllSeller = () => {
     const [sellers, setSellers] = useState<any[]>([]);
@@ -16,7 +15,7 @@ const AllSeller = () => {
     console.log(sellers);
     return (
         <div>
-            <div className="text-sm breadcrumbs">
+            <div className="text-xl  breadcrumbs">
                 <ul>
                     <li>
                         <Link to={'/home'}>
@@ -65,9 +64,7 @@ const AllSeller = () => {
                                 text-white bg-gradient-to-r from-primary to-secondary   border-none">Verify</label>
                                 </td>
                                 <td>
-
                                     <FaTrashAlt className=' border-none text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
-
                                 </td>
                             </tr>)
                         }

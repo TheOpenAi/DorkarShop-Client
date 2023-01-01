@@ -8,17 +8,7 @@ import { FaTrash, FaTrashAlt } from 'react-icons/fa'
 
 const MyProduct = () => {
     const user = useContext(UserContext);
-    const [products, setProducts] = useState([]);
-    //    useEffect(() => {
-    //     fetch(
-    //         `http://localhost:5000/sellerorder?email=${user?.user?.email}`
-    //       )
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setProducts(data);
-    //         });
-    //    }, [user]);
-    // react query 
+  
     const { data, isLoading, error, refetch } = useQuery({
         queryKey: ["products", user?.user?.email],
         queryFn: () => {
@@ -27,9 +17,8 @@ const MyProduct = () => {
             ).then((res) => res.json());
         },
     });
-    console.log(data);
-
-
+  
+    
     const handelproducts = (id: any) => {
         fetch(`http://localhost:5000/sellerorder/${id}`, {
             method: "DELETE",
