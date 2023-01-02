@@ -13,8 +13,10 @@ import Testimonials from "./Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
 import WhyChoseUs from "./WhyChoseUs/WhyChoseUs";
 import Addvertise from "./Advertise/Advertise";
+import useTitle from "../../../hooks/useTitle";
 
 const Home = () => {
+  useTitle('Home');
   return (
     <div >
       <Banner></Banner>
