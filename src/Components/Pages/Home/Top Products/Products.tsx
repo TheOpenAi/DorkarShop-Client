@@ -28,7 +28,7 @@ const Products = () => {
   return (
 
     <>
-      <div className="xl:w-3/4 mx-auto py-5 bg-gray-100 my-20">
+      <div className=" xl:w-3/4 mx-auto py-5 bg-gray-100 my-20">
         <div className="flex items-center justify-center h-auto ">
           <div className="flex flex-col">
 
