@@ -5,6 +5,12 @@ import Aos from "aos";
 
 import Cart from "../Pages/Cart/Cart";
 import { UserContext } from "../../context/UserProvider";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+  FaUserCircle,
+} from "react-icons/fa";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -20,13 +26,14 @@ const Header = () => {
 
   useEffect(() => {
     if (user?.user?.email) {
-      fetch(`https://dorkar-shop-server-siamcse.vercel.app/carts?email=${user?.user?.email}`)
-        .then(res => res.json())
-        .then(data => {
+      fetch(
+        `https://dorkar-shop-server-siamcse.vercel.app/carts?email=${user?.user?.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
           setProducts(data);
-        })
+        });
     }
-
   }, [user?.user?.email, user?.refresh]);
 
   return (
@@ -41,11 +48,33 @@ const Header = () => {
               </h1>
             </a>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <form>
-              <div className="relative rounded-lg">
+          <div className="navbar-center hidden lg:flex pt-2">
+            <input
+              type="text"
+              placeholder="Search Product"
+              className="input border-indigo-500 w-full hover:border-0"
+            />
+            <button className="btn bg-indigo-400">
+              <svg
+                aria-hidden="true"
+                className="w-5 h-5 text-white "
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+            </button>
+            {/* <form>
+              <div className="relative rounded-lg border">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none bg-[#F3F4F6]">
-                  <svg
+                <svg
                     aria-hidden="true"
                     className="w-5 h-5 text-gray-500 "
                     fill="none"
@@ -61,6 +90,7 @@ const Header = () => {
                     ></path>
                   </svg>
                 </div>
+              
                 <input
                   type="search"
                   id="default-search"
@@ -68,50 +98,34 @@ const Header = () => {
                   placeholder="Search "
                   required
                 ></input>
-                <button
-                  type="submit"
-                  className="text-white absolute right-2.5 bottom-2.5
-                                 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
-                >
-                  Search
-                </button>
               </div>
-            </form>
+            </form> */}
           </div>
           <div className="navbar-end">
             <div className="flex gap-4">
               <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current"
+                <button
+                  className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
                 >
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                </svg>
+                  <FaLinkedinIn className="text-blue-600 w-full text-center text-xl" />
+                </button>
               </a>
               <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current"
+                <button
+                  className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
                 >
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                </svg>
+                  <FaTwitter className="text-secondary w-full text-center text-xl" />
+                </button>
               </a>
               <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current"
+                <button
+                  className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
                 >
-                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                </svg>
+                  <FaFacebookF className="text-blue-600 w-full text-center text-xl" />
+                </button>
               </a>
             </div>
           </div>
@@ -136,10 +150,15 @@ const Header = () => {
                 {user?.user?.email ? (
                   <>
                     <li>
-                      <button onClick={handleLogout}> LogOut</button>
+                      <Link to={"/dashboard"}> Dashboard</Link>
                     </li>
                     <li>
-                      <Link to={"/dashboard"}> Dashboard</Link>
+                      <button
+                        className="btn btn-outline"
+                        onClick={handleLogout}
+                      >
+                        LogOut
+                      </button>
                     </li>
                   </>
                 ) : (
@@ -147,9 +166,7 @@ const Header = () => {
                     <li>
                       <Link to={"/login"}> Login</Link>
                     </li>
-                    <li>
-                      <Link to={"/singup"}> Singup</Link>
-                    </li>
+
                     <li>
                       <Link to={"/dashboard"}> {user?.user?.name}</Link>
                     </li>
@@ -178,8 +195,16 @@ const Header = () => {
                       />
                     </label> */}
 
-                    <label htmlFor="dashboard-drawer-2" tabIndex={2} className=" lg:hidden">
-                      <img className='mr-3' src='https://i.ibb.co/0FQ1X8x/icons8-dashboard-layout-48.png' alt='' />
+                    <label
+                      htmlFor="dashboard-drawer-2"
+                      tabIndex={2}
+                      className=" lg:hidden"
+                    >
+                      <img
+                        className="mr-3"
+                        src="https://i.ibb.co/0FQ1X8x/icons8-dashboard-layout-48.png"
+                        alt=""
+                      />
                     </label>
                   </div>
                 </div>
@@ -187,7 +212,9 @@ const Header = () => {
 
               <div>
                 <div className="indicator lg:hidden">
-                  <span className="indicator-item badge badge-error">{cartProducts?.length}</span>
+                  <span className="indicator-item badge badge-error">
+                    {cartProducts?.length}
+                  </span>
                   <button
                     type="button"
                     className="flex items-center justify-center ml-auto text-white bg-black rounded-full w-9 h-9"
@@ -264,7 +291,9 @@ const Header = () => {
                 </form> */}
 
                 <div className="indicator">
-                  <span className="indicator-item badge badge-error">{cartProducts?.length}</span>
+                  <span className="indicator-item badge badge-error">
+                    {cartProducts?.length}
+                  </span>
                   <Link
                     to={"#"}
                     title=""
@@ -292,8 +321,9 @@ const Header = () => {
                     tabIndex={0}
                     className="btn btn-ghost btn-circle avatar"
                   >
-                    <div className="w-10 rounded-full">
-                      <img src="https://placeimg.com/80/80/people" />
+                    <div className="rounded-full">
+                      {/* <img src="https://placeimg.com/80/80/people" /> */}
+                      <FaUserCircle className="text-4xl text-primary"></FaUserCircle>
                     </div>
                   </label>
                 )}
@@ -399,16 +429,16 @@ const Header = () => {
                         type="search"
                         id="default-search"
                         className=" bg-[#F3F4F6] block w-full p-4 pl-10 text-sm text-gray-900  "
-                        placeholder="Search Prodcuts, "
+                        placeholder="Search, "
                         required
                       ></input>
-                      <button
+                      {/* <button
                         type="submit"
                         className="text-white absolute right-2.5 bottom-2.5
                                  bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
                       >
                         Search
-                      </button>
+                      </button> */}
                     </div>
                   </form>
                 </div>
