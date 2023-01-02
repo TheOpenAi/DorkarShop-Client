@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaJediOrder, FaProductHunt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import { UserContext } from '../../../../context/UserProvider';
 import Header from '../../../Header/Header';
@@ -9,29 +10,30 @@ const Dashboard = () => {
     return (
         <div>
             <div>
-                <Header></Header> 
-                 <div className="drawer drawer-mobile">
-                    <input id="dashboard-drawer-2" type="checkbox" className="drawer-toggle" />
+                <Header></Header>
+                <div className="drawer drawer-mobile ">
+                    <input id="dashboard-drawer-2 bg-gray-200" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
                         <Outlet></Outlet>
-                   
+
                     </div>
-                    <div className="drawer-side">
-                        <label htmlFor="dashboard-drawer-2" className="drawer-overlay"></label>
-                        <ul className="menu p-4 w-80 bg-base-100 text-base-content  ">
+                    <div className="drawer-side  ">
+                        <label htmlFor="dashboard-drawer-2" className="drawer-overlay "></label>
+                        <ul className="menu p-4 w-80 bg-gray-100 text-base-content  ">
                             <div className='flex mb-4'>
                                 <div>
                                     <img className='h-14 w-20' src='https://i.ibb.co/0FQ1X8x/icons8-dashboard-layout-48.png' alt='' />
                                 </div>
 
-                                <div>
+                                <div className=''>
                                     <h1 className='my-4 font-bold font-3xl text-blue-900'>Dashboard</h1>
                                 </div>
                             </div>
 
-                            <div className=''>
+                            <div className=' text-xl text-gray-500 font-bold'>
                                 {
                                     user?.user?.role === 'Seller' && <>
+
                                         <li><Link to='/dashboard/addProduct' >Add Product</Link></li>
                                         <li><Link to='/dashboard/myProduct' >My Product</Link></li>
                                     </>
