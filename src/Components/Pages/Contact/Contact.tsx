@@ -5,6 +5,7 @@ import support2 from "../../../Assets/SUPPORT2.webp";
 import con1 from "../../../Assets/contact.png";
 import { toast } from "react-hot-toast";
 import useTitle from "../../../hooks/useTitle";
+import Footer from "../Footer/Footer";
 const Contact = () => {
   const sendEmail = (e: any) => {
     e.preventDefault();
