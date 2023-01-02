@@ -16,7 +16,7 @@ import Addvertise from "./Advertise/Advertise";
 
 const Home = () => {
   return (
-    <div>
+    <div >
       <Banner></Banner>
       <Categories></Categories>
       <WhyChoseUs />

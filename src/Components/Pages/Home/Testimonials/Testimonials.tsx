@@ -26,7 +26,7 @@ const Testimonials = () => {
                             data-aos-duration='1000'
                             data-aos-delay='100'
                         >
-                            <div aria-hidden="true" className="absolute top-0 w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
+                            <div aria-hidden="true" className=" w-full h-full rounded-2xl bg-white shadow-lg transition duration-500 group-hover:scale-105"></div>
 
                             <>
                                 <Swiper
