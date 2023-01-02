@@ -26,6 +26,8 @@ import Contact from "./Components/Pages/Contact/Contact";
 import Payment from "./Components/Payment/Payment";
 import PaymentFail from "./Components/Payment/PaymentFail";
 import UserDashboard from "./Components/Pages/Dashboard/Dashboard/UserDashboard";
+import { NotFoundError } from "framer/build/router";
+import NotFoundPage from "./Components/Pages/NotFoundPage";
 
 function App() {
   const route = createBrowserRouter([
@@ -45,7 +47,7 @@ function App() {
             fetch(
               `https://dorkar-shop-server-siamcse.vercel.app/productdetails/${params.id}`
             ),
-          element: <ProductsDetails></ProductsDetails> ,
+          element: <ProductsDetails></ProductsDetails>,
         },
         {
           path: "/sinlgecategories/:id",
@@ -60,19 +62,27 @@ function App() {
         },
         {
           path: "/payment/fail", element: <PaymentFail></PaymentFail>
-        }
+        },
+
       ]
+
+
     },
+    {
+      path: '/*',
+      element: <NotFoundPage></NotFoundPage>
+    },
+
     {
       path: "/dashboard",
       element: (
         <PrivateRoutes>
-         
+
           <Dashboard></Dashboard>
         </PrivateRoutes>
       ),
 
-      children: [ 
+      children: [
         { path: "/dashboard/", element: <UserDashboard></UserDashboard> },
         { path: "/dashboard/addProduct", element: <AddProduct></AddProduct> },
         { path: "/dashboard/allSeller", element: <AllSeller></AllSeller> },
@@ -80,6 +90,8 @@ function App() {
         { path: "/dashboard/allusers", element: <AllUser></AllUser> },
         { path: "/dashboard/myorder", element: <MyOrder></MyOrder> },
         { path: "/dashboard/myProduct", element: <MyProduct></MyProduct> },
+
+
       ],
     },
   ]);
