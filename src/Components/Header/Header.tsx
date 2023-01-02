@@ -166,7 +166,7 @@ const Header = () => {
                   </div>
 
                   <div>
-                    <label
+                    {/* <label
                       htmlFor="dashboard-drawer-2"
                       tabIndex={2}
                       className="mr-10 lg:hidden"
@@ -176,6 +176,10 @@ const Header = () => {
                         src="https://i.ibb.co/0FQ1X8x/icons8-dashboard-layout-48.png"
                         alt=""
                       />
+                    </label> */}
+
+                    <label htmlFor="dashboard-drawer-2" tabIndex={2} className=" lg:hidden">
+                      <img className='mr-3' src='https://i.ibb.co/0FQ1X8x/icons8-dashboard-layout-48.png' alt='' />
                     </label>
                   </div>
                 </div>
