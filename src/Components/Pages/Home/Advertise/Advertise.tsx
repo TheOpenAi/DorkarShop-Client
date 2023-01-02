@@ -12,12 +12,12 @@ const Addvertise = () => {
       </div>
       <div className="mx-auto" data-aos="zoom-in">
         <figure>
-          <img src='https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_21-1-1-1.jpg' alt="Shoes" />
+          <img src='https://i.ibb.co/CQpFrm5/offer-banner-21.png' alt="Shoes" />
         </figure>
       </div>
       <div className="mx-auto" data-aos="zoom-in">
         <figure>
-          <img src='https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_31-1-1-1.png' alt="Shoes" />
+          <img src='https://i.ibb.co/JnNbGrc/offer-banner-31-1.png' alt="Shoes" />
         </figure>
       </div>
     </div>

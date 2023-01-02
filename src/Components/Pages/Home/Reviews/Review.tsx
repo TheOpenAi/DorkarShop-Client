@@ -43,7 +43,7 @@ const Review = () => {
                                 </div>
 
                                 <div className="hidden lg:block">
-                                    <img className="object-contain w-full h-20 mx-auto" src="https://img.favpng.com/20/22/10/kabel-eins-classics-cable-television-logo-png-favpng-pLg6bZq9gfd8rktAnRGSaHzQh.jpg" alt="" />
+                                    <img className="object-contain w-full h-20 mx-auto" src="https://i.ibb.co/K66sSMG/Png-Item-2491766.png" alt="" />
                                 </div>
 
                                 <div className="hidden lg:block">
