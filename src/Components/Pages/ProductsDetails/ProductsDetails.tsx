@@ -5,12 +5,14 @@ import { FaStar, FaFacebook, FaHandPointRight, FaInstagram, FaTwitter, FaCartPlu
 import { useLoaderData } from 'react-router';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
+import useTitle from '../../../hooks/useTitle';
 import Modal from './Modal';
 import Related from './Related';
 
 const ProductsDetails = () => {
     const userContext = useContext(UserContext);
     const data: any = useLoaderData();
+    useTitle('Details');
 
     const { _id, model, price, details, imgUrl, category, brand } = data;
 
@@ -69,7 +71,7 @@ const ProductsDetails = () => {
                 setRelated(related);
 
             });
-    }, [data]);
+    }, [data,_id]);
     return (
         <div className='lg:w-3/4 mx-auto'>
             <div className="text-xl breadcrumbs w-[100%] mx-auto text-secondary">
@@ -118,7 +120,6 @@ const ProductsDetails = () => {
                         <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4  border-t-[2px] border-t-gray-400 justify-evenly m-5 p-5 ">
                             <div className='flex ' >
                                 <p className="text-xl text-primary font-semibold flex"> Tk.{price} </p>
-                                <p className="text-base text-gray-400 line-through"> 55.00</p>
                             </div>
                             <p className="text-gray-800 font-semibold space-x-2">
                                 <span>Availability: </span>
@@ -200,7 +201,7 @@ const ProductsDetails = () => {
                              bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg  px-4 py-2 2  uppercase 
                              flex items-center gap-2 hover:bg-transparent  transition">
                                 <FaMoneyBillAlt> </FaMoneyBillAlt>
-                                <label htmlFor="my-modal">Book Now</label></button>
+                                <label htmlFor="my-modal">Buy Now</label></button>
 
 
                             <button onClick={() => handleAddToCart(_id)}

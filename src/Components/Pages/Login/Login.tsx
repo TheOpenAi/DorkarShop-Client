@@ -4,14 +4,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 import toast from 'react-hot-toast';
 import signup from "../../../Assets/121421-login.gif"
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
     const userContext = useContext(UserContext)
     const navigate = useNavigate();
     const location = useLocation();
+    useTitle('Login');
 
     const from = location.state?.from?.pathname || '/';
-    console.log(userContext?.loading);
 
     const handelogin = (e: any) => {
         e.preventDefault();

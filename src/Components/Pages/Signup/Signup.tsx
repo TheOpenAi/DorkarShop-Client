@@ -3,11 +3,13 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserProvider';
 import signup from "../../../Assets/107800-login-leady.gif"
+import useTitle from '../../../hooks/useTitle';
 
 const Signup = () => {
     const userContext = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
+    useTitle('Sign Up');
 
     const from = location.state?.from?.pathname || '/';
 
