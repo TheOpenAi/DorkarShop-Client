@@ -22,7 +22,7 @@ const ProductsDetails = () => {
 
     const handleAddToCart = (id: any) => {
         console.log(id);
-        
+
         const cart = {
             model,
             email: userContext?.user?.email,
