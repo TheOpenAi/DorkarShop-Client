@@ -118,12 +118,12 @@ const MyProduct = () => {
 
                                     </td>
                                     <td>
-                                        <td>
-                                            <FaTrashAlt onClick={() => handleProducts(product._id)} className='text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
 
-                                            {/* <img className='cursor-pointer' onClick={() => handelproducts(product._id)} src={trash} alt="" /> */}
+                                        <FaTrashAlt onClick={() => handleProducts(product._id)} className='text-red-600 text-2xl cursor-pointer'></FaTrashAlt>
 
-                                        </td>
+                                        {/* <img className='cursor-pointer' onClick={() => handelproducts(product._id)} src={trash} alt="" /> */}
+
+
                                     </td>
 
                                 </tr>
