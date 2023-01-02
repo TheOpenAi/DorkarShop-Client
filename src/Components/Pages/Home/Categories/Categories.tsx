@@ -77,9 +77,12 @@ const Categories = () => {
                             <img
                               src={category?.imgUrl}
                               alt=""
-                              className="h-full rounded-t-xl"
+                              className="h-full rounded-xl"
                             />
-                            <h2 className="capitalize font-semibold text-lg text-accent py-1">
+                         
+                          </div>
+                          <div className="w-3/4 mx-auto absolute  bottom-[0px] left-[25px]  rounded-t-lg bg-gray-100">
+                          <h2 className="capitalize font-semibold text-lg text-accent py-1">
                               {category?.title}
                             </h2>
                           </div>
