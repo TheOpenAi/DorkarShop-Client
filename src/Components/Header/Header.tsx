@@ -42,22 +42,22 @@ const Header = () => {
         <div className="navbar bg-gray-100 px-4 mx-auto sm:px-6 lg:px-8">
           <div className="navbar-start">
             <div className="dropdown"></div>
-            <a className="btn btn-ghost normal-case text-xl">
+            <Link className="normal-case text-xl" to="/">
               <h1 className="text-xl md:text-3xl lg:text-3xl text-primary font-sans font-extrabold lg:ml-10">
                 Dorkar Shop
               </h1>
-            </a>
+            </Link>
           </div>
-          <div className="navbar-center hidden lg:flex pt-2">
+          <div className="navbar-center w-2/5 hidden lg:flex pt-2">
             <input
               type="text"
               placeholder="Search Product"
-              className="input border-indigo-500 w-full hover:border-0"
+              className="input w-full hover:border-0"
             />
-            <button className="btn bg-indigo-400">
+            <button className="p-3 ">
               <svg
                 aria-hidden="true"
-                className="w-5 h-5 text-white "
+                className="w-7 h-7 text-accent "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -407,11 +407,16 @@ const Header = () => {
 
                 <div className="flex flex-col space-y-2">
                   <form>
-                    <div className="relative rounded-lg">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none bg-[#F3F4F6]">
+                    <div className="flex px-3 rounded-lg">
+                    <input
+                        type="text"
+                        placeholder="Search Product"
+                        className="input w-full bg-gray-100 hover:border-0"
+                      />
+                      <button className="p-3 ">
                         <svg
                           aria-hidden="true"
-                          className="w-5 h-5 text-gray-500 "
+                          className="w-7 h-7 text-accent "
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -424,21 +429,8 @@ const Header = () => {
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                           ></path>
                         </svg>
-                      </div>
-                      <input
-                        type="search"
-                        id="default-search"
-                        className=" bg-[#F3F4F6] block w-full p-4 pl-10 text-sm text-gray-900  "
-                        placeholder="Search, "
-                        required
-                      ></input>
-                      {/* <button
-                        type="submit"
-                        className="text-white absolute right-2.5 bottom-2.5
-                                 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 "
-                      >
-                        Search
-                      </button> */}
+                      </button>
+  
                     </div>
                   </form>
                 </div>

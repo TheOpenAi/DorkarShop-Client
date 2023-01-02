@@ -5,7 +5,7 @@ module.exports = {
     themes: [
       {
         dorkarTheme: {
-          primary: "#878afe",
+          primary: "#9896f1",
           secondary: "#2badc8",
 
           accent: "#2f3d4b",

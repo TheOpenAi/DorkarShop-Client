@@ -81,7 +81,7 @@ const Products = () => {
               <div className="w-full lg:w-6/12 px-4">
                 <h1
                   onClick={() => setProduct(product + 10)}
-                  className="text-gray-900 text-xl mt-10 cursor-pointer font-bold mb-8"
+                  className="text-secondary hover:scale-110 duration-150 text-xl mt-10 cursor-pointer font-bold mb-8"
                 >
                   Load More..
                 </h1>
