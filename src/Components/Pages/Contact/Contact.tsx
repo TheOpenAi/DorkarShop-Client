@@ -4,12 +4,13 @@ import support1 from "../../../Assets/support1.jpg";
 import support2 from "../../../Assets/SUPPORT2.webp";
 import con1 from "../../../Assets/contact.png";
 import { toast } from "react-hot-toast";
-import Footer from "../Footer/Footer";
+import useTitle from "../../../hooks/useTitle";
 const Contact = () => {
   const sendEmail = (e: any) => {
     e.preventDefault();
     toast.success("Email send successfully");
   };
+  useTitle('Contact');
   return (
     <div className="py-12 w-full">
       <h2 className="text-3xl font-bold text-center text-primary">

@@ -1,5 +1,6 @@
 import React from 'react';
 import cartPic from "../../../Assets/About-1.jpg";
+import useTitle from '../../../hooks/useTitle';
 import Footer from '../Footer/Footer';
 
 import ClientSay from './ClientSay';
@@ -8,6 +9,7 @@ import Team from './Team';
 import Wedo from './Wedo';
 
 const About = () => {
+  useTitle('About')
   return (
     <div>
       <div className='px-12 py-12 bg-white'>
