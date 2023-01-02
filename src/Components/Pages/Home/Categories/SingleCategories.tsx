@@ -1,16 +1,12 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import {
-  FaRegHeart,
-  FaExchangeAlt,
-  FaQuestion,
-  FaDollarSign,
-} from "react-icons/fa";
+import { FaRegHeart, FaExchangeAlt } from "react-icons/fa";
+import useTitle from "../../../../hooks/useTitle";
 
 const SingleCategories = () => {
   const products: any = useLoaderData();
-
-  console.log(products);
+  useTitle('Products');
+  
   return (
     <div className="bg-gray-50 md:w-3/4 pt-5 mx-auto">
       <div className="text-xl breadcrumbs w-[90%] mx-auto text-secondary">

@@ -43,7 +43,7 @@ const Cart = (_Props: any) => {
     // total price 
     let sum = 0;
     cartProducts.forEach((obj) => {
-        sum += obj.price;
+        sum += Number(obj.price);
     });
     return (
         <main

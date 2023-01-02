@@ -73,10 +73,10 @@ const MyProduct = () => {
 
                         {
                             // mapo the porduca
-                            data && data.map((product: any) => (
+                            data && data.map((product: any, i: any) => (
 
-                                <tr >
-                                    <th> 1</th>
+                                <tr key={i}>
+                                    <th>{i + 1}</th>
                                     <td><div className="mask mask-squircle w-12 h-12">
                                         <img src={product.imgUrl} alt="Avatar Tailwind CSS Component" />
                                     </div></td>

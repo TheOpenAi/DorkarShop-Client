@@ -4,19 +4,22 @@ import support1 from "../../../Assets/support1.jpg";
 import support2 from "../../../Assets/SUPPORT2.webp";
 import con1 from "../../../Assets/contact.png";
 import { toast } from "react-hot-toast";
+import useTitle from "../../../hooks/useTitle";
+import Footer from "../Footer/Footer";
 const Contact = () => {
   const sendEmail = (e: any) => {
     e.preventDefault();
     toast.success("Email send successfully");
   };
+  useTitle('Contact');
   return (
-    <div className="py-12">
+    <div className="py-12 w-full">
       <h2 className="text-3xl font-bold text-center text-primary">
         CONTACT US
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12 px-4 md:px-12">
-        <div className="card bg-base-100 shadow-xl border-b-8 border-primary">
-          <div className="flex justify-center">
+      <div className="lg:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 mt-12 px-4 md:px-12">
+        <div className="card bg-gray-100 shadow-xl border-b-8 border-primary max-w-lg mx-auto">
+          <div className="flex justify-center ">
             <img className="w-1/2" src={support2} alt="" />
           </div>
           <div className="card-body items-center text-center mt-0 pt-0">
@@ -31,7 +34,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 shadow-xl border-b-8 border-primary">
+        <div className="card bg-gray-100 shadow-xl border-b-8 border-primary max-w-lg mx-auto">
           <div className="flex justify-center">
             <img className="w-1/2" src={support} alt="" />
           </div>
@@ -50,7 +53,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 shadow-xl border-b-8 border-primary">
+        <div className="card bg-gray-100 shadow-xl border-b-8 border-primary max-w-lg mx-auto">
           <div className="flex justify-center">
             <img className="w-1/2" src={support1} alt="" />
           </div>
@@ -70,11 +73,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-base-200 py-12">
+      <div className=" bg-gray-100 py-12 mt-20">
         <h2 className="text-3xl font-bold text-center text-primary py-5">
           DROP US A LINE
         </h2>
-        <div className="grid grid-col-1 md:grid-cols-2 px-4 md:px-28 mt-14">
+        <div className="lg:w-3/4 mx-auto grid grid-col-1 md:grid-cols-2 px-4 mt-14">
           <div className="flex justify-center" data-aos="zoom-in">
             <img src={con1} alt="" />
           </div>
@@ -125,6 +128,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

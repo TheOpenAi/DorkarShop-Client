@@ -4,16 +4,14 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PaymentFail from './PaymentFail';
 import NoProductFound from './NoProductFound';
+import useTitle from '../../hooks/useTitle';
 
 
 const Payment = () => {
-
     const location = useLocation();
-    // console.log(location.search)
     const query = new URLSearchParams(location.search);
     const transectionId = query.get("transectionId");
-    // console.log(transectionId);
-
+    useTitle('Payment');
 
     const [order, setOrder]: any = useState({});
     useEffect(() => {

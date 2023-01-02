@@ -1,7 +1,9 @@
 import React from 'react';
+import useTitle from '../../../hooks/useTitle';
 import Footer from '../Footer/Footer';
 
 const Success = () => {
+    useTitle('Payment');
     return (
         <div>
             <div className="bg-gray-100 h-screen">

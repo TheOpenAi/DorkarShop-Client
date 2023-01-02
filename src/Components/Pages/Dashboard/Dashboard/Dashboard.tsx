@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { FaJediOrder, FaProductHunt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import { UserContext } from '../../../../context/UserProvider';
+import useTitle from '../../../../hooks/useTitle';
 import Header from '../../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const Dashboard = () => {
     const user = useContext(UserContext);
     console.log(user);
+    useTitle('Dashboard');
     return (
         <div>
             <Header></Header>
