@@ -14,7 +14,7 @@ const AllUser = () => {
     console.log(users);
     return (
         <div>
-                 <div className="text-sm breadcrumbs">
+            <div className="text-sm breadcrumbs">
                 <ul>
                     <li>
                         <Link to={'/home'}>
@@ -29,7 +29,7 @@ const AllUser = () => {
                         </Link>
                     </li>
                     <li>
-                      
+
                         all users
                     </li>
                 </ul>
@@ -54,10 +54,10 @@ const AllUser = () => {
                         </thead>
                         <tbody>
                             {
-                                users.map((user:any,i) => <tr >
-                                    <th>{i+1}</th>
+                                users.map((user: any, i) => <tr >
+                                    <th>{i + 1}</th>
                                     <td><div className="mask mask-squircle w-12 h-12">
-                                        <img src="" alt="Avatar Tailwind CSS Component" />
+                                        <img src="https://static.vecteezy.com/system/resources/previews/004/773/704/original/a-girl-s-face-with-a-beautiful-smile-a-female-avatar-for-a-website-and-social-network-vector.jpg" alt='' />
                                     </div></td>
 
                                     <td>{user.name}</td>
@@ -79,7 +79,7 @@ const AllUser = () => {
                                 </tr>)
                             }
 
-                            
+
 
 
                         </tbody>
